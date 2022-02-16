@@ -69,6 +69,21 @@
             animation-timing-function: linear;
             animation-duration: 5s;
         }
+        .screenSize{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 15;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
         .lds-ellipsis {
   display: inline-block;
   position: relative;
@@ -136,13 +151,19 @@
         top: -100%;
     }
 }
+@media only screen and (max-width: 800px) {
+          .screenSize{
+              display: none;
+          }
+      }
         </style>
         </head>
         <body>
         
         <h2>Book library</h2>
         <h2 style="position: absolute; right: 15px; top: 15px; font-size: 15px;">Sort by: A to Z</h2>
-        
+        <div class="screenSize"><p style="font-size: 25px;">Screen size too large.</p><p style="font-size: 20px;">Book library isn't optimized for this screen size.</p><p style="font-size: 15px;">Please open Book library on a smaller screen.</p></div>
+
         <div class="screen"><p style="font-size: 25px;">Loading Book library...</p><div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div></div>
         <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for books..." title="Type in a book" onclick="searchOpen()"><p style="position: absolute; top: 50px; right: 20px; font-size: 30px; opacity: 0; transition: 0.3s;" id="closer" onclick="searchClose()">&#10005;</p>
         <ul id="myUL">

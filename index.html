@@ -23,7 +23,6 @@
           background-position: 10px;
           width: 50px;
           padding: 0 0 0 50px;
-          border: 1px solid #ddd;
           margin-bottom: 12px;
           font-size: 25px;
           border: 2px solid green;
@@ -37,6 +36,29 @@
           bottom: 0;
           right: 15px;
           z-index: 10;
+        }
+
+        #reminder {
+          background-image: url('checkmark.jpeg');
+          background-size: 30px;
+          background-repeat: no-repeat;
+          background-position: 10px;
+          width: 50px;
+          padding: 0 0 0 50px;
+          margin-bottom: 12px;
+          font-size: 25px;
+          border: 2px solid green;
+          color: green;
+          height: 53px;
+          margin-bottom: 10px;
+          display: block;
+          transition: 0.3s;
+          border-radius: 100%;
+          position: fixed;
+          bottom: 0;
+          left: 15px;
+          z-index: 9;
+          background-color: white;
         }
         
         #myUL {
@@ -87,6 +109,18 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
+        }
+        .complete{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            top: 100%;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 13;
+            transition: 0.3s;
         }
         .lds-ellipsis {
   display: inline-block;
@@ -166,9 +200,12 @@
         <h2>Book library</h2>
         <h2 style="position: absolute; right: 15px; top: 15px; font-size: 15px;">Sort by: A to Z</h2>
         <div class="screenSize"><p style="font-size: 25px;">Screen size too large.</p><p style="font-size: 20px;">Book library isn't optimized for this screen size.</p><p style="font-size: 15px;">Please open Book library on a smaller screen.</p></div>
+        <div class="complete" id="complete"><h1 style="font-size: 20px; padding-left: 15px;">Book reading complete</h1><p style="position: absolute; top: -25px; right: 15px; font-size: 30px; opacity: 1; transition: 0.3s; position: absolute;" onclick="completeClose()">&#10005;</p><p style="font-size: 25px; text-align: center; margin-top: 50px;">Coming soon...</p><div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 300px;"><div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div></div></div>
+
 
         <div class="screen"><p style="font-size: 25px;">Loading Book library...</p><div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div></div>
         <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for books..." title="Type in a book" onclick="searchOpen()"><p style="position: absolute; bottom: -17px; right: 25px; font-size: 30px; opacity: 0; transition: 0.3s; position: fixed; z-index: -1;" id="closer" onclick="searchClose()">&#10005;</p>
+        <div id="reminder" onclick="completeOpen()"></div>
         <ul id="myUL">
           <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; position: relative;" id="book1"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">100 dalykų lietingai dienai. Ką veikti, kai... <br> <span style="font-size: 17px; margin-top: 0;">Emil-Hoffmann</span></a><p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;" id="plus1" onclick="book1open()">+</p><p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;" id="minus1" onclick="book1close()">-</p><p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas, priekis/galas</p><p style="margin-top: -15px; padding-left: 10px;">Pages: 226</p><p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p><p style="margin-top: -15px; padding-left: 10px;">Publisher: VaiGa</p><p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: green;">read</span></p></li>
           <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;" id="book2"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">100 dalykų, kuriuos reikia žinoti kiekvienam... <br> <span style="font-size: 17px; margin-top: 0;">Philip Kiefer</span></a><p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;" id="plus2" onclick="book2open()">+</p><p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;" id="minus2" onclick="book2close()">-</p><p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas, priekis/galas</p><p style="margin-top: -15px; padding-left: 10px;">Pages: 226</p><p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p><p style="margin-top: -15px; padding-left: 10px;">Publisher: VaiGa</p><p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: green;">read</span></p></li>
@@ -250,6 +287,36 @@
           <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;" id="book78"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Mano tėvai atšaukė mano gimtadienį <br> <span style="font-size: 17px; margin-top: 0;">Jo Simmons</span></a><p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;" id="plus78" onclick="book78open()">+</p><p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;" id="minus78" onclick="book78close()">-</p><p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas, priekis/galas</p><p style="margin-top: -15px; padding-left: 10px;">Pages: 226</p><p style="margin-top: -15px; padding-left: 10px;">Information: for sale on Vinted</p><p style="margin-top: -15px; padding-left: 10px;">Publisher: Alma littera</p><p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: green;">read</span></p></li>
           <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;" id="book79"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Matematikos burtai, galvosūkiai, žaidimai... <br> <span style="font-size: 17px; margin-top: 0;">Edward Godwin</span></a><p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;" id="plus79" onclick="book79open()">+</p><p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;" id="minus79" onclick="book79close()">-</p><p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas, priekis/galas</p><p style="margin-top: -15px; padding-left: 10px;">Pages: 80</p><p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p><p style="margin-top: -15px; padding-left: 10px;">Publisher: Gimtasis žodis</p><p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: red;">unread</span></p></li>
           <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;" id="book80"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Mažasis automobilis <br> <span style="font-size: 17px; margin-top: 0;">Ramunė Vasarė</span></a><p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;" id="plus80" onclick="book80open()">+</p><p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;" id="minus80" onclick="book80close()">-</p><p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas, priekis/galas</p><p style="margin-top: -15px; padding-left: 10px;">Pages: 6</p><p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p><p style="margin-top: -15px; padding-left: 10px;">Publisher: WILGA</p><p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: green;">read</span></p></li>
+          <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;" id="book81"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Mažasis katekizmas vaikams <br> <span style="font-size: 17px; margin-top: 0;">Michel Dubost, Stanislas Lalanne...</span></a><p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;" id="plus81" onclick="book81open()">+</p><p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;" id="minus81" onclick="book81close()">-</p><p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas, priekis/galas</p><p style="margin-top: -15px; padding-left: 10px;">Pages: 80</p><p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p><p style="margin-top: -15px; padding-left: 10px;">Publisher: Katalikų pasaulio leidiniai</p><p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: red;">unread</span></p></li>
+          <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;" id="book82"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Mažoji Dievo pažadų knygelė vaikams <br> <span style="font-size: 17px; margin-top: 0;">Ričardas Dalis</span></a><p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;" id="plus82" onclick="book82open()">+</p><p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;" id="minus82" onclick="book82close()">-</p><p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas, priekis/galas</p><p style="margin-top: -15px; padding-left: 10px;">Pages: 155</p><p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p><p style="margin-top: -15px; padding-left: 10px;">Publisher: Amžinoji uola</p><p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: red;">unread</span></p></li>
+          <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;" id="book83"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Mažojo KŪRĖJO knyga <br> <span style="font-size: 17px; margin-top: 0;">Natalija Brancevičienė</span></a><p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;" id="plus83" onclick="book83open()">+</p><p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;" id="minus83" onclick="book83close()">-</p><p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas, priekis/galas</p><p style="margin-top: -15px; padding-left: 10px;">Pages: 66</p><p style="margin-top: -15px; padding-left: 10px;">Information: for sale on Vinted</p><p style="margin-top: -15px; padding-left: 10px;">Publisher: Alma littera</p><p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: green;">read</span></p></li>
+          <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;" id="book84"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Mėgintuvėlis Enciklopedija kitaip <br> <span style="font-size: 17px; margin-top: 0;">Dr. Renata Česūnienė, Laurynas...</span></a><p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;" id="plus84" onclick="book84open()">+</p><p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;" id="minus84" onclick="book84close()">-</p><p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas, priekis/galas</p><p style="margin-top: -15px; padding-left: 10px;">Pages: 130</p><p style="margin-top: -15px; padding-left: 10px;">Information: for sale on Vinted</p><p style="margin-top: -15px; padding-left: 10px;">Publisher: Alma littera</p><p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: green;">read</span></p></li>
+          <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;" id="book85"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Menu, menu mįslę <br> <span style="font-size: 17px; margin-top: 0;">Vilius Šaulys</span></a><p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;" id="plus85" onclick="book85open()">+</p><p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;" id="minus85" onclick="book85close()">-</p><p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas, priekis/galas</p><p style="margin-top: -15px; padding-left: 10px;">Pages: 248</p><p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p><p style="margin-top: -15px; padding-left: 10px;">Publisher: Liberum Artis</p><p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: red;">unread</span></p></li>
+          <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;" id="book86"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Miklūs pirštukai <br> <span style="font-size: 17px; margin-top: 0;">Ula Simulynaitė</span></a><p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;" id="plus86" onclick="book86open()">+</p><p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;" id="minus86" onclick="book86close()">-</p><p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas, priekis/galas</p><p style="margin-top: -15px; padding-left: 10px;">Pages: 16</p><p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p><p style="margin-top: -15px; padding-left: 10px;">Publisher: Kūrybinės idėjos</p><p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: green;">read</span></p></li>
+          <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;" id="book87"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Mįslių Karuselė <br> <span style="font-size: 17px; margin-top: 0;">Nijolė Blaževičiūtė</span></a><p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;" id="plus87" onclick="book87open()">+</p><p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;" id="minus87" onclick="book87close()">-</p><p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas, priekis/galas</p><p style="margin-top: -15px; padding-left: 10px;">Pages: 160</p><p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p><p style="margin-top: -15px; padding-left: 10px;">Publisher: Naujoji Romuva</p><p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: red;">unread</span></p></li>
+          <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;" id="book88"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Mįslių skrynelė <br> <span style="font-size: 17px; margin-top: 0;">Statys Lipskis</span></a><p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;" id="plus88" onclick="book88open()">+</p><p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;" id="minus88" onclick="book88close()">-</p><p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas, priekis/galas</p><p style="margin-top: -15px; padding-left: 10px;">Pages: 312</p><p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p><p style="margin-top: -15px; padding-left: 10px;">Publisher: Ž Vilnius</p><p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: red;">unread</span></p></li>
+          <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;" id="book89"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Moksliniai Eksperimentai su ORU <br> <span style="font-size: 17px; margin-top: 0;">Snigdha Sah</span></a><p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;" id="plus89" onclick="book89open()">+</p><p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;" id="minus89" onclick="book89close()">-</p><p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas, priekis/galas</p><p style="margin-top: -15px; padding-left: 10px;">Pages: 24</p><p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p><p style="margin-top: -15px; padding-left: 10px;">Publisher: Naujoji Rosma</p><p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: green;">read</span></p></li>
+          <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;" id="book90"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Mokslo enciklopedija <br> <span style="font-size: 17px; margin-top: 0;">Kirsteen Robson, Phillip Clarke...</span></a><p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;" id="plus90" onclick="book90open()">+</p><p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;" id="minus90" onclick="book90close()">-</p><p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas, priekis/galas</p><p style="margin-top: -15px; padding-left: 10px;">Pages: 450</p><p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p><p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p><p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: red;">unread</span></p></li>
+          <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;" id="book91"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Mokykis meistrauti <br> <span style="font-size: 17px; margin-top: 0;">B. Popovas</span></a><p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;" id="plus91" onclick="book91open()">+</p><p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;" id="minus91" onclick="book91close()">-</p><p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas, priekis/galas</p><p style="margin-top: -15px; padding-left: 10px;">Pages: 202</p><p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p><p style="margin-top: -15px; padding-left: 10px;">Publisher: Šviesa</p><p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: red;">unread</span></p></li>
+          <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;" id="book92"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Mokykis programuoti - sukurk savo... <br> <span style="font-size: 17px; margin-top: 0;">CoderDojo NANO</span></a><p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;" id="plus92" onclick="book92open()">+</p><p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;" id="minus92" onclick="book92close()">-</p><p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas, priekis/galas</p><p style="margin-top: -15px; padding-left: 10px;">Pages: 94</p><p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p><p style="margin-top: -15px; padding-left: 10px;">Publisher: Egmont</p><p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: green;">read</span></p></li>
+          <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;" id="book93"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Narsuoliai irgi bijo <br> <span style="font-size: 17px; margin-top: 0;">Carmen Gil</span></a><p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;" id="plus93" onclick="book93open()">+</p><p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;" id="minus93" onclick="book93close()">-</p><p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas, priekis/galas</p><p style="margin-top: -15px; padding-left: 10px;">Pages: 68</p><p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p><p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p><p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: green;">read</span></p></li>
+          <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;" id="book94"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Naujokas <br> <span style="font-size: 17px; margin-top: 0;">Jerry Craft</span></a><p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;" id="plus94" onclick="book94open()">+</p><p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;" id="minus94" onclick="book94close()">-</p><p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas, priekis/galas</p><p style="margin-top: -15px; padding-left: 10px;">Pages: 252</p><p style="margin-top: -15px; padding-left: 10px;">Information: 1 of 2 for sale on Vinted</p><p style="margin-top: -15px; padding-left: 10px;">Publisher: Alma littera</p><p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: red;">unread</span></p></li>
+          <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;" id="book95"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Nelaimingas Petsonas <br> <span style="font-size: 17px; margin-top: 0;">Sven Nordqvist</span></a><p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;" id="plus95" onclick="book95open()">+</p><p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;" id="minus95" onclick="book95close()">-</p><p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas, priekis/galas</p><p style="margin-top: -15px; padding-left: 10px;">Pages: 28</p><p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p><p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p><p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: green;">read</span></p></li>
+          <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;" id="book96"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Nevykėlio dienoraštis Rašyk ir tu <br> <span style="font-size: 17px; margin-top: 0;">Jeff Kinney</span></a><p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;" id="plus96" onclick="book96open()">+</p><p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;" id="minus96" onclick="book96close()">-</p><p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas, priekis/galas</p><p style="margin-top: -15px; padding-left: 10px;">Pages: 196</p><p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p><p style="margin-top: -15px; padding-left: 10px;">Publisher: Presvika</p><p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: red;">unread</span></p></li>
+          <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;" id="book97"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Nuostabusis Ozo šalies burtininkas <br> <span style="font-size: 17px; margin-top: 0;">L. Frank Baum</span></a><p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;" id="plus97" onclick="book97open()">+</p><p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;" id="minus97" onclick="book97close()">-</p><p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas, priekis/galas</p><p style="margin-top: -15px; padding-left: 10px;">Pages: 194</p><p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p><p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p><p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: green;">read</span></p></li>
+          <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;" id="book98"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Nykštuko draugija <i>+ autoriaus parašas</i> <br> <span style="font-size: 17px; margin-top: 0;">Vytautas Steponas Vaičiūnas</span></a><p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;" id="plus98" onclick="book98open()">+</p><p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;" id="minus98" onclick="book98close()">-</p><p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas, priekis/galas</p><p style="margin-top: -15px; padding-left: 10px;">Pages: 16</p><p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p><p style="margin-top: -15px; padding-left: 10px;">Publisher: Pasaul. Liet. kūlt., moksl. ir...</p><p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: green;">read</span></p></li>
+          <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;" id="book99"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Nykštuko ir jo draugų nuotykiai <br> <span style="font-size: 17px; margin-top: 0;">Vytautas Steponas Vaičiūnas</span></a><p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;" id="plus99" onclick="book99open()">+</p><p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;" id="minus99" onclick="book99close()">-</p><p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas, priekis/galas</p><p style="margin-top: -15px; padding-left: 10px;">Pages: 38</p><p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p><p style="margin-top: -15px; padding-left: 10px;">Publisher: Pasaul. Liet. kūlt., moksl. ir...</p><p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: green;">read</span></p></li>
+          <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;" id="book100"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Panama labai graži <br> <span style="font-size: 17px; margin-top: 0;">Janosch</span></a><p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;" id="plus100" onclick="book100open()">+</p><p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;" id="minus100" onclick="book100close()">-</p><p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas, priekis/galas</p><p style="margin-top: -15px; padding-left: 10px;">Pages: 50</p><p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p><p style="margin-top: -15px; padding-left: 10px;">Publisher: Garnelis</p><p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: green;">read</span></p></li>
+          <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;" id="book101"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Pasaiba <i>+ autoriaus parašas</i> <br> <span style="font-size: 17px; margin-top: 0;">Danguolė Kandrotienė</span></a><p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;" id="plus101" onclick="book101open()">+</p><p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;" id="minus101" onclick="book101close()">-</p><p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas, priekis/galas</p><p style="margin-top: -15px; padding-left: 10px;">Pages: 114</p><p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p><p style="margin-top: -15px; padding-left: 10px;">Publisher: Debesų ganyklos</p><p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: red;">unread</span></p></li>
+          <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;" id="book102"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Pasaulio atlasas <br> <span style="font-size: 17px; margin-top: 0;">Bolekas ir Liolekas</span></a><p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;" id="plus102" onclick="book102open()">+</p><p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;" id="minus102" onclick="book102close()">-</p><p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas, priekis/galas</p><p style="margin-top: -15px; padding-left: 10px;">Pages: 50</p><p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p><p style="margin-top: -15px; padding-left: 10px;">Publisher: Mūsų knyga</p><p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: red;">unread</span></p></li>
+          <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;" id="book103"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Pasaulio Pasakėčios <br> <span style="font-size: 17px; margin-top: 0;">Antonio Perera</span></a><p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;" id="plus103" onclick="book103open()">+</p><p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;" id="minus103" onclick="book103close()">-</p><p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas, priekis/galas</p><p style="margin-top: -15px; padding-left: 10px;">Pages: 130</p><p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p><p style="margin-top: -15px; padding-left: 10px;">Publisher: Alma littera</p><p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: red;">unread</span></p></li>
+          <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;" id="book104"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Paskutinės galimybės viešbutis <br> <span style="font-size: 17px; margin-top: 0;">Nicki Thornton</span></a><p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;" id="plus104" onclick="book104open()">+</p><p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;" id="minus104" onclick="book104close()">-</p><p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas, priekis/galas</p><p style="margin-top: -15px; padding-left: 10px;">Pages: 266</p><p style="margin-top: -15px; padding-left: 10px;">Information: for sale on Vinted</p><p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p><p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: green;">read</span></p></li>
+          <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;" id="book105"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Paslaptingas drakonas <br> <span style="font-size: 17px; margin-top: 0;">Ed Clarke</span></a><p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;" id="plus105" onclick="book105open()">+</p><p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;" id="minus105" onclick="book105close()">-</p><p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas, priekis/galas</p><p style="margin-top: -15px; padding-left: 10px;">Pages: 162</p><p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p><p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p><p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: green;">read</span></p></li>
+          <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;" id="book106"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Paslaptingoji Sala <br> <span style="font-size: 17px; margin-top: 0;">Jules Verne</span></a><p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;" id="plus106" onclick="book106open()">+</p><p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;" id="minus106" onclick="book106close()">-</p><p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas, priekis/galas</p><p style="margin-top: -15px; padding-left: 10px;">Pages: 722</p><p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p><p style="margin-top: -15px; padding-left: 10px;">Publisher: Obuolys</p><p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: red;">unread</span></p></li>
+          <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;" id="book107"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Petsonas stovyklauja <br> <span style="font-size: 17px; margin-top: 0;">Sven Nordqvist</span></a><p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;" id="plus107" onclick="book107open()">+</p><p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;" id="minus107" onclick="book107close()">-</p><p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas, priekis/galas</p><p style="margin-top: -15px; padding-left: 10px;">Pages: 28</p><p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p><p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p><p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: green;">read</span></p></li>
+          <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;" id="book108"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Petsono tortas <br> <span style="font-size: 17px; margin-top: 0;">Sven Nordqvist</span></a><p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;" id="plus108" onclick="book108open()">+</p><p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;" id="minus108" onclick="book108close()">-</p><p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas, priekis/galas</p><p style="margin-top: -15px; padding-left: 10px;">Pages: 28</p><p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p><p style="margin-top: -15px; padding-left: 10px;">Publisher: Garnelis</p><p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: green;">read</span></p></li>
+          <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;" id="book109"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Pievos pasakėlės <br> <span style="font-size: 17px; margin-top: 0;">Dalia Tarailienė</span></a><p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;" id="plus109" onclick="book109open()">+</p><p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;" id="minus109" onclick="book109close()">-</p><p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas, priekis/galas</p><p style="margin-top: -15px; padding-left: 10px;">Pages: 24</p><p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p><p style="margin-top: -15px; padding-left: 10px;">Publisher: Vilnius</p><p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: green;">read</span></p></li>
+          <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;" id="book110"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Piteris Galingasis ir įžūlūs robotai plėšikai <br> <span style="font-size: 17px; margin-top: 0;">Kent Clark ir Brandon T. Snider</span></a><p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;" id="plus110" onclick="book110open()">+</p><p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;" id="minus110" onclick="book110close()">-</p><p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas, priekis/galas</p><p style="margin-top: -15px; padding-left: 10px;">Pages: 122</p><p style="margin-top: -15px; padding-left: 10px;">Information: for sale on Vinted</p><p style="margin-top: -15px; padding-left: 10px;">Publisher: Alma littera</p><p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: green;">read</span></p></li>
         </ul>
         
         <p style="margin-top: 45px; margin-bottom: -5px;">&copy; Book library 2022</p>
@@ -266,6 +333,12 @@
                 document.getElementById("myInput").style.borderRadius = "100%";
                 document.getElementById("closer").style.opacity = "0";
                 document.getElementById("closer").style.zIndex = "-1";
+            }
+            function completeOpen() {
+                document.getElementById("complete").style.top = "0";
+            }
+            function completeClose() {
+                document.getElementById("complete").style.top = "100%";
             }
             function book1open() {
                 document.getElementById("book1").style.height = "200px";
@@ -1066,6 +1139,676 @@
                 document.getElementById("book80").style.height = "60px";
                 document.getElementById("minus80").style.opacity = "0";
                 setTimeout(() => {document.getElementById("plus80").style.opacity = "1";}, 250);
+            }
+            function book81open() {
+                document.getElementById("book81").style.height = "200px";
+                document.getElementById("plus81").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus81").style.opacity = "1";}, 250);
+            }
+            function book81close() {
+                document.getElementById("book81").style.height = "60px";
+                document.getElementById("minus81").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus81").style.opacity = "1";}, 250);
+            }
+            function book82open() {
+                document.getElementById("book82").style.height = "200px";
+                document.getElementById("plus82").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus82").style.opacity = "1";}, 250);
+            }
+            function book82close() {
+                document.getElementById("book82").style.height = "60px";
+                document.getElementById("minus82").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus82").style.opacity = "1";}, 250);
+            }
+            function book83open() {
+                document.getElementById("book83").style.height = "200px";
+                document.getElementById("plus83").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus83").style.opacity = "1";}, 250);
+            }
+            function book83close() {
+                document.getElementById("book83").style.height = "60px";
+                document.getElementById("minus83").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus83").style.opacity = "1";}, 250);
+            }
+            function book84open() {
+                document.getElementById("book84").style.height = "200px";
+                document.getElementById("plus84").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus84").style.opacity = "1";}, 250);
+            }
+            function book84close() {
+                document.getElementById("book84").style.height = "60px";
+                document.getElementById("minus84").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus84").style.opacity = "1";}, 250);
+            }
+            function book85open() {
+                document.getElementById("book85").style.height = "200px";
+                document.getElementById("plus85").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus85").style.opacity = "1";}, 250);
+            }
+            function book85close() {
+                document.getElementById("book85").style.height = "60px";
+                document.getElementById("minus85").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus85").style.opacity = "1";}, 250);
+            }
+            function book86open() {
+                document.getElementById("book86").style.height = "200px";
+                document.getElementById("plus86").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus86").style.opacity = "1";}, 250);
+            }
+            function book86close() {
+                document.getElementById("book86").style.height = "60px";
+                document.getElementById("minus86").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus86").style.opacity = "1";}, 250);
+            }
+            function book87open() {
+                document.getElementById("book87").style.height = "200px";
+                document.getElementById("plus87").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus87").style.opacity = "1";}, 250);
+            }
+            function book87close() {
+                document.getElementById("book87").style.height = "60px";
+                document.getElementById("minus87").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus87").style.opacity = "1";}, 250);
+            }
+            function book88open() {
+                document.getElementById("book88").style.height = "200px";
+                document.getElementById("plus88").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus88").style.opacity = "1";}, 250);
+            }
+            function book88close() {
+                document.getElementById("book88").style.height = "60px";
+                document.getElementById("minus88").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus88").style.opacity = "1";}, 250);
+            }
+            function book89open() {
+                document.getElementById("book89").style.height = "200px";
+                document.getElementById("plus89").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus89").style.opacity = "1";}, 250);
+            }
+            function book89close() {
+                document.getElementById("book89").style.height = "60px";
+                document.getElementById("minus89").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus89").style.opacity = "1";}, 250);
+            }
+            function book90open() {
+                document.getElementById("book90").style.height = "200px";
+                document.getElementById("plus90").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus90").style.opacity = "1";}, 250);
+            }
+            function book90close() {
+                document.getElementById("book90").style.height = "60px";
+                document.getElementById("minus90").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus90").style.opacity = "1";}, 250);
+            }
+            function book91open() {
+                document.getElementById("book91").style.height = "200px";
+                document.getElementById("plus91").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus91").style.opacity = "1";}, 250);
+            }
+            function book91close() {
+                document.getElementById("book91").style.height = "60px";
+                document.getElementById("minus91").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus91").style.opacity = "1";}, 250);
+            }
+            function book92open() {
+                document.getElementById("book92").style.height = "200px";
+                document.getElementById("plus92").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus92").style.opacity = "1";}, 250);
+            }
+            function book92close() {
+                document.getElementById("book92").style.height = "60px";
+                document.getElementById("minus92").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus92").style.opacity = "1";}, 250);
+            }
+            function book93open() {
+                document.getElementById("book93").style.height = "200px";
+                document.getElementById("plus93").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus93").style.opacity = "1";}, 250);
+            }
+            function book93close() {
+                document.getElementById("book93").style.height = "60px";
+                document.getElementById("minus93").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus93").style.opacity = "1";}, 250);
+            }
+            function book94open() {
+                document.getElementById("book94").style.height = "200px";
+                document.getElementById("plus94").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus94").style.opacity = "1";}, 250);
+            }
+            function book94close() {
+                document.getElementById("book94").style.height = "60px";
+                document.getElementById("minus94").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus94").style.opacity = "1";}, 250);
+            }
+            function book95open() {
+                document.getElementById("book95").style.height = "200px";
+                document.getElementById("plus95").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus95").style.opacity = "1";}, 250);
+            }
+            function book95close() {
+                document.getElementById("book95").style.height = "60px";
+                document.getElementById("minus95").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus95").style.opacity = "1";}, 250);
+            }
+            function book96open() {
+                document.getElementById("book96").style.height = "200px";
+                document.getElementById("plus96").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus96").style.opacity = "1";}, 250);
+            }
+            function book96close() {
+                document.getElementById("book96").style.height = "60px";
+                document.getElementById("minus96").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus96").style.opacity = "1";}, 250);
+            }
+            function book97open() {
+                document.getElementById("book97").style.height = "200px";
+                document.getElementById("plus97").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus97").style.opacity = "1";}, 250);
+            }
+            function book97close() {
+                document.getElementById("book97").style.height = "60px";
+                document.getElementById("minus97").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus97").style.opacity = "1";}, 250);
+            }
+            function book98open() {
+                document.getElementById("book98").style.height = "200px";
+                document.getElementById("plus98").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus98").style.opacity = "1";}, 250);
+            }
+            function book98close() {
+                document.getElementById("book98").style.height = "60px";
+                document.getElementById("minus98").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus98").style.opacity = "1";}, 250);
+            }
+            function book99open() {
+                document.getElementById("book99").style.height = "200px";
+                document.getElementById("plus99").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus99").style.opacity = "1";}, 250);
+            }
+            function book99close() {
+                document.getElementById("book99").style.height = "60px";
+                document.getElementById("minus99").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus99").style.opacity = "1";}, 250);
+            }
+            function book100open() {
+                document.getElementById("book100").style.height = "200px";
+                document.getElementById("plus100").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus100").style.opacity = "1";}, 250);
+            }
+            function book100close() {
+                document.getElementById("book100").style.height = "60px";
+                document.getElementById("minus100").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus100").style.opacity = "1";}, 250);
+            }
+            function book101open() {
+                document.getElementById("book101").style.height = "200px";
+                document.getElementById("plus101").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus101").style.opacity = "1";}, 250);
+            }
+            function book101close() {
+                document.getElementById("book101").style.height = "60px";
+                document.getElementById("minus101").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus101").style.opacity = "1";}, 250);
+            }
+            function book102open() {
+                document.getElementById("book102").style.height = "200px";
+                document.getElementById("plus102").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus102").style.opacity = "1";}, 250);
+            }
+            function book102close() {
+                document.getElementById("book102").style.height = "60px";
+                document.getElementById("minus102").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus102").style.opacity = "1";}, 250);
+            }
+            function book103open() {
+                document.getElementById("book103").style.height = "200px";
+                document.getElementById("plus103").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus103").style.opacity = "1";}, 250);
+            }
+            function book103close() {
+                document.getElementById("book103").style.height = "60px";
+                document.getElementById("minus103").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus103").style.opacity = "1";}, 250);
+            }
+            function book104open() {
+                document.getElementById("book104").style.height = "200px";
+                document.getElementById("plus104").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus104").style.opacity = "1";}, 250);
+            }
+            function book104close() {
+                document.getElementById("book104").style.height = "60px";
+                document.getElementById("minus104").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus104").style.opacity = "1";}, 250);
+            }
+            function book105open() {
+                document.getElementById("book105").style.height = "200px";
+                document.getElementById("plus105").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus105").style.opacity = "1";}, 250);
+            }
+            function book105close() {
+                document.getElementById("book105").style.height = "60px";
+                document.getElementById("minus105").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus105").style.opacity = "1";}, 250);
+            }
+            function book106open() {
+                document.getElementById("book106").style.height = "200px";
+                document.getElementById("plus106").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus106").style.opacity = "1";}, 250);
+            }
+            function book106close() {
+                document.getElementById("book106").style.height = "60px";
+                document.getElementById("minus106").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus106").style.opacity = "1";}, 250);
+            }
+            function book107open() {
+                document.getElementById("book107").style.height = "200px";
+                document.getElementById("plus107").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus107").style.opacity = "1";}, 250);
+            }
+            function book107close() {
+                document.getElementById("book107").style.height = "60px";
+                document.getElementById("minus107").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus107").style.opacity = "1";}, 250);
+            }
+            function book108open() {
+                document.getElementById("book108").style.height = "200px";
+                document.getElementById("plus108").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus108").style.opacity = "1";}, 250);
+            }
+            function book108close() {
+                document.getElementById("book108").style.height = "60px";
+                document.getElementById("minus108").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus108").style.opacity = "1";}, 250);
+            }
+            function book109open() {
+                document.getElementById("book109").style.height = "200px";
+                document.getElementById("plus109").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus109").style.opacity = "1";}, 250);
+            }
+            function book109close() {
+                document.getElementById("book109").style.height = "60px";
+                document.getElementById("minus109").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus109").style.opacity = "1";}, 250);
+            }
+            function book110open() {
+                document.getElementById("book110").style.height = "200px";
+                document.getElementById("plus110").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus110").style.opacity = "1";}, 250);
+            }
+            function book110close() {
+                document.getElementById("book110").style.height = "60px";
+                document.getElementById("minus110").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus110").style.opacity = "1";}, 250);
+            }
+            function book111open() {
+                document.getElementById("book111").style.height = "200px";
+                document.getElementById("plus111").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus111").style.opacity = "1";}, 250);
+            }
+            function book111close() {
+                document.getElementById("book111").style.height = "60px";
+                document.getElementById("minus111").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus111").style.opacity = "1";}, 250);
+            }
+            function book112open() {
+                document.getElementById("book112").style.height = "200px";
+                document.getElementById("plus112").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus112").style.opacity = "1";}, 250);
+            }
+            function book112close() {
+                document.getElementById("book112").style.height = "60px";
+                document.getElementById("minus112").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus112").style.opacity = "1";}, 250);
+            }
+            function book113open() {
+                document.getElementById("book113").style.height = "200px";
+                document.getElementById("plus113").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus113").style.opacity = "1";}, 250);
+            }
+            function book113close() {
+                document.getElementById("book113").style.height = "60px";
+                document.getElementById("minus113").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus113").style.opacity = "1";}, 250);
+            }
+            function book114open() {
+                document.getElementById("book114").style.height = "200px";
+                document.getElementById("plus114").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus114").style.opacity = "1";}, 250);
+            }
+            function book114close() {
+                document.getElementById("book114").style.height = "60px";
+                document.getElementById("minus114").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus114").style.opacity = "1";}, 250);
+            }
+            function book115open() {
+                document.getElementById("book115").style.height = "200px";
+                document.getElementById("plus115").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus115").style.opacity = "1";}, 250);
+            }
+            function book115close() {
+                document.getElementById("book115").style.height = "60px";
+                document.getElementById("minus115").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus115").style.opacity = "1";}, 250);
+            }
+            function book116open() {
+                document.getElementById("book116").style.height = "200px";
+                document.getElementById("plus116").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus116").style.opacity = "1";}, 250);
+            }
+            function book116close() {
+                document.getElementById("book116").style.height = "60px";
+                document.getElementById("minus116").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus116").style.opacity = "1";}, 250);
+            }
+            function book117open() {
+                document.getElementById("book117").style.height = "200px";
+                document.getElementById("plus117").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus117").style.opacity = "1";}, 250);
+            }
+            function book117close() {
+                document.getElementById("book117").style.height = "60px";
+                document.getElementById("minus117").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus117").style.opacity = "1";}, 250);
+            }
+            function book118open() {
+                document.getElementById("book118").style.height = "200px";
+                document.getElementById("plus118").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus118").style.opacity = "1";}, 250);
+            }
+            function book118close() {
+                document.getElementById("book118").style.height = "60px";
+                document.getElementById("minus118").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus118").style.opacity = "1";}, 250);
+            }
+            function book119open() {
+                document.getElementById("book119").style.height = "200px";
+                document.getElementById("plus119").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus119").style.opacity = "1";}, 250);
+            }
+            function book119close() {
+                document.getElementById("book119").style.height = "60px";
+                document.getElementById("minus119").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus119").style.opacity = "1";}, 250);
+            }
+            function book120open() {
+                document.getElementById("book120").style.height = "200px";
+                document.getElementById("plus120").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus120").style.opacity = "1";}, 250);
+            }
+            function book120close() {
+                document.getElementById("book120").style.height = "60px";
+                document.getElementById("minus120").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus120").style.opacity = "1";}, 250);
+            }
+            function book121open() {
+                document.getElementById("book121").style.height = "200px";
+                document.getElementById("plus121").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus121").style.opacity = "1";}, 250);
+            }
+            function book121close() {
+                document.getElementById("book121").style.height = "60px";
+                document.getElementById("minus121").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus121").style.opacity = "1";}, 250);
+            }
+            function book122open() {
+                document.getElementById("book122").style.height = "200px";
+                document.getElementById("plus122").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus122").style.opacity = "1";}, 250);
+            }
+            function book122close() {
+                document.getElementById("book122").style.height = "60px";
+                document.getElementById("minus122").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus122").style.opacity = "1";}, 250);
+            }
+            function book123open() {
+                document.getElementById("book123").style.height = "200px";
+                document.getElementById("plus123").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus123").style.opacity = "1";}, 250);
+            }
+            function book123close() {
+                document.getElementById("book123").style.height = "60px";
+                document.getElementById("minus123").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus123").style.opacity = "1";}, 250);
+            }
+            function book124open() {
+                document.getElementById("book124").style.height = "200px";
+                document.getElementById("plus124").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus124").style.opacity = "1";}, 250);
+            }
+            function book124close() {
+                document.getElementById("book124").style.height = "60px";
+                document.getElementById("minus124").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus124").style.opacity = "1";}, 250);
+            }
+            function book125open() {
+                document.getElementById("book125").style.height = "200px";
+                document.getElementById("plus125").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus125").style.opacity = "1";}, 250);
+            }
+            function book125close() {
+                document.getElementById("book125").style.height = "60px";
+                document.getElementById("minus125").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus125").style.opacity = "1";}, 250);
+            }
+            function book126open() {
+                document.getElementById("book126").style.height = "200px";
+                document.getElementById("plus126").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus126").style.opacity = "1";}, 250);
+            }
+            function book126close() {
+                document.getElementById("book126").style.height = "60px";
+                document.getElementById("minus126").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus126").style.opacity = "1";}, 250);
+            }
+            function book127open() {
+                document.getElementById("book127").style.height = "200px";
+                document.getElementById("plus127").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus127").style.opacity = "1";}, 250);
+            }
+            function book127close() {
+                document.getElementById("book127").style.height = "60px";
+                document.getElementById("minus127").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus127").style.opacity = "1";}, 250);
+            }
+            function book128open() {
+                document.getElementById("book128").style.height = "200px";
+                document.getElementById("plus412").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus128").style.opacity = "1";}, 250);
+            }
+            function book128close() {
+                document.getElementById("book128").style.height = "60px";
+                document.getElementById("minus128").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus128").style.opacity = "1";}, 250);
+            }
+            function book129open() {
+                document.getElementById("book129").style.height = "200px";
+                document.getElementById("plus129").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus129").style.opacity = "1";}, 250);
+            }
+            function book129close() {
+                document.getElementById("book129").style.height = "60px";
+                document.getElementById("minus129").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus129").style.opacity = "1";}, 250);
+            }
+            function book130open() {
+                document.getElementById("book130").style.height = "200px";
+                document.getElementById("plus130").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus130").style.opacity = "1";}, 250);
+            }
+            function book130close() {
+                document.getElementById("book130").style.height = "60px";
+                document.getElementById("minus130").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus130").style.opacity = "1";}, 250);
+            }
+            function book131open() {
+                document.getElementById("book131").style.height = "200px";
+                document.getElementById("plus131").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus131").style.opacity = "1";}, 250);
+            }
+            function book131close() {
+                document.getElementById("book131").style.height = "60px";
+                document.getElementById("minus131").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus131").style.opacity = "1";}, 250);
+            }
+            function book132open() {
+                document.getElementById("book132").style.height = "200px";
+                document.getElementById("plus132").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus132").style.opacity = "1";}, 250);
+            }
+            function book132close() {
+                document.getElementById("book132").style.height = "60px";
+                document.getElementById("minus132").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus132").style.opacity = "1";}, 250);
+            }
+            function book133open() {
+                document.getElementById("book133").style.height = "200px";
+                document.getElementById("plus133").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus133").style.opacity = "1";}, 250);
+            }
+            function book133close() {
+                document.getElementById("book133").style.height = "60px";
+                document.getElementById("minus133").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus133").style.opacity = "1";}, 250);
+            }
+            function book134open() {
+                document.getElementById("book134").style.height = "200px";
+                document.getElementById("plus134").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus134").style.opacity = "1";}, 250);
+            }
+            function book134close() {
+                document.getElementById("book134").style.height = "60px";
+                document.getElementById("minus134").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus134").style.opacity = "1";}, 250);
+            }
+            function book135open() {
+                document.getElementById("book135").style.height = "200px";
+                document.getElementById("plus135").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus135").style.opacity = "1";}, 250);
+            }
+            function book135close() {
+                document.getElementById("book135").style.height = "60px";
+                document.getElementById("minus135").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus135").style.opacity = "1";}, 250);
+            }
+            function book136open() {
+                document.getElementById("book136").style.height = "200px";
+                document.getElementById("plus136").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus136").style.opacity = "1";}, 250);
+            }
+            function book136close() {
+                document.getElementById("book136").style.height = "60px";
+                document.getElementById("minus136").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus136").style.opacity = "1";}, 250);
+            }
+            function book137open() {
+                document.getElementById("book137").style.height = "200px";
+                document.getElementById("plus137").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus137").style.opacity = "1";}, 250);
+            }
+            function book137close() {
+                document.getElementById("book137").style.height = "60px";
+                document.getElementById("minus137").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus137").style.opacity = "1";}, 250);
+            }
+            function book138open() {
+                document.getElementById("book138").style.height = "200px";
+                document.getElementById("plus138").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus138").style.opacity = "1";}, 250);
+            }
+            function book138close() {
+                document.getElementById("book138").style.height = "60px";
+                document.getElementById("minus138").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus138").style.opacity = "1";}, 250);
+            }
+            function book139open() {
+                document.getElementById("book139").style.height = "200px";
+                document.getElementById("plus139").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus139").style.opacity = "1";}, 250);
+            }
+            function book139close() {
+                document.getElementById("book139").style.height = "60px";
+                document.getElementById("minus139").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus139").style.opacity = "1";}, 250);
+            }
+            function book140open() {
+                document.getElementById("book140").style.height = "200px";
+                document.getElementById("plus140").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus140").style.opacity = "1";}, 250);
+            }
+            function book140close() {
+                document.getElementById("book140").style.height = "60px";
+                document.getElementById("minus140").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus140").style.opacity = "1";}, 250);
+            }
+            function book141open() {
+                document.getElementById("book141").style.height = "200px";
+                document.getElementById("plus141").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus141").style.opacity = "1";}, 250);
+            }
+            function book141close() {
+                document.getElementById("book141").style.height = "60px";
+                document.getElementById("minus141").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus141").style.opacity = "1";}, 250);
+            }
+            function book142open() {
+                document.getElementById("book142").style.height = "200px";
+                document.getElementById("plus142").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus142").style.opacity = "1";}, 250);
+            }
+            function book142close() {
+                document.getElementById("book142").style.height = "60px";
+                document.getElementById("minus142").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus142").style.opacity = "1";}, 250);
+            }
+            function book143open() {
+                document.getElementById("book143").style.height = "200px";
+                document.getElementById("plus143").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus143").style.opacity = "1";}, 250);
+            }
+            function book143close() {
+                document.getElementById("book143").style.height = "60px";
+                document.getElementById("minus143").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus143").style.opacity = "1";}, 250);
+            }
+            function book144open() {
+                document.getElementById("book144").style.height = "200px";
+                document.getElementById("plus144").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus144").style.opacity = "1";}, 250);
+            }
+            function book144close() {
+                document.getElementById("book144").style.height = "60px";
+                document.getElementById("minus144").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus144").style.opacity = "1";}, 250);
+            }
+            function book145open() {
+                document.getElementById("book145").style.height = "200px";
+                document.getElementById("plus145").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus145").style.opacity = "1";}, 250);
+            }
+            function book145close() {
+                document.getElementById("book145").style.height = "60px";
+                document.getElementById("minus145").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus145").style.opacity = "1";}, 250);
+            }
+            function book146open() {
+                document.getElementById("book146").style.height = "200px";
+                document.getElementById("plus146").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus146").style.opacity = "1";}, 250);
+            }
+            function book146close() {
+                document.getElementById("book146").style.height = "60px";
+                document.getElementById("minus146").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus146").style.opacity = "1";}, 250);
+            }
+            function book147open() {
+                document.getElementById("book147").style.height = "200px";
+                document.getElementById("plus147").style.opacity = "0";
+                setTimeout(() => {document.getElementById("minus147").style.opacity = "1";}, 250);
+            }
+            function book147close() {
+                document.getElementById("book147").style.height = "60px";
+                document.getElementById("minus147").style.opacity = "0";
+                setTimeout(() => {document.getElementById("plus147").style.opacity = "1";}, 250);
             }
         function myFunction() {
             var input, filter, ul, li, a, i, txtValue;

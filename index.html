@@ -229,22 +229,22 @@
         <h1 style="font-size: 20px; padding-left: 15px;">Book reading finished</h1>
         <p style="position: absolute; top: -25px; right: 15px; font-size: 30px; opacity: 1; transition: 0.3s; position: absolute;"
             onclick="completeClose()">&#10005;</p>
-        <form action="https://formspree.io/f/mnqwgked" method="POST"><label for="bookname"
+        <form action="https://formspree.io/f/mnqwgked" method="POST" id="my-form"><label for="bookname"
                 style="width: 90%; margin-left: 15px; margin-top: 50px; display: block; text-align: left; font-weight: 900; font-size: 20px;">Book
                 name</label><input type="text" id="Book name" name="Book name"
                 style="width: 90%; margin: 15px; font-size: 17px; padding: 5px; display: block; border: 2px solid black; text-align: left;"
-                required placeholder="Harry Potter"><label for="bookauthor"
+                placeholder="Harry Potter"><label for="bookauthor"
                 style="width: 90%; margin-left: 15px; margin-top: 20px; display: block; text-align: left; font-weight: 900; font-size: 20px;">Book
                 author</label><input type="text" id="Book author" name="Book author"
                 style="width: 90%; margin: 15px; font-size: 17px; padding: 5px; display: block; border: 2px solid black; text-align: left;"
-                required placeholder="J. K. Rowling"><label for="date"
+                placeholder="J. K. Rowling"><label for="date"
                 style="width: 90%; margin-left: 15px; margin-top: 20px; display: block; text-align: left; font-weight: 900; font-size: 20px;">Date</label><input
                 type="text" id="Date" name="Date"
                 style="width: 90%; margin: 15px; font-size: 17px; padding: 5px; display: block; border: 2px solid black; text-align: left;"
-                required placeholder="07/05/2022"><button type="submit"
+                placeholder="07/05/2022"><button type="submit"
                 style="border-radius: 0; border: none; width: 90%; margin: 15px; background-color: green; color: white; padding: 5px;">Confirm</button>
-                <p style="color: green; display: none; margin-left: 15px;" id="success">Success. <span style="color: black; display: none;" id="refreshingPage">Refreshing page...</span><span style="color: black; display: none;" id="3">(3)</span><span style="color: black; display: none;" id="2">(2)</span><span style="color: black; display: none;" id="1">(1)</span></p>
-                <p style="color: red; display: none; margin-left: 15px;" id="error">Error. Try again. <span style="color: black; display: none;" id="refreshingPage2">Refreshing page...</span><span style="color: black; display: none;" id="32">(3)</span><span style="color: black; display: none;" id="22">(2)</span><span style="color: black; display: none;" id="12">(1)</span></p>
+                <p style="color: green; display: none; margin-left: 15px;" id="success">Success. <span style="color: black; display: none;" id="refreshingPage">Refreshing page... </span><span style="color: black; display: none;" id="3">In (3)</span><span style="color: black; display: none;" id="2">In (2)</span><span style="color: black; display: none;" id="1">In (1)</span></p>
+                <p style="color: red; display: none; margin-left: 15px;" id="error">Error. Try again. <span style="color: black; display: none;" id="refreshingPage2">Refreshing page... </span><span style="color: black; display: none;" id="32">In (3)</span><span style="color: black; display: none;" id="22">In (2)</span><span style="color: black; display: none;" id="12">In (1)</span></p>
         </form>
     </div>
 
@@ -258,8 +258,10 @@
             <div></div>
         </div>
     </div>
+    <form id="forma">
     <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for books..." title="Type in a book"
         onclick="searchOpen()">
+    </form>
     <p style="position: absolute; bottom: -17px; right: 25px; font-size: 30px; opacity: 0; transition: 0.3s; position: fixed; z-index: -1;"
         id="closer" onclick="searchClose()">&#10005;</p>
     <div id="reminder" onclick="completeOpen()"></div>
@@ -284,8 +286,7 @@
                 id="plus2" onclick="book2open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus2" onclick="book2close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 226</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: VaiGa</p>
@@ -298,8 +299,7 @@
                 id="plus3" onclick="book3open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus3" onclick="book3close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 226</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Debesų ganyklos</p>
@@ -312,8 +312,7 @@
                 id="plus4" onclick="book4open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus4" onclick="book4close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 218</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Debesų ganyklos</p>
@@ -352,8 +351,7 @@
                 id="plus7" onclick="book7open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus7" onclick="book7close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 210</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Debesų ganyklos</p>
@@ -420,8 +418,7 @@
                 id="plus12" onclick="book12open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus12" onclick="book12close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 250</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p>
@@ -434,8 +431,7 @@
                 id="plus13" onclick="book13open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus13" onclick="book13close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: <span style="color: slategray;">lent to Eve</span></p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 290</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Alma littera</p>
@@ -500,8 +496,7 @@
                 id="plus19" onclick="book19open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus19" onclick="book19close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 466</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Alma littera</p>
@@ -514,8 +509,7 @@
                 id="plus20" onclick="book20open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus20" onclick="book20close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: top front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 66</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Alma littera</p>
@@ -530,8 +524,7 @@
                 id="plus21" onclick="book21open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus21" onclick="book21close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: top front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 74</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: VaiGa</p>
@@ -623,8 +616,7 @@
                 id="plus28" onclick="book28open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus28" onclick="book28close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 82</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Flintas</p>
@@ -650,8 +642,7 @@
                 id="plus30" onclick="book30open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus30" onclick="book30close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: top front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 242</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Alma littera</p>
@@ -677,8 +668,7 @@
                 id="plus32" onclick="book32open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus32" onclick="book32close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 46</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Alma littera</p>
@@ -704,8 +694,7 @@
                 id="plus34" onclick="book34open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus34" onclick="book34close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 28</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p>
@@ -718,8 +707,7 @@
                 id="plus35" onclick="book35open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus35" onclick="book35close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: for sale shelf</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 284</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: for sale on Vinted</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Alma littera</p>
@@ -811,8 +799,7 @@
                 id="plus42" onclick="book42open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus42" onclick="book42close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 242</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Debesų ganyklos</p>
@@ -877,8 +864,7 @@
                 id="plus47" onclick="book47open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus47" onclick="book47close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: top front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 250</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Alma littera</p>
@@ -892,8 +878,7 @@
                 id="plus48" onclick="book48open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus48" onclick="book48close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: top front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 274</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Alma littera</p>
@@ -945,8 +930,7 @@
                 id="plus52" onclick="book52open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus52" onclick="book52close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: for sale shelf</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 146</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: for sale on Vinted</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p>
@@ -959,8 +943,7 @@
                 id="plus53" onclick="book53open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus53" onclick="book53close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 28</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p>
@@ -973,8 +956,7 @@
                 id="plus54" onclick="book54open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus54" onclick="book54close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 28</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p>
@@ -987,8 +969,7 @@
                 id="plus55" onclick="book55open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus55" onclick="book55close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: for sale shelf</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 274</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: for sale on Vinted</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Tyto alba</p>
@@ -1014,8 +995,7 @@
                 id="plus57" onclick="book57open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus57" onclick="book57close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: top front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 210</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p>
@@ -1080,8 +1060,7 @@
                 id="plus62" onclick="book62open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus62" onclick="book62close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 66</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Alma littera</p>
@@ -1133,8 +1112,7 @@
                 id="plus66" onclick="book66open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus66" onclick="book66close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 28</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p>
@@ -1147,8 +1125,7 @@
                 id="plus67" onclick="book67open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus67" onclick="book67close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: for sale shelf</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 226</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: for sale on Vinted</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p>
@@ -1161,8 +1138,7 @@
                 id="plus68" onclick="book68open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus68" onclick="book68close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 12</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Juozapo Zavadzkio spaustuvė</p>
@@ -1188,8 +1164,7 @@
                 id="plus70" onclick="book70open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus70" onclick="book70close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 62</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Alma littera</p>
@@ -1202,8 +1177,7 @@
                 id="plus71" onclick="book71open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus71" onclick="book71close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 42</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Mega</p>
@@ -1217,8 +1191,7 @@
                 id="plus72" onclick="book72open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus72" onclick="book72close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: for sale shelf</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 130</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: for sale on Vinted</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Alma littera</p>
@@ -1244,8 +1217,7 @@
                 id="plus75" onclick="book75open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus75" onclick="book75close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: for sale shelf</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 314</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Tyto alba</p>
@@ -1258,8 +1230,7 @@
                 id="plus76" onclick="book76open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus76" onclick="book76close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 94</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Baltos lankos</p>
@@ -1285,8 +1256,7 @@
                 id="plus78" onclick="book78open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus78" onclick="book78close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: for sale shelf</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 226</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: for sale on Vinted</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Alma littera</p>
@@ -1352,8 +1322,7 @@
                 id="plus83" onclick="book83open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus83" onclick="book83close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 66</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: for sale on Vinted</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Alma littera</p>
@@ -1367,8 +1336,7 @@
                 id="plus84" onclick="book84open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus84" onclick="book84close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: for sale shelf</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 130</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: for sale on Vinted</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Alma littera</p>
@@ -1446,8 +1414,7 @@
                 id="plus90" onclick="book90open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus90" onclick="book90close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 450</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p>
@@ -1473,8 +1440,7 @@
                 id="plus92" onclick="book92open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus92" onclick="book92close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: top front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 94</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Egmont</p>
@@ -1487,8 +1453,7 @@
                 id="plus93" onclick="book93open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus93" onclick="book93close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 68</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p>
@@ -1501,7 +1466,7 @@
                 id="plus94" onclick="book94open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus94" onclick="book94close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: top back and</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: top back and top front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 252</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: 1 of 2 for sale on Vinted</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Alma littera</p>
@@ -1514,8 +1479,7 @@
                 id="plus95" onclick="book95open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus95" onclick="book95close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 28</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p>
@@ -1528,8 +1492,7 @@
                 id="plus96" onclick="book96open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus96" onclick="book96close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 196</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Presvika</p>
@@ -1542,8 +1505,7 @@
                 id="plus97" onclick="book97open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus97" onclick="book97close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 194</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p>
@@ -1557,8 +1519,7 @@
                 id="plus98" onclick="book98open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus98" onclick="book98close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 16</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Pasaul. Liet. kūlt., moksl. ir...</p>
@@ -1584,8 +1545,7 @@
                 id="plus100" onclick="book100open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus100" onclick="book100close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 50</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Garnelis</p>
@@ -1599,8 +1559,7 @@
                 id="plus101" onclick="book101open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus101" onclick="book101close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 114</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Debesų ganyklos</p>
@@ -1613,8 +1572,7 @@
                 id="plus102" onclick="book102open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus102" onclick="book102close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 50</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Mūsų knyga</p>
@@ -1640,8 +1598,7 @@
                 id="plus105" onclick="book105open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus105" onclick="book105close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: <span style="color: slategray;">lent to Eve</span></p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 162</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p>
@@ -1654,8 +1611,7 @@
                 id="plus106" onclick="book106open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus106" onclick="book106close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: top front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 722</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Obuolys</p>
@@ -1668,8 +1624,7 @@
                 id="plus107" onclick="book107open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus107" onclick="book107close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 28</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p>
@@ -1682,8 +1637,7 @@
                 id="plus108" onclick="book108open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus108" onclick="book108close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 28</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Garnelis</p>
@@ -1696,8 +1650,7 @@
                 id="plus109" onclick="book109open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus109" onclick="book109close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: <span style="color: slategray;">lent to Eve</span></p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 24</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Vilnius</p>
@@ -1711,8 +1664,7 @@
                 id="plus110" onclick="book110open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus110" onclick="book110close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: for sale shelf</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 122</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: for sale on Vinted</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Alma littera</p>
@@ -1738,8 +1690,7 @@
                 id="plus112" onclick="book112open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus112" onclick="book112close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 28</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p>
@@ -1766,8 +1717,7 @@
                 id="plus114" onclick="book114open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus114" onclick="book114close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 98</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Alma littera</p>
@@ -1780,8 +1730,7 @@
                 id="plus115" onclick="book115open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus115" onclick="book115close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: for sale shelf</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 114</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: for sale on Vinted</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p>
@@ -1794,8 +1743,7 @@
                 id="plus116" onclick="book116open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus116" onclick="book116close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: for sale shelf</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 90</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: for sale on Vinted</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p>
@@ -1808,8 +1756,7 @@
                 id="plus117" onclick="book117open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus117" onclick="book117close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 258</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Kronta</p>
@@ -1861,8 +1808,7 @@
                 id="plus121" onclick="book121open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus121" onclick="book121close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 202</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p>
@@ -1888,8 +1834,7 @@
                 id="plus123" onclick="book123open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus123" onclick="book123close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: top front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 306</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Alma littera</p>
@@ -1930,7 +1875,7 @@
                 id="plus126" onclick="book126open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus126" onclick="book126close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: top back and</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: top back and top front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 258</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: 1 of 2 for sale on Vinted</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Baltos lankos</p>
@@ -1943,8 +1888,7 @@
                 id="plus127" onclick="book127open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus127" onclick="book127close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: for sale shelf</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 234</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: for sale on Vinted</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p>
@@ -1957,8 +1901,7 @@
                 id="plus128" onclick="book128open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus128" onclick="book128close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: top front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 130</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p>
@@ -1984,8 +1927,7 @@
                 id="plus130" onclick="book130open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus130" onclick="book130close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: <span style="color: slategray;">lent to Eve</span></p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 200</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Vaga</p>
@@ -1998,8 +1940,7 @@
                 id="plus131" onclick="book131open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus131" onclick="book131close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 258</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p>
@@ -2039,8 +1980,7 @@
                 id="plus134" onclick="book134open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus134" onclick="book134close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: top front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 152</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Psichologija TAU</p>
@@ -2054,8 +1994,7 @@
                 id="plus135" onclick="book135open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus135" onclick="book135close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: top front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 144</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Psichologija TAU</p>
@@ -2082,8 +2021,7 @@
                 id="plus137" onclick="book137open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus137" onclick="book137close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: top front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 178</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p>
@@ -2096,8 +2034,7 @@
                 id="plus138" onclick="book138open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus138" onclick="book138close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: for sale shelf</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 274</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: for sale on Vinted</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p>
@@ -2110,8 +2047,7 @@
                 id="plus139" onclick="book139open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus139" onclick="book139close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: top front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 218</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Lietuvos rašytojų sajungos leidykla</p>
@@ -2151,8 +2087,7 @@
                 id="plus142" onclick="book142open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus142" onclick="book142close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 322</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: VaiGa</p>
@@ -2178,8 +2113,7 @@
                 id="plus144" onclick="book144open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus144" onclick="book144close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 40</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Vaikų bibliotekėlė</p>
@@ -2231,8 +2165,7 @@
                 id="plus148" onclick="book148open()">+</p>
             <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
                 id="minus148" onclick="book148close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: - aukštas,
-                priekis/galas</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 128</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p>
@@ -2255,23 +2188,23 @@
 
             function success() {
                 document.getElementById("success").style.display = "block";
-                setTimeout(() => {   document.getElementById("refreshingPage").style.display = "block"; }, 3000);
-                setTimeout(() => {   document.getElementById("3").style.display = "block"; }, 4000);
+                setTimeout(() => {   document.getElementById("refreshingPage").style.display = "inline"; }, 3000);
+                setTimeout(() => {   document.getElementById("3").style.display = "inline"; }, 4000);
                 setTimeout(() => {   document.getElementById("3").style.display = "none"; }, 5000);
-                setTimeout(() => {   document.getElementById("2").style.display = "block"; }, 5000);
+                setTimeout(() => {   document.getElementById("2").style.display = "inline"; }, 5000);
                 setTimeout(() => {   document.getElementById("2").style.display = "none"; }, 6000);
-                setTimeout(() => {   document.getElementById("1").style.display = "block"; }, 6000);
+                setTimeout(() => {   document.getElementById("1").style.display = "inline"; }, 6000);
                 setTimeout(() => {   location.replace("index.html") }, 7000);
             }
 
             function error() {
                 document.getElementById("error").style.display = "block";
-                setTimeout(() => {   document.getElementById("refreshingPage2").style.display = "block"; }, 3000);
-                setTimeout(() => {   document.getElementById("32").style.display = "block"; }, 4000);
+                setTimeout(() => {   document.getElementById("refreshingPage2").style.display = "inline"; }, 3000);
+                setTimeout(() => {   document.getElementById("32").style.display = "inline"; }, 4000);
                 setTimeout(() => {   document.getElementById("32").style.display = "none"; }, 5000);
-                setTimeout(() => {   document.getElementById("22").style.display = "block"; }, 5000);
+                setTimeout(() => {   document.getElementById("22").style.display = "inline"; }, 5000);
                 setTimeout(() => {   document.getElementById("22").style.display = "none"; }, 6000);
-                setTimeout(() => {   document.getElementById("12").style.display = "block"; }, 6000);
+                setTimeout(() => {   document.getElementById("12").style.display = "inline"; }, 6000);
                 setTimeout(() => {   location.replace("index.html") }, 7000);
             }
 
@@ -2313,6 +2246,7 @@
             document.getElementById("myInput").style.borderRadius = "100%";
             document.getElementById("closer").style.opacity = "0";
             document.getElementById("closer").style.zIndex = "-1";
+            document.getElementById("forma").reset();
         }
 
         function completeOpen() {

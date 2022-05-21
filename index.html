@@ -210,6 +210,34 @@
             }
         }
 
+        @keyframes blink{
+            0%{
+                opacity: 1;
+            }
+            50%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+        #confirm{
+            border-radius: 0; 
+            border: none; 
+            width: 90%; 
+            margin: 15px; 
+            background-color: green; 
+            color: white; 
+            padding: 5px;
+            transition: 0.5s;
+            display: block;
+        }
+        #confirm:hover{
+            animation-name: blink;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            animation-duration: 2s;
+        }
         @media only screen and (max-width: 800px) {
             .screenSize {
                 display: none;
@@ -226,7 +254,7 @@
         <p style="font-size: 15px;">Please open Book library on a smaller screen.</p>
     </div>
     <div class="complete" id="complete">
-        <h1 style="font-size: 20px; padding-left: 15px;">Book reading finished</h1>
+        <h1 style="font-size: 20px; padding-left: 15px;">Book reading complete</h1>
         <p style="position: absolute; top: -25px; right: 15px; font-size: 30px; opacity: 1; transition: 0.3s; position: absolute;"
             onclick="completeClose()">&#10005;</p>
         <form action="https://formspree.io/f/mnqwgked" method="POST" id="my-form"><label for="bookname"
@@ -242,9 +270,9 @@
                 type="text" id="Date" name="Date"
                 style="width: 90%; margin: 15px; font-size: 17px; padding: 5px; display: block; border: 2px solid black; text-align: left;"
                 placeholder="07/05/2022"><button type="submit"
-                style="border-radius: 0; border: none; width: 90%; margin: 15px; background-color: green; color: white; padding: 5px;">Confirm</button>
-                <p style="color: green; display: none; margin-left: 15px;" id="success">Success. <span style="color: black; display: none;" id="refreshingPage">Refreshing page </span><span style="color: black; display: none;" id="3">in 3...</span><span style="color: black; display: none;" id="2">in 2...</span><span style="color: black; display: none;" id="1">in 1...</span></p>
-                <p style="color: red; display: none; margin-left: 15px;" id="error">Error. Try again. <span style="color: black; display: none;" id="refreshingPage2">Refreshing page </span><span style="color: black; display: none;" id="32">in 3...</span><span style="color: black; display: none;" id="22">in 2...</span><span style="color: black; display: none;" id="12">in 1...</span></p>
+                id="confirm">Confirm</button>
+                <p style="color: green; display: none; margin-left: 15px;" id="success">Success. <span style="color: black; display: none;" id="refreshingPage">Refreshing page in </span><span style="color: black; display: none;" id="3">3...</span><span style="color: black; display: none;" id="2">2...</span><span style="color: black; display: none;" id="1">1...</span></p>
+                <p style="color: red; display: none; margin-left: 15px;" id="error">Error. Try again. <span style="color: black; display: none;" id="refreshingPage2">Refreshing page in </span><span style="color: black; display: none;" id="32">3...</span><span style="color: black; display: none;" id="22">2...</span><span style="color: black; display: none;" id="12">1...</span></p>
         </form>
     </div>
 
@@ -2187,25 +2215,27 @@
             // Success and Error functions for after the form is submitted
 
             function success() {
-                document.getElementById("success").style.display = "block";
-                setTimeout(() => {   document.getElementById("refreshingPage").style.display = "inline"; }, 3000);
-                setTimeout(() => {   document.getElementById("3").style.display = "inline"; }, 4000);
-                setTimeout(() => {   document.getElementById("3").style.display = "none"; }, 5000);
-                setTimeout(() => {   document.getElementById("2").style.display = "inline"; }, 5000);
-                setTimeout(() => {   document.getElementById("2").style.display = "none"; }, 6000);
-                setTimeout(() => {   document.getElementById("1").style.display = "inline"; }, 6000);
-                setTimeout(() => {   location.replace("index.html") }, 7000);
+                setTimeout(() => {   document.getElementById("confirm").style.webkitAnimation = "none"; }, 5500);
+                setTimeout(() => {   document.getElementById("success").style.display = "block"; }, 5500);
+                setTimeout(() => {   document.getElementById("refreshingPage").style.display = "inline"; }, 8500);
+                setTimeout(() => {   document.getElementById("3").style.display = "inline"; }, 9500);
+                setTimeout(() => {   document.getElementById("3").style.display = "none"; }, 10500);
+                setTimeout(() => {   document.getElementById("2").style.display = "inline"; }, 10500);
+                setTimeout(() => {   document.getElementById("2").style.display = "none"; }, 11500);
+                setTimeout(() => {   document.getElementById("1").style.display = "inline"; }, 11500);
+                setTimeout(() => {   location.replace("index.html") }, 12500);
             }
 
             function error() {
-                document.getElementById("error").style.display = "block";
-                setTimeout(() => {   document.getElementById("refreshingPage2").style.display = "inline"; }, 3000);
-                setTimeout(() => {   document.getElementById("32").style.display = "inline"; }, 4000);
-                setTimeout(() => {   document.getElementById("32").style.display = "none"; }, 5000);
-                setTimeout(() => {   document.getElementById("22").style.display = "inline"; }, 5000);
-                setTimeout(() => {   document.getElementById("22").style.display = "none"; }, 6000);
-                setTimeout(() => {   document.getElementById("12").style.display = "inline"; }, 6000);
-                setTimeout(() => {   location.replace("index.html") }, 7000);
+                setTimeout(() => {   document.getElementById("confirm").style.webkitAnimation = "none"; }, 5500);
+                setTimeout(() => {   document.getElementById("error").style.display = "block"; }, 5500);
+                setTimeout(() => {   document.getElementById("refreshingPage2").style.display = "inline"; }, 8500);
+                setTimeout(() => {   document.getElementById("32").style.display = "inline"; }, 9500);
+                setTimeout(() => {   document.getElementById("32").style.display = "none"; }, 10500);
+                setTimeout(() => {   document.getElementById("22").style.display = "inline"; }, 10500);
+                setTimeout(() => {   document.getElementById("22").style.display = "none"; }, 11500);
+                setTimeout(() => {   document.getElementById("12").style.display = "inline"; }, 11500);
+                setTimeout(() => {   location.replace("index.html") }, 12500);
             }
 
             // handle the form submission event

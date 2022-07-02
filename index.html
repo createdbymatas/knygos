@@ -1095,6 +1095,19 @@
             <p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: red;">unread</span></p>
         </li>
         <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;"
+            id="book149"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Krabatas <br>
+                <span style="font-size: 17px; margin-top: 0;">Otfried Preubler</span></a>
+            <p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;"
+                id="plus149" onclick="book149open()">+</p>
+            <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
+                id="minus149" onclick="book149close()">-</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: top front</p>
+            <p style="margin-top: -15px; padding-left: 10px;">Pages: 258</p>
+            <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
+            <p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p>
+            <p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: red;">unread</span></p>
+        </li>
+        <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;"
             id="book63"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Kukis grįžta <br>
                 <span style="font-size: 17px; margin-top: 0;">Jan Svěrák</span></a>
             <p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;"
@@ -1946,6 +1959,32 @@
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 354</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Aktėja</p>
+            <p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: red;">unread</span></p>
+        </li>
+        <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;"
+            id="book150"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Tarp pilkų debesų
+                <br> <span style="font-size: 17px; margin-top: 0;">Ruta Sepetys</span></a>
+            <p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;"
+                id="plus150" onclick="book150open()">+</p>
+            <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
+                id="minus150" onclick="book150close()">-</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: top front</p>
+            <p style="margin-top: -15px; padding-left: 10px;">Pages: 160</p>
+            <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
+            <p style="margin-top: -15px; padding-left: 10px;">Publisher: Alma littera</p>
+            <p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: red;">unread</span></p>
+        </li>
+        <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;"
+            id="book151"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Teisinga moneta
+                <br> <span style="font-size: 17px; margin-top: 0;">E. C. Myers</span></a>
+            <p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;"
+                id="plus151" onclick="book151open()">+</p>
+            <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
+                id="minus151" onclick="book151close()">-</p>
+            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: top front</p>
+            <p style="margin-top: -15px; padding-left: 10px;">Pages: 346</p>
+            <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
+            <p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p>
             <p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: red;">unread</span></p>
         </li>
         <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;"
@@ -4652,6 +4691,51 @@
             document.getElementById("minus148").style.opacity = "0";
             setTimeout(() => {
                 document.getElementById("plus148").style.opacity = "1";
+            }, 250);
+        }
+        function book149open() {
+            document.getElementById("book149").style.height = "200px";
+            document.getElementById("plus149").style.opacity = "0";
+            setTimeout(() => {
+                document.getElementById("minus149").style.opacity = "1";
+            }, 250);
+        }
+
+        function book149close() {
+            document.getElementById("book149").style.height = "60px";
+            document.getElementById("minus149").style.opacity = "0";
+            setTimeout(() => {
+                document.getElementById("plus149").style.opacity = "1";
+            }, 250);
+        }
+        function book150open() {
+            document.getElementById("book150").style.height = "200px";
+            document.getElementById("plus150").style.opacity = "0";
+            setTimeout(() => {
+                document.getElementById("minus150").style.opacity = "1";
+            }, 250);
+        }
+
+        function book150close() {
+            document.getElementById("book150").style.height = "60px";
+            document.getElementById("minus150").style.opacity = "0";
+            setTimeout(() => {
+                document.getElementById("plus150").style.opacity = "1";
+            }, 250);
+        }
+        function book151open() {
+            document.getElementById("book151").style.height = "200px";
+            document.getElementById("plus151").style.opacity = "0";
+            setTimeout(() => {
+                document.getElementById("minus151").style.opacity = "1";
+            }, 250);
+        }
+
+        function book151close() {
+            document.getElementById("book151").style.height = "60px";
+            document.getElementById("minus151").style.opacity = "0";
+            setTimeout(() => {
+                document.getElementById("plus151").style.opacity = "1";
             }, 250);
         }
 

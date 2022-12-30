@@ -275,8 +275,8 @@
     <div id="reminder" onclick="completeOpen()"></div>
     <ul id="myUL">
         <li style="background-color: white; height: 60px; box-shadow: none; overflow: hidden; transition: 0.3s; position: relative; border-radius: 25px 25px 0 0; padding: none; border: 2px solid green;" id="book1">
-            <i class="fa-solid fa-circle" style="color: green; position: absolute; top: 38px; right: 30px; font-size: 10px;" id="status1"></i>
             <a href="#" style="font-size: 15px; padding-left: 10px; padding-top: 7px;" onclick="book1open()"><p style="margin: 0; padding: 0; width: 105%; height: 23px; position: absolute; top: 6px; left: 10px;" onclick="book1open()" id="book1main">100 dalykų lietingai dienai. Ką veikti, kai...</p><p style="margin: 0; padding: 0; width: 105%; height: 23px; position: absolute; top: 6px; left: 10px; display: none;" onclick="book1open()" id="book1other">100 dalykų lietingai dienai. Ką veikti, kai nėra ko veikti</p><p style="font-size: 17px; margin-top: 22px;">Emil-Hoffmann</p></a>
+            <i class="fa-solid fa-circle" style="color: green; position: absolute; top: 38px; right: 30px; font-size: 10px;" id="status1"></i>
             <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 32px; font-size: 25px; display: block; transition: 0.3s; font-size: 20px; color: green;" id="plus1" onclick="book1open()"></i>
             <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 32px; font-size: 20px; transition: 0.3s; display: none; pointer-events: none; color: green;" id="minus1" onclick="book1close()"></i>
             <p style="margin-top: -15px; padding-left: 10px; padding-top: 5px; border-top: 2px solid green;">Location: top back</p>
@@ -456,14 +456,14 @@
             <p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: red;">unread</span></p>
         </li>
         <li style="background-color: white; height: 60px; box-shadow: none; overflow: hidden; transition: 0.3s; position: relative; padding: none; border: 2px solid green; border-top: none;" id="book20"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;"><p style="margin: 0; padding: 0; width: 105%; height: 23px; position: absolute; top: 6px; left: 10px;" onclick="book20open()">Berniukams apie tai</p><p style="font-size: 17px; margin-top: 30px;">Lizzie Cox, Damien Weighill</p></a>
-            <i class="fa-solid fa-circle" style="color: yellowgreen; position: absolute; top: 41px; right: 30px; font-size: 10px;" id="status20"></i>
+            <i class="fa-solid fa-circle" style="color: red; position: absolute; top: 41px; right: 30px; font-size: 10px;" id="status20"></i>
             <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 25px; display: block; transition: 0.3s; font-size: 20px; color: green;" id="plus20" onclick="book20open()"></i>
             <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 20px; transition: 0.3s; display: none; pointer-events: none; color: green;" id="minus20" onclick="book20close()"></i>
             <p style="margin-top: -14px; padding-left: 10px; padding-top: 5px; border-top: 2px solid green;">Location: top front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 66</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Alma littera</p>
-            <p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: yellowgreen;">started reading</span></p>
+            <p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: red;">unread</span></p>
         </li>
         <li style="background-color: white; height: 60px; box-shadow: none; overflow: hidden; transition: 0.3s; position: relative; padding: none; border: 2px solid green; border-top: none;" id="book21"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;"><p style="margin: 0; padding: 0; width: 105%; height: 23px; position: absolute; top: 6px; left: 10px;" onclick="book21open()" id="book21main">(Beveik) paauglio berniuko knyga (kone)...</p><p style="margin: 0; padding: 0; width: 105%; height: 23px; position: absolute; top: 6px; left: 10px; display: none;" onclick="book21open()" id="book21other">(Beveik) paauglio berniuko knyga (kone) apie viską</p><p style="font-size: 17px; margin-top: 30px;">Dr. Sharie Coombes</p></a>
             <i class="fa-solid fa-circle" style="color: green; position: absolute; top: 41px; right: 30px; font-size: 10px;" id="status21"></i>
@@ -765,327 +765,251 @@
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Foto profas</p>
             <p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: red;">unread</span></p>
         </li>
-        <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;"
-            id="book51"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Jei būčiau tu <br>
-                <span style="font-size: 17px; margin-top: 0;">Caryll Houselander</span></a>
-            <p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;"
-                id="plus51" onclick="book51open()">+</p>
-            <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
-                id="minus51" onclick="book51close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: top back</p>
+        <li style="background-color: white; height: 60px; box-shadow: none; overflow: hidden; transition: 0.3s; position: relative; padding: none; border: 2px solid green; border-top: none;" id="book51"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;"><p style="margin: 0; padding: 0; width: 105%; height: 23px; position: absolute; top: 6px; left: 10px;" onclick="book51open()">Jei būčiau tu</p><p style="font-size: 17px; margin-top: 30px;">Caryll Houselander</p></a>
+            <i class="fa-solid fa-circle" style="color: green; position: absolute; top: 41px; right: 30px; font-size: 10px;" id="status51"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 25px; display: block; transition: 0.3s; font-size: 20px; color: green;" id="plus51" onclick="book51open()"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 20px; transition: 0.3s; display: none; pointer-events: none; color: green;" id="minus51" onclick="book51close()"></i>
+            <p style="margin-top: -14px; padding-left: 10px; padding-top: 5px; border-top: 2px solid green;">Location: top back</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 56</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Katalikų pasaulio leidiniai</p>
             <p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: green;">read</span></p>
         </li>
-        <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;"
-            id="book52"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Juodavandeniai <br>
-                <span style="font-size: 17px; margin-top: 0;">Ignė Zarambaitė</span></a>
-            <p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;"
-                id="plus52" onclick="book52open()">+</p>
-            <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
-                id="minus52" onclick="book52close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: for sale shelf</p>
+        <li style="background-color: white; height: 60px; box-shadow: none; overflow: hidden; transition: 0.3s; position: relative; padding: none; border: 2px solid green; border-top: none;" id="book52"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;"><p style="margin: 0; padding: 0; width: 105%; height: 23px; position: absolute; top: 6px; left: 10px;" onclick="book52open()">Juodavandeniai</p><p style="font-size: 17px; margin-top: 30px;">Ignė Zarambaitė</p></a>
+            <i class="fa-solid fa-circle" style="color: green; position: absolute; top: 41px; right: 30px; font-size: 10px;" id="status52"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 25px; display: block; transition: 0.3s; font-size: 20px; color: green;" id="plus52" onclick="book52open()"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 20px; transition: 0.3s; display: none; pointer-events: none; color: green;" id="minus52" onclick="book52close()"></i>
+            <p style="margin-top: -14px; padding-left: 10px; padding-top: 5px; border-top: 2px solid green;">Location: for sale shelf</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 146</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: for sale on Vinted</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p>
             <p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: green;">read</span></p>
         </li>
-        <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;"
-            id="book53"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Kaip Findusas gaidį
-                Karuzą išvijo <br> <span style="font-size: 17px; margin-top: 0;">Sven Nordqvist</span></a>
-            <p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;"
-                id="plus53" onclick="book53open()">+</p>
-            <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
-                id="minus53" onclick="book53close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
+        <li style="background-color: white; height: 60px; box-shadow: none; overflow: hidden; transition: 0.3s; position: relative; padding: none; border: 2px solid green; border-top: none;" id="book53"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;"><p style="margin: 0; padding: 0; width: 105%; height: 23px; position: absolute; top: 6px; left: 10px;" onclick="book53open()">Kaip Findusas gaidį Karuzą išvijo</p><p style="font-size: 17px; margin-top: 30px;">Sven Nordqvist</p></a>
+            <i class="fa-solid fa-circle" style="color: green; position: absolute; top: 41px; right: 30px; font-size: 10px;" id="status53"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 25px; display: block; transition: 0.3s; font-size: 20px; color: green;" id="plus53" onclick="book53open()"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 20px; transition: 0.3s; display: none; pointer-events: none; color: green;" id="minus53" onclick="book53close()"></i>
+            <p style="margin-top: -14px; padding-left: 10px; padding-top: 5px; border-top: 2px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 28</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p>
             <p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: green;">read</span></p>
         </li>
-        <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;"
-            id="book54"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Kaip Findusas, būdamas
-                mažas, ėmė... <br> <span style="font-size: 17px; margin-top: 0;">Sven Nordqvist</span></a>
-            <p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;"
-                id="plus54" onclick="book54open()">+</p>
-            <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
-                id="minus54" onclick="book54close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
+        <li style="background-color: white; height: 60px; box-shadow: none; overflow: hidden; transition: 0.3s; position: relative; padding: none; border: 2px solid green; border-top: none;" id="book54"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;"><p style="margin: 0; padding: 0; width: 105%; height: 23px; position: absolute; top: 6px; left: 10px;" onclick="book54open()" id="book54main">Kaip Findusas, būdamas mažas, ėmė ir...</p><p style="margin: 0; padding: 0; width: 105%; height: 23px; position: absolute; top: 6px; left: 10px; display: none;" onclick="book54open()" id="book54other">Kaip Findusas, būdamas mažas, ėmė ir prapuolė</p><p style="font-size: 17px; margin-top: 30px;">Sven Nordqvist</p></a>
+            <i class="fa-solid fa-circle" style="color: green; position: absolute; top: 41px; right: 30px; font-size: 10px;" id="status54"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 25px; display: block; transition: 0.3s; font-size: 20px; color: green;" id="plus54" onclick="book54open()"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 20px; transition: 0.3s; display: none; pointer-events: none; color: green;" id="minus54" onclick="book54close()"></i>
+            <p style="margin-top: -14px; padding-left: 10px; padding-top: 5px; border-top: 2px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 28</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p>
             <p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: green;">read</span></p>
         </li>
-        <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;"
-            id="book55"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Kaip Kalėdų berniukas
-                tėčio ieškojo <br> <span style="font-size: 17px; margin-top: 0;">Matt Haig</span></a>
-            <p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;"
-                id="plus55" onclick="book55open()">+</p>
-            <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
-                id="minus55" onclick="book55close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: for sale shelf</p>
+        <li style="background-color: white; height: 60px; box-shadow: none; overflow: hidden; transition: 0.3s; position: relative; padding: none; border: 2px solid green; border-top: none;" id="book55"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;"><p style="margin: 0; padding: 0; width: 105%; height: 23px; position: absolute; top: 6px; left: 10px;" onclick="book55open()">Kaip Kalėdų berniukas tėčio ieškojo</p><p style="font-size: 17px; margin-top: 30px;">Matt Haig</p></a>
+            <i class="fa-solid fa-circle" style="color: green; position: absolute; top: 41px; right: 30px; font-size: 10px;" id="status55"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 25px; display: block; transition: 0.3s; font-size: 20px; color: green;" id="plus55" onclick="book55open()"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 20px; transition: 0.3s; display: none; pointer-events: none; color: green;" id="minus55" onclick="book55close()"></i>
+            <p style="margin-top: -14px; padding-left: 10px; padding-top: 5px; border-top: 2px solid green;">Location: for sale shelf</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 274</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: for sale on Vinted</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Tyto alba</p>
             <p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: green;">read</span></p>
         </li>
-        <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;"
-            id="book56"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Kaip sudėlioti rubiko
-                kubą <br> <span style="font-size: 17px; margin-top: 0;">Rubik's</span></a>
-            <p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;"
-                id="plus56" onclick="book56open()">+</p>
-            <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
-                id="minus56" onclick="book56close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: top back</p>
+        <li style="background-color: white; height: 60px; box-shadow: none; overflow: hidden; transition: 0.3s; position: relative; padding: none; border: 2px solid green; border-top: none;" id="book56"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;"><p style="margin: 0; padding: 0; width: 105%; height: 23px; position: absolute; top: 6px; left: 10px;" onclick="book56open()">Kaip sudėlioti rubiko kubą</p><p style="font-size: 17px; margin-top: 30px;">Rubik's</p></a>
+            <i class="fa-solid fa-circle" style="color: red; position: absolute; top: 41px; right: 30px; font-size: 10px;" id="status56"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 25px; display: block; transition: 0.3s; font-size: 20px; color: green;" id="plus56" onclick="book56open()"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 20px; transition: 0.3s; display: none; pointer-events: none; color: green;" id="minus56" onclick="book56close()"></i>
+            <p style="margin-top: -14px; padding-left: 10px; padding-top: 5px; border-top: 2px solid green;">Location: top back</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 64</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Egmont</p>
             <p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: red;">unread</span></p>
         </li>
-        <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;"
-            id="book57"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Kalėdų bičiulis <br>
-                <span style="font-size: 17px; margin-top: 0;">Greg Kincaid</span></a>
-            <p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;"
-                id="plus57" onclick="book57open()">+</p>
-            <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
-                id="minus57" onclick="book57close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: top front</p>
+        <li style="background-color: white; height: 60px; box-shadow: none; overflow: hidden; transition: 0.3s; position: relative; padding: none; border: 2px solid green; border-top: none;" id="book57"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;"><p style="margin: 0; padding: 0; width: 105%; height: 23px; position: absolute; top: 6px; left: 10px;" onclick="book57open()">Kalėdų bičiulis</p><p style="font-size: 17px; margin-top: 30px;">Greg Kincaid</p></a>
+            <i class="fa-solid fa-circle" style="color: red; position: absolute; top: 41px; right: 30px; font-size: 10px;" id="status57"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 25px; display: block; transition: 0.3s; font-size: 20px; color: green;" id="plus57" onclick="book57open()"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 20px; transition: 0.3s; display: none; pointer-events: none; color: green;" id="minus57" onclick="book57close()"></i>
+            <p style="margin-top: -14px; padding-left: 10px; padding-top: 5px; border-top: 2px solid green;">Location: top front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 210</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p>
             <p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: red;">unread</span></p>
         </li>
-        <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;"
-            id="book58"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Kalėdų dovana <br>
-                <span style="font-size: 17px; margin-top: 0;">Birutė Pūkelevičiūtė</span></a>
-            <p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;"
-                id="plus58" onclick="book58open()">+</p>
-            <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
-                id="minus58" onclick="book58close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom back</p>
+        <li style="background-color: white; height: 60px; box-shadow: none; overflow: hidden; transition: 0.3s; position: relative; padding: none; border: 2px solid green; border-top: none;" id="book58"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;"><p style="margin: 0; padding: 0; width: 105%; height: 23px; position: absolute; top: 6px; left: 10px;" onclick="book58open()">Kalėdų dovana</p><p style="font-size: 17px; margin-top: 30px;">Birutė Pūkelevičiūtė</p></a>
+            <i class="fa-solid fa-circle" style="color: red; position: absolute; top: 41px; right: 30px; font-size: 10px;" id="status58"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 25px; display: block; transition: 0.3s; font-size: 20px; color: green;" id="plus58" onclick="book58open()"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 20px; transition: 0.3s; display: none; pointer-events: none; color: green;" id="minus58" onclick="book58close()"></i>
+            <p style="margin-top: -14px; padding-left: 10px; padding-top: 5px; border-top: 2px solid green;">Location: bottom back</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 42</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Danna chicagoje</p>
             <p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: red;">unread</span></p>
         </li>
-        <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;"
-            id="book59"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Kalėdų senelio
-                staigmena <br> <span style="font-size: 17px; margin-top: 0;">Sven Nordqvist</span></a>
-            <p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;"
-                id="plus59" onclick="book59open()">+</p>
-            <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
-                id="minus59" onclick="book59close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: top back</p>
+        <li style="background-color: white; height: 60px; box-shadow: none; overflow: hidden; transition: 0.3s; position: relative; padding: none; border: 2px solid green; border-top: none;" id="book59"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;"><p style="margin: 0; padding: 0; width: 105%; height: 23px; position: absolute; top: 6px; left: 10px;" onclick="book59open()">Kalėdų senelio staigmena</p><p style="font-size: 17px; margin-top: 30px;">Sven Nordqvist</p></a>
+            <i class="fa-solid fa-circle" style="color: green; position: absolute; top: 41px; right: 30px; font-size: 10px;" id="status59"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 25px; display: block; transition: 0.3s; font-size: 20px; color: green;" id="plus59" onclick="book59open()"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 20px; transition: 0.3s; display: none; pointer-events: none; color: green;" id="minus59" onclick="book59close()"></i>
+            <p style="margin-top: -14px; padding-left: 10px; padding-top: 5px; border-top: 2px solid green;">Location: top back</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 130</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p>
             <p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: green;">read</span></p>
         </li>
-        <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;"
-            id="book60"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Kartą Betliejuje <br>
-                <span style="font-size: 17px; margin-top: 0;">Mary Joslin</span></a>
-            <p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;"
-                id="plus60" onclick="book60open()">+</p>
-            <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
-                id="minus60" onclick="book60close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: top back</p>
+        <li style="background-color: white; height: 60px; box-shadow: none; overflow: hidden; transition: 0.3s; position: relative; padding: none; border: 2px solid green; border-top: none;" id="book60"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;"><p style="margin: 0; padding: 0; width: 105%; height: 23px; position: absolute; top: 6px; left: 10px;" onclick="book60open()">Kartą Betliejuje</p><p style="font-size: 17px; margin-top: 30px;">Mary Joslin</p></a>
+            <i class="fa-solid fa-circle" style="color: green; position: absolute; top: 41px; right: 30px; font-size: 10px;" id="status60"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 25px; display: block; transition: 0.3s; font-size: 20px; color: green;" id="plus60" onclick="book60open()"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 20px; transition: 0.3s; display: none; pointer-events: none; color: green;" id="minus60" onclick="book60close()"></i>
+            <p style="margin-top: -14px; padding-left: 10px; padding-top: 5px; border-top: 2px solid green;">Location: top back</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 26</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Lietuvos Biblijos draugija</p>
             <p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: green;">read</span></p>
         </li>
-        <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;"
-            id="book61"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Kautynės su Drakonu
-                <br> <span style="font-size: 17px; margin-top: 0;">Mark Cheverton</span></a>
-            <p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;"
-                id="plus61" onclick="book61open()">+</p>
-            <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
-                id="minus61" onclick="book61close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: top back</p>
+        <li style="background-color: white; height: 60px; box-shadow: none; overflow: hidden; transition: 0.3s; position: relative; padding: none; border: 2px solid green; border-top: none;" id="book61"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;"><p style="margin: 0; padding: 0; width: 105%; height: 23px; position: absolute; top: 6px; left: 10px;" onclick="book61open()">Kautynės su Drakonu</p><p style="font-size: 17px; margin-top: 30px;">Mark Cheverton</p></a>
+            <i class="fa-solid fa-circle" style="color: red; position: absolute; top: 41px; right: 30px; font-size: 10px;" id="status61"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 25px; display: block; transition: 0.3s; font-size: 20px; color: green;" id="plus61" onclick="book61open()"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 20px; transition: 0.3s; display: none; pointer-events: none; color: green;" id="minus61" onclick="book61close()"></i>
+            <p style="margin-top: -14px; padding-left: 10px; padding-top: 5px; border-top: 2px solid green;">Location: top back</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 402</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: for sale on Vinted</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Tyto alba</p>
             <p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: red;">unread</span></p>
         </li>
-        <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;"
-            id="book62"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Klausė žvirblis
-                čiulbuonėlis <br> <span style="font-size: 17px; margin-top: 0;">Lietuvių liaudies žaidimai</span></a>
-            <p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;"
-                id="plus62" onclick="book62open()">+</p>
-            <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
-                id="minus62" onclick="book62close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
+        <li style="background-color: white; height: 60px; box-shadow: none; overflow: hidden; transition: 0.3s; position: relative; padding: none; border: 2px solid green; border-top: none;" id="book62"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;"><p style="margin: 0; padding: 0; width: 105%; height: 23px; position: absolute; top: 6px; left: 10px;" onclick="book62open()">Klausė žvirblis čiulbuonėlis</p><p style="font-size: 17px; margin-top: 30px;">Lietuvių liaudies žaidimai</p></a>
+            <i class="fa-solid fa-circle" style="color: red; position: absolute; top: 41px; right: 30px; font-size: 10px;" id="status62"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 25px; display: block; transition: 0.3s; font-size: 20px; color: green;" id="plus62" onclick="book62open()"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 20px; transition: 0.3s; display: none; pointer-events: none; color: green;" id="minus62" onclick="book62close()"></i>
+            <p style="margin-top: -14px; padding-left: 10px; padding-top: 5px; border-top: 2px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 66</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Alma littera</p>
             <p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: red;">unread</span></p>
         </li>
-        <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;"
-            id="book149"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Krabatas <br>
-                <span style="font-size: 17px; margin-top: 0;">Otfried Preubler</span></a>
-            <p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;"
-                id="plus149" onclick="book149open()">+</p>
-            <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
-                id="minus149" onclick="book149close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: top front</p>
+        <li style="background-color: white; height: 60px; box-shadow: none; overflow: hidden; transition: 0.3s; position: relative; padding: none; border: 2px solid green; border-top: none;" id="book149"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;"><p style="margin: 0; padding: 0; width: 105%; height: 23px; position: absolute; top: 6px; left: 10px;" onclick="book149open()">Krabatas</p><p style="font-size: 17px; margin-top: 30px;">Otfried Preubler</p></a>
+            <i class="fa-solid fa-circle" style="color: red; position: absolute; top: 41px; right: 30px; font-size: 10px;" id="status149"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 25px; display: block; transition: 0.3s; font-size: 20px; color: green;" id="plus149" onclick="book149open()"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 20px; transition: 0.3s; display: none; pointer-events: none; color: green;" id="minus149" onclick="book149close()"></i>
+            <p style="margin-top: -14px; padding-left: 10px; padding-top: 5px; border-top: 2px solid green;">Location: top front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 258</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p>
             <p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: red;">unread</span></p>
         </li>
-        <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;"
-            id="book63"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Kukis grįžta <br>
-                <span style="font-size: 17px; margin-top: 0;">Jan Svěrák</span></a>
-            <p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;"
-                id="plus63" onclick="book63open()">+</p>
-            <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
-                id="minus63" onclick="book63close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: top back</p>
+        <li style="background-color: white; height: 60px; box-shadow: none; overflow: hidden; transition: 0.3s; position: relative; padding: none; border: 2px solid green; border-top: none;" id="book63"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;"><p style="margin: 0; padding: 0; width: 105%; height: 23px; position: absolute; top: 6px; left: 10px;" onclick="book63open()">Kukis grįžta</p><p style="font-size: 17px; margin-top: 30px;">Jan Svěrák</p></a>
+            <i class="fa-solid fa-circle" style="color: red; position: absolute; top: 41px; right: 30px; font-size: 10px;" id="status63"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 25px; display: block; transition: 0.3s; font-size: 20px; color: green;" id="plus63" onclick="book63open()"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 20px; transition: 0.3s; display: none; pointer-events: none; color: green;" id="minus63" onclick="book63close()"></i>
+            <p style="margin-top: -14px; padding-left: 10px; padding-top: 5px; border-top: 2px solid green;">Location: top back</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 144</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Baltos lankos</p>
             <p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: red;">unread</span></p>
         </li>
-        <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;"
-            id="book64"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Laiškai iš elnių miško
-                <br> <span style="font-size: 17px; margin-top: 0;">Leonardas Grudzinskas</span></a>
-            <p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;"
-                id="plus64" onclick="book64open()">+</p>
-            <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
-                id="minus64" onclick="book64close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: top back</p>
+        <li style="background-color: white; height: 60px; box-shadow: none; overflow: hidden; transition: 0.3s; position: relative; padding: none; border: 2px solid green; border-top: none;" id="book64"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;"><p style="margin: 0; padding: 0; width: 105%; height: 23px; position: absolute; top: 6px; left: 10px;" onclick="book64open()">Laiškai iš elnių miško</p><p style="font-size: 17px; margin-top: 30px;">Leonardas Grudzinskas</p></a>
+            <i class="fa-solid fa-circle" style="color: red; position: absolute; top: 41px; right: 30px; font-size: 10px;" id="status64"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 25px; display: block; transition: 0.3s; font-size: 20px; color: green;" id="plus64" onclick="book64open()"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 20px; transition: 0.3s; display: none; pointer-events: none; color: green;" id="minus64" onclick="book64close()"></i>
+            <p style="margin-top: -14px; padding-left: 10px; padding-top: 5px; border-top: 2px solid green;">Location: top back</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 162</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Vaga</p>
             <p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: red;">unread</span></p>
         </li>
-        <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;"
-            id="book65"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Lapė ir liūtas <br>
-                <span style="font-size: 17px; margin-top: 0;">Afrikos pasakos</span></a>
-            <p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;"
-                id="plus65" onclick="book65open()">+</p>
-            <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
-                id="minus65" onclick="book65close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom back</p>
+        <li style="background-color: white; height: 60px; box-shadow: none; overflow: hidden; transition: 0.3s; position: relative; padding: none; border: 2px solid green; border-top: none;" id="book65"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;"><p style="margin: 0; padding: 0; width: 105%; height: 23px; position: absolute; top: 6px; left: 10px;" onclick="book65open()">Lapė ir liūtas</p><p style="font-size: 17px; margin-top: 30px;">Afrikos pasakos</p></a>
+            <i class="fa-solid fa-circle" style="color: red; position: absolute; top: 41px; right: 30px; font-size: 10px;" id="status65"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 25px; display: block; transition: 0.3s; font-size: 20px; color: green;" id="plus65" onclick="book65open()"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 20px; transition: 0.3s; display: none; pointer-events: none; color: green;" id="minus65" onclick="book65close()"></i>
+            <p style="margin-top: -14px; padding-left: 10px; padding-top: 5px; border-top: 2px solid green;">Location: bottom back</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 250</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Vyturys</p>
             <p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: red;">unread</span></p>
         </li>
-        <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;"
-            id="book66"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Lapių medžioklė <br>
-                <span style="font-size: 17px; margin-top: 0;">Sven Nordqvist</span></a>
-            <p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;"
-                id="plus66" onclick="book66open()">+</p>
-            <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
-                id="minus66" onclick="book66close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
+        <li style="background-color: white; height: 60px; box-shadow: none; overflow: hidden; transition: 0.3s; position: relative; padding: none; border: 2px solid green; border-top: none;" id="book66"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;"><p style="margin: 0; padding: 0; width: 105%; height: 23px; position: absolute; top: 6px; left: 10px;" onclick="book66open()">Lapių medžioklė</p><p style="font-size: 17px; margin-top: 30px;">Sven Nordqvist</p></a>
+            <i class="fa-solid fa-circle" style="color: green; position: absolute; top: 41px; right: 30px; font-size: 10px;" id="status66"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 25px; display: block; transition: 0.3s; font-size: 20px; color: green;" id="plus66" onclick="book66open()"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 20px; transition: 0.3s; display: none; pointer-events: none; color: green;" id="minus66" onclick="book66close()"></i>
+            <p style="margin-top: -14px; padding-left: 10px; padding-top: 5px; border-top: 2px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 28</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p>
             <p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: green;">read</span></p>
         </li>
-        <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;"
-            id="book67"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Laukiniai <br> <span
-                    style="font-size: 17px; margin-top: 0;">C. Alexander London</span></a>
-            <p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;"
-                id="plus67" onclick="book67open()">+</p>
-            <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
-                id="minus67" onclick="book67close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: for sale shelf</p>
+        <li style="background-color: white; height: 60px; box-shadow: none; overflow: hidden; transition: 0.3s; position: relative; padding: none; border: 2px solid green; border-top: none;" id="book67"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;"><p style="margin: 0; padding: 0; width: 105%; height: 23px; position: absolute; top: 6px; left: 10px;" onclick="book67open()">Laukiniai</p><p style="font-size: 17px; margin-top: 30px;">C. Alexander London</p></a>
+            <i class="fa-solid fa-circle" style="color: green; position: absolute; top: 41px; right: 30px; font-size: 10px;" id="status67"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 25px; display: block; transition: 0.3s; font-size: 20px; color: green;" id="plus67" onclick="book67open()"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 20px; transition: 0.3s; display: none; pointer-events: none; color: green;" id="minus67" onclick="book67close()"></i>
+            <p style="margin-top: -14px; padding-left: 10px; padding-top: 5px; border-top: 2px solid green;">Location: for sale shelf</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 226</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: for sale on Vinted</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Nieko rimto</p>
             <p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: green;">read</span></p>
         </li>
-        <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;"
-            id="book68"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Leiskite vaikučius
-                prie manęs <br> <span style="font-size: 17px; margin-top: 0;">Vidmantas Staniulis</span></a>
-            <p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;"
-                id="plus68" onclick="book68open()">+</p>
-            <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
-                id="minus68" onclick="book68close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
+        <li style="background-color: white; height: 60px; box-shadow: none; overflow: hidden; transition: 0.3s; position: relative; padding: none; border: 2px solid green; border-top: none;" id="book68"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;"><p style="margin: 0; padding: 0; width: 105%; height: 23px; position: absolute; top: 6px; left: 10px;" onclick="book68open()">Leiskite vaikučius prie manęs</p><p style="font-size: 17px; margin-top: 30px;">Vidmantas Staniulis</p></a>
+            <i class="fa-solid fa-circle" style="color: green; position: absolute; top: 41px; right: 30px; font-size: 10px;" id="status68"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 25px; display: block; transition: 0.3s; font-size: 20px; color: green;" id="plus68" onclick="book68open()"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 20px; transition: 0.3s; display: none; pointer-events: none; color: green;" id="minus68" onclick="book68close()"></i>
+            <p style="margin-top: -14px; padding-left: 10px; padding-top: 5px; border-top: 2px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 12</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Juozapo Zavadzkio spaustuvė</p>
             <p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: green;">read</span></p>
         </li>
-        <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;"
-            id="book69"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Lietus ir skafandras
-                <br> <span style="font-size: 17px; margin-top: 0;">Dovilė Zavedskaitė</span></a>
-            <p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;"
-                id="plus69" onclick="book69open()">+</p>
-            <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
-                id="minus69" onclick="book69close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: top back</p>
+        <li style="background-color: white; height: 60px; box-shadow: none; overflow: hidden; transition: 0.3s; position: relative; padding: none; border: 2px solid green; border-top: none;" id="book69"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;"><p style="margin: 0; padding: 0; width: 105%; height: 23px; position: absolute; top: 6px; left: 10px;" onclick="book69open()">Lietus ir skafandras</p><p style="font-size: 17px; margin-top: 30px;">Dovilė Zavedskaitė</p></a>
+            <i class="fa-solid fa-circle" style="color: green; position: absolute; top: 41px; right: 30px; font-size: 10px;" id="status69"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 25px; display: block; transition: 0.3s; font-size: 20px; color: green;" id="plus69" onclick="book69open()"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 20px; transition: 0.3s; display: none; pointer-events: none; color: green;" id="minus69" onclick="book69close()"></i>
+            <p style="margin-top: -14px; padding-left: 10px; padding-top: 5px; border-top: 2px solid green;">Location: top back</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 76</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
-            <p style="margin-top: -15px; padding-left: 10px;">Publisher: "Švieskime vaikus" lab. ir par...</p>
+            <p style="margin-top: -15px; padding-left: 10px;">Publisher: "Švieskime vaikus" lab.</p>
             <p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: green;">read</span></p>
         </li>
-        <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;"
-            id="book70"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Lietuvos 100-mečio
-                kelionė <br> <span style="font-size: 17px; margin-top: 0;">Lina Kulikauskienė, Selemonas...</span></a>
-            <p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;"
-                id="plus70" onclick="book70open()">+</p>
-            <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
-                id="minus70" onclick="book70close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
+        <li style="background-color: white; height: 60px; box-shadow: none; overflow: hidden; transition: 0.3s; position: relative; padding: none; border: 2px solid green; border-top: none;" id="book70"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;"><p style="margin: 0; padding: 0; width: 105%; height: 23px; position: absolute; top: 6px; left: 10px;" onclick="book70open()">Lietuvos 100-mečio kelionė</p><p style="font-size: 17px; margin-top: 30px;">Lina Kulikauskienė, Selemonas...</p></a>
+            <i class="fa-solid fa-circle" style="color: red; position: absolute; top: 41px; right: 30px; font-size: 10px;" id="status70"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 25px; display: block; transition: 0.3s; font-size: 20px; color: green;" id="plus70" onclick="book70open()"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 20px; transition: 0.3s; display: none; pointer-events: none; color: green;" id="minus70" onclick="book70close()"></i>
+            <p style="margin-top: -14px; padding-left: 10px; padding-top: 5px; border-top: 2px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 62</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Alma littera</p>
             <p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: red;">unread</span></p>
         </li>
-        <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;"
-            id="book71"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Lilė ir meno pinklės
-                <br> <span style="font-size: 17px; margin-top: 0;">Rimas Valeikis</span></a>
-            <p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;"
-                id="plus71" onclick="book71open()">+</p>
-            <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
-                id="minus71" onclick="book71close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom front</p>
+        <li style="background-color: white; height: 60px; box-shadow: none; overflow: hidden; transition: 0.3s; position: relative; padding: none; border: 2px solid green; border-top: none;" id="book71"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;"><p style="margin: 0; padding: 0; width: 105%; height: 23px; position: absolute; top: 6px; left: 10px;" onclick="book71open()">Lilė ir meno pinklės</p><p style="font-size: 17px; margin-top: 30px;">Rimas Valeikis</p></a>
+            <i class="fa-solid fa-circle" style="color: green; position: absolute; top: 41px; right: 30px; font-size: 10px;" id="status71"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 25px; display: block; transition: 0.3s; font-size: 20px; color: green;" id="plus71" onclick="book71open()"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 20px; transition: 0.3s; display: none; pointer-events: none; color: green;" id="minus71" onclick="book71close()"></i>
+            <p style="margin-top: -14px; padding-left: 10px; padding-top: 5px; border-top: 2px solid green;">Location: bottom front</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 42</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Mega</p>
             <p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: green;">read</span></p>
         </li>
-        <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;"
-            id="book72"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Loterijos laimėtojai
-                iš KLASĖS Nr. 13 <br> <span style="font-size: 17px; margin-top: 0;">Honest Lee, Matthew J.
-                    Gilbert</span></a>
-            <p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;"
-                id="plus72" onclick="book72open()">+</p>
-            <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
-                id="minus72" onclick="book72close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: for sale shelf</p>
+        <li style="background-color: white; height: 60px; box-shadow: none; overflow: hidden; transition: 0.3s; position: relative; padding: none; border: 2px solid green; border-top: none;" id="book72"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;"><p style="margin: 0; padding: 0; width: 105%; height: 23px; position: absolute; top: 6px; left: 10px;" onclick="book72open()">Loterijos laimėtojai iš KLASĖS Nr. 13</p><p style="font-size: 17px; margin-top: 30px;">Honest Lee, Matthew J. Gilbert</p></a>
+            <i class="fa-solid fa-circle" style="color: green; position: absolute; top: 41px; right: 30px; font-size: 10px;" id="status72"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 25px; display: block; transition: 0.3s; font-size: 20px; color: green;" id="plus72" onclick="book72open()"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 20px; transition: 0.3s; display: none; pointer-events: none; color: green;" id="minus72" onclick="book72close()"></i>
+            <p style="margin-top: -14px; padding-left: 10px; padding-top: 5px; border-top: 2px solid green;">Location: for sale shelf</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 130</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: for sale on Vinted</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Alma littera</p>
             <p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: green;">read</span></p>
         </li>
-        <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;"
-            id="book73"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Mac OS X Leopard <br>
-                <span style="font-size: 17px; margin-top: 0;">Scott Kelby</span></a>
-            <p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;"
-                id="plus73" onclick="book73open()">+</p>
-            <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
-                id="minus73" onclick="book73close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: top back</p>
+        <li style="background-color: white; height: 60px; box-shadow: none; overflow: hidden; transition: 0.3s; position: relative; padding: none; border: 2px solid green; border-top: none;" id="book73"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;"><p style="margin: 0; padding: 0; width: 105%; height: 23px; position: absolute; top: 6px; left: 10px;" onclick="book73open()">Mac OS X Leopard</p><p style="font-size: 17px; margin-top: 30px;">Scott Kelby</p></a>
+            <i class="fa-solid fa-circle" style="color: red; position: absolute; top: 41px; right: 30px; font-size: 10px;" id="status73"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 25px; display: block; transition: 0.3s; font-size: 20px; color: green;" id="plus73" onclick="book73open()"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 20px; transition: 0.3s; display: none; pointer-events: none; color: green;" id="minus73" onclick="book73close()"></i>
+            <p style="margin-top: -14px; padding-left: 10px; padding-top: 5px; border-top: 2px solid green;">Location: top back</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 250</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: DataCom</p>
             <p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: red;">unread</span></p>
         </li>
-        <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;"
-            id="book75"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Mano brolis
-                superherojus <br> <span style="font-size: 17px; margin-top: 0;">David Solomons</span></a>
-            <p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;"
-                id="plus75" onclick="book75open()">+</p>
-            <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
-                id="minus75" onclick="book75close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: for sale shelf</p>
+        <li style="background-color: white; height: 60px; box-shadow: none; overflow: hidden; transition: 0.3s; position: relative; padding: none; border: 2px solid green; border-top: none;" id="book75"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;"><p style="margin: 0; padding: 0; width: 105%; height: 23px; position: absolute; top: 6px; left: 10px;" onclick="book75open()">Mano brolis superherojus</p><p style="font-size: 17px; margin-top: 30px;">David Solomons</p></a>
+            <i class="fa-solid fa-circle" style="color: green; position: absolute; top: 41px; right: 30px; font-size: 10px;" id="status75"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 25px; display: block; transition: 0.3s; font-size: 20px; color: green;" id="plus75" onclick="book75open()"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 20px; transition: 0.3s; display: none; pointer-events: none; color: green;" id="minus75" onclick="book75close()"></i>
+            <p style="margin-top: -14px; padding-left: 10px; padding-top: 5px; border-top: 2px solid green;">Location: for sale shelf</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 314</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Tyto alba</p>
@@ -3697,403 +3621,731 @@
         }
 
         function book51open() {
-            document.getElementById("book51").style.height = "200px";
-            document.getElementById("plus51").style.opacity = "0";
+            document.getElementById("book51").style.height = "207px";
+            document.getElementById("status51").style.opacity = "0";
+            document.getElementById("plus51").style.display = "none";
+            document.getElementById("plus51").style.pointerEvents = "none";
+            document.getElementById("minus51").style.display = "block";
             setTimeout(() => {
-                document.getElementById("minus51").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus51").style.transform = "rotate(-180deg)";
+                document.getElementById("plus51").style.transform = "rotate(-180deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("minus51").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book51close() {
             document.getElementById("book51").style.height = "60px";
-            document.getElementById("minus51").style.opacity = "0";
+            document.getElementById("status51").style.opacity = "1";
+            document.getElementById("minus51").style.display = "none";
+            document.getElementById("minus51").style.pointerEvents = "none";
+            document.getElementById("plus51").style.display = "block";
             setTimeout(() => {
-                document.getElementById("plus51").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus51").style.transform = "rotate(0deg)";
+                document.getElementById("plus51").style.transform = "rotate(0deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("plus51").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book52open() {
-            document.getElementById("book52").style.height = "200px";
-            document.getElementById("plus52").style.opacity = "0";
+            document.getElementById("book52").style.height = "207px";
+            document.getElementById("status52").style.opacity = "0";
+            document.getElementById("plus52").style.display = "none";
+            document.getElementById("plus52").style.pointerEvents = "none";
+            document.getElementById("minus52").style.display = "block";
             setTimeout(() => {
-                document.getElementById("minus52").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus52").style.transform = "rotate(-180deg)";
+                document.getElementById("plus52").style.transform = "rotate(-180deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("minus52").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book52close() {
             document.getElementById("book52").style.height = "60px";
-            document.getElementById("minus52").style.opacity = "0";
+            document.getElementById("status52").style.opacity = "1";
+            document.getElementById("minus52").style.display = "none";
+            document.getElementById("minus52").style.pointerEvents = "none";
+            document.getElementById("plus52").style.display = "block";
             setTimeout(() => {
-                document.getElementById("plus52").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus52").style.transform = "rotate(0deg)";
+                document.getElementById("plus52").style.transform = "rotate(0deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("plus52").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book53open() {
-            document.getElementById("book53").style.height = "200px";
-            document.getElementById("plus53").style.opacity = "0";
+            document.getElementById("book53").style.height = "207px";
+            document.getElementById("status53").style.opacity = "0";
+            document.getElementById("plus53").style.display = "none";
+            document.getElementById("plus53").style.pointerEvents = "none";
+            document.getElementById("minus53").style.display = "block";
             setTimeout(() => {
-                document.getElementById("minus53").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus53").style.transform = "rotate(-180deg)";
+                document.getElementById("plus53").style.transform = "rotate(-180deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("minus53").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book53close() {
             document.getElementById("book53").style.height = "60px";
-            document.getElementById("minus53").style.opacity = "0";
+            document.getElementById("status53").style.opacity = "1";
+            document.getElementById("minus53").style.display = "none";
+            document.getElementById("minus53").style.pointerEvents = "none";
+            document.getElementById("plus53").style.display = "block";
             setTimeout(() => {
-                document.getElementById("plus53").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus53").style.transform = "rotate(0deg)";
+                document.getElementById("plus53").style.transform = "rotate(0deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("plus53").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book54open() {
-            document.getElementById("book54").style.height = "200px";
-            document.getElementById("plus54").style.opacity = "0";
+            document.getElementById("book54").style.height = "207px";
+            document.getElementById("status54").style.opacity = "0";
+            document.getElementById("plus54").style.display = "none";
+            document.getElementById("plus54").style.pointerEvents = "none";
+            document.getElementById("minus54").style.display = "block";
+            document.getElementById("book54other").style.display = "block";
+            document.getElementById("book54main").style.display = "none";
             setTimeout(() => {
-                document.getElementById("minus54").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus54").style.transform = "rotate(-180deg)";
+                document.getElementById("plus54").style.transform = "rotate(-180deg)";
+                document.getElementById("book54other").style.left = "105%";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("minus54").style.pointerEvents = "all";
+                document.getElementById("book54other").style.animation = "judejimas 5s linear infinite";
+            }, 300);
         }
 
         function book54close() {
             document.getElementById("book54").style.height = "60px";
-            document.getElementById("minus54").style.opacity = "0";
+            document.getElementById("status54").style.opacity = "1";
+            document.getElementById("minus54").style.display = "none";
+            document.getElementById("minus54").style.pointerEvents = "none";
+            document.getElementById("plus54").style.display = "block";
+            document.getElementById("book54other").style.display = "none";
+            document.getElementById("book54main").style.display = "block";
+            document.getElementById("book54other").style.animation = "none";
+            document.getElementById("book54other").style.left = "10px";
             setTimeout(() => {
-                document.getElementById("plus54").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus54").style.transform = "rotate(0deg)";
+                document.getElementById("plus54").style.transform = "rotate(0deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("plus54").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book55open() {
-            document.getElementById("book55").style.height = "200px";
-            document.getElementById("plus55").style.opacity = "0";
+            document.getElementById("book55").style.height = "207px";
+            document.getElementById("status55").style.opacity = "0";
+            document.getElementById("plus55").style.display = "none";
+            document.getElementById("plus55").style.pointerEvents = "none";
+            document.getElementById("minus55").style.display = "block";
             setTimeout(() => {
-                document.getElementById("minus55").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus55").style.transform = "rotate(-180deg)";
+                document.getElementById("plus55").style.transform = "rotate(-180deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("minus55").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book55close() {
             document.getElementById("book55").style.height = "60px";
-            document.getElementById("minus55").style.opacity = "0";
+            document.getElementById("status55").style.opacity = "1";
+            document.getElementById("minus55").style.display = "none";
+            document.getElementById("minus55").style.pointerEvents = "none";
+            document.getElementById("plus55").style.display = "block";
             setTimeout(() => {
-                document.getElementById("plus55").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus55").style.transform = "rotate(0deg)";
+                document.getElementById("plus55").style.transform = "rotate(0deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("plus55").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book56open() {
-            document.getElementById("book56").style.height = "200px";
-            document.getElementById("plus56").style.opacity = "0";
+            document.getElementById("book56").style.height = "207px";
+            document.getElementById("status56").style.opacity = "0";
+            document.getElementById("plus56").style.display = "none";
+            document.getElementById("plus56").style.pointerEvents = "none";
+            document.getElementById("minus56").style.display = "block";
             setTimeout(() => {
-                document.getElementById("minus56").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus56").style.transform = "rotate(-180deg)";
+                document.getElementById("plus56").style.transform = "rotate(-180deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("minus56").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book56close() {
             document.getElementById("book56").style.height = "60px";
-            document.getElementById("minus56").style.opacity = "0";
+            document.getElementById("status56").style.opacity = "1";
+            document.getElementById("minus56").style.display = "none";
+            document.getElementById("minus56").style.pointerEvents = "none";
+            document.getElementById("plus56").style.display = "block";
             setTimeout(() => {
-                document.getElementById("plus56").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus56").style.transform = "rotate(0deg)";
+                document.getElementById("plus56").style.transform = "rotate(0deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("plus56").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book57open() {
-            document.getElementById("book57").style.height = "200px";
-            document.getElementById("plus57").style.opacity = "0";
+            document.getElementById("book57").style.height = "207px";
+            document.getElementById("status57").style.opacity = "0";
+            document.getElementById("plus57").style.display = "none";
+            document.getElementById("plus57").style.pointerEvents = "none";
+            document.getElementById("minus57").style.display = "block";
             setTimeout(() => {
-                document.getElementById("minus57").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus57").style.transform = "rotate(-180deg)";
+                document.getElementById("plus57").style.transform = "rotate(-180deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("minus57").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book57close() {
             document.getElementById("book57").style.height = "60px";
-            document.getElementById("minus57").style.opacity = "0";
+            document.getElementById("status57").style.opacity = "1";
+            document.getElementById("minus57").style.display = "none";
+            document.getElementById("minus57").style.pointerEvents = "none";
+            document.getElementById("plus57").style.display = "block";
             setTimeout(() => {
-                document.getElementById("plus57").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus57").style.transform = "rotate(0deg)";
+                document.getElementById("plus57").style.transform = "rotate(0deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("plus57").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book58open() {
-            document.getElementById("book58").style.height = "200px";
-            document.getElementById("plus58").style.opacity = "0";
+            document.getElementById("book58").style.height = "207px";
+            document.getElementById("status58").style.opacity = "0";
+            document.getElementById("plus58").style.display = "none";
+            document.getElementById("plus58").style.pointerEvents = "none";
+            document.getElementById("minus58").style.display = "block";
             setTimeout(() => {
-                document.getElementById("minus58").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus58").style.transform = "rotate(-180deg)";
+                document.getElementById("plus58").style.transform = "rotate(-180deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("minus58").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book58close() {
             document.getElementById("book58").style.height = "60px";
-            document.getElementById("minus58").style.opacity = "0";
+            document.getElementById("status58").style.opacity = "1";
+            document.getElementById("minus58").style.display = "none";
+            document.getElementById("minus58").style.pointerEvents = "none";
+            document.getElementById("plus58").style.display = "block";
             setTimeout(() => {
-                document.getElementById("plus58").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus58").style.transform = "rotate(0deg)";
+                document.getElementById("plus58").style.transform = "rotate(0deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("plus58").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book59open() {
-            document.getElementById("book59").style.height = "200px";
-            document.getElementById("plus59").style.opacity = "0";
+            document.getElementById("book59").style.height = "207px";
+            document.getElementById("status59").style.opacity = "0";
+            document.getElementById("plus59").style.display = "none";
+            document.getElementById("plus59").style.pointerEvents = "none";
+            document.getElementById("minus59").style.display = "block";
             setTimeout(() => {
-                document.getElementById("minus59").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus59").style.transform = "rotate(-180deg)";
+                document.getElementById("plus59").style.transform = "rotate(-180deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("minus59").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book59close() {
             document.getElementById("book59").style.height = "60px";
-            document.getElementById("minus59").style.opacity = "0";
+            document.getElementById("status59").style.opacity = "1";
+            document.getElementById("minus59").style.display = "none";
+            document.getElementById("minus59").style.pointerEvents = "none";
+            document.getElementById("plus59").style.display = "block";
             setTimeout(() => {
-                document.getElementById("plus59").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus59").style.transform = "rotate(0deg)";
+                document.getElementById("plus59").style.transform = "rotate(0deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("plus59").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book60open() {
-            document.getElementById("book60").style.height = "200px";
-            document.getElementById("plus60").style.opacity = "0";
+            document.getElementById("book60").style.height = "207px";
+            document.getElementById("status60").style.opacity = "0";
+            document.getElementById("plus60").style.display = "none";
+            document.getElementById("plus60").style.pointerEvents = "none";
+            document.getElementById("minus60").style.display = "block";
             setTimeout(() => {
-                document.getElementById("minus60").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus60").style.transform = "rotate(-180deg)";
+                document.getElementById("plus60").style.transform = "rotate(-180deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("minus60").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book60close() {
             document.getElementById("book60").style.height = "60px";
-            document.getElementById("minus60").style.opacity = "0";
+            document.getElementById("status60").style.opacity = "1";
+            document.getElementById("minus60").style.display = "none";
+            document.getElementById("minus60").style.pointerEvents = "none";
+            document.getElementById("plus60").style.display = "block";
             setTimeout(() => {
-                document.getElementById("plus60").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus60").style.transform = "rotate(0deg)";
+                document.getElementById("plus60").style.transform = "rotate(0deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("plus60").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book61open() {
-            document.getElementById("book61").style.height = "200px";
-            document.getElementById("plus61").style.opacity = "0";
+            document.getElementById("book61").style.height = "207px";
+            document.getElementById("status61").style.opacity = "0";
+            document.getElementById("plus61").style.display = "none";
+            document.getElementById("plus61").style.pointerEvents = "none";
+            document.getElementById("minus61").style.display = "block";
             setTimeout(() => {
-                document.getElementById("minus61").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus61").style.transform = "rotate(-180deg)";
+                document.getElementById("plus61").style.transform = "rotate(-180deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("minus61").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book61close() {
             document.getElementById("book61").style.height = "60px";
-            document.getElementById("minus61").style.opacity = "0";
+            document.getElementById("status61").style.opacity = "1";
+            document.getElementById("minus61").style.display = "none";
+            document.getElementById("minus61").style.pointerEvents = "none";
+            document.getElementById("plus61").style.display = "block";
             setTimeout(() => {
-                document.getElementById("plus61").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus61").style.transform = "rotate(0deg)";
+                document.getElementById("plus61").style.transform = "rotate(0deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("plus61").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book62open() {
-            document.getElementById("book62").style.height = "200px";
-            document.getElementById("plus62").style.opacity = "0";
+            document.getElementById("book62").style.height = "207px";
+            document.getElementById("status62").style.opacity = "0";
+            document.getElementById("plus62").style.display = "none";
+            document.getElementById("plus62").style.pointerEvents = "none";
+            document.getElementById("minus62").style.display = "block";
             setTimeout(() => {
-                document.getElementById("minus62").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus62").style.transform = "rotate(-180deg)";
+                document.getElementById("plus62").style.transform = "rotate(-180deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("minus62").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book62close() {
             document.getElementById("book62").style.height = "60px";
-            document.getElementById("minus62").style.opacity = "0";
+            document.getElementById("status62").style.opacity = "1";
+            document.getElementById("minus62").style.display = "none";
+            document.getElementById("minus62").style.pointerEvents = "none";
+            document.getElementById("plus62").style.display = "block";
             setTimeout(() => {
-                document.getElementById("plus62").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus62").style.transform = "rotate(0deg)";
+                document.getElementById("plus62").style.transform = "rotate(0deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("plus62").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book63open() {
-            document.getElementById("book63").style.height = "200px";
-            document.getElementById("plus63").style.opacity = "0";
+            document.getElementById("book63").style.height = "207px";
+            document.getElementById("status63").style.opacity = "0";
+            document.getElementById("plus63").style.display = "none";
+            document.getElementById("plus63").style.pointerEvents = "none";
+            document.getElementById("minus63").style.display = "block";
             setTimeout(() => {
-                document.getElementById("minus63").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus63").style.transform = "rotate(-180deg)";
+                document.getElementById("plus63").style.transform = "rotate(-180deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("minus63").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book63close() {
             document.getElementById("book63").style.height = "60px";
-            document.getElementById("minus63").style.opacity = "0";
+            document.getElementById("status63").style.opacity = "1";
+            document.getElementById("minus63").style.display = "none";
+            document.getElementById("minus63").style.pointerEvents = "none";
+            document.getElementById("plus63").style.display = "block";
             setTimeout(() => {
-                document.getElementById("plus63").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus63").style.transform = "rotate(0deg)";
+                document.getElementById("plus63").style.transform = "rotate(0deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("plus63").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book64open() {
-            document.getElementById("book64").style.height = "200px";
-            document.getElementById("plus64").style.opacity = "0";
+            document.getElementById("book64").style.height = "207px";
+            document.getElementById("status64").style.opacity = "0";
+            document.getElementById("plus64").style.display = "none";
+            document.getElementById("plus64").style.pointerEvents = "none";
+            document.getElementById("minus64").style.display = "block";
             setTimeout(() => {
-                document.getElementById("minus64").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus64").style.transform = "rotate(-180deg)";
+                document.getElementById("plus64").style.transform = "rotate(-180deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("minus64").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book64close() {
             document.getElementById("book64").style.height = "60px";
-            document.getElementById("minus64").style.opacity = "0";
+            document.getElementById("status64").style.opacity = "1";
+            document.getElementById("minus64").style.display = "none";
+            document.getElementById("minus64").style.pointerEvents = "none";
+            document.getElementById("plus64").style.display = "block";
             setTimeout(() => {
-                document.getElementById("plus64").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus64").style.transform = "rotate(0deg)";
+                document.getElementById("plus64").style.transform = "rotate(0deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("plus64").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book65open() {
-            document.getElementById("book65").style.height = "200px";
-            document.getElementById("plus65").style.opacity = "0";
+            document.getElementById("book65").style.height = "207px";
+            document.getElementById("status65").style.opacity = "0";
+            document.getElementById("plus65").style.display = "none";
+            document.getElementById("plus65").style.pointerEvents = "none";
+            document.getElementById("minus65").style.display = "block";
             setTimeout(() => {
-                document.getElementById("minus65").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus65").style.transform = "rotate(-180deg)";
+                document.getElementById("plus65").style.transform = "rotate(-180deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("minus65").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book65close() {
             document.getElementById("book65").style.height = "60px";
-            document.getElementById("minus65").style.opacity = "0";
+            document.getElementById("status65").style.opacity = "1";
+            document.getElementById("minus65").style.display = "none";
+            document.getElementById("minus65").style.pointerEvents = "none";
+            document.getElementById("plus65").style.display = "block";
             setTimeout(() => {
-                document.getElementById("plus65").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus65").style.transform = "rotate(0deg)";
+                document.getElementById("plus65").style.transform = "rotate(0deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("plus65").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book66open() {
-            document.getElementById("book66").style.height = "200px";
-            document.getElementById("plus66").style.opacity = "0";
+            document.getElementById("book66").style.height = "207px";
+            document.getElementById("status66").style.opacity = "0";
+            document.getElementById("plus66").style.display = "none";
+            document.getElementById("plus66").style.pointerEvents = "none";
+            document.getElementById("minus66").style.display = "block";
             setTimeout(() => {
-                document.getElementById("minus66").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus66").style.transform = "rotate(-180deg)";
+                document.getElementById("plus66").style.transform = "rotate(-180deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("minus66").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book66close() {
             document.getElementById("book66").style.height = "60px";
-            document.getElementById("minus66").style.opacity = "0";
+            document.getElementById("status66").style.opacity = "1";
+            document.getElementById("minus66").style.display = "none";
+            document.getElementById("minus66").style.pointerEvents = "none";
+            document.getElementById("plus66").style.display = "block";
             setTimeout(() => {
-                document.getElementById("plus66").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus66").style.transform = "rotate(0deg)";
+                document.getElementById("plus66").style.transform = "rotate(0deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("plus66").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book67open() {
-            document.getElementById("book67").style.height = "200px";
-            document.getElementById("plus67").style.opacity = "0";
+            document.getElementById("book67").style.height = "207px";
+            document.getElementById("status67").style.opacity = "0";
+            document.getElementById("plus67").style.display = "none";
+            document.getElementById("plus67").style.pointerEvents = "none";
+            document.getElementById("minus67").style.display = "block";
             setTimeout(() => {
-                document.getElementById("minus67").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus67").style.transform = "rotate(-180deg)";
+                document.getElementById("plus67").style.transform = "rotate(-180deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("minus67").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book67close() {
             document.getElementById("book67").style.height = "60px";
-            document.getElementById("minus67").style.opacity = "0";
+            document.getElementById("status67").style.opacity = "1";
+            document.getElementById("minus67").style.display = "none";
+            document.getElementById("minus67").style.pointerEvents = "none";
+            document.getElementById("plus67").style.display = "block";
             setTimeout(() => {
-                document.getElementById("plus67").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus67").style.transform = "rotate(0deg)";
+                document.getElementById("plus67").style.transform = "rotate(0deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("plus67").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book68open() {
-            document.getElementById("book68").style.height = "200px";
-            document.getElementById("plus68").style.opacity = "0";
+            document.getElementById("book68").style.height = "207px";
+            document.getElementById("status68").style.opacity = "0";
+            document.getElementById("plus68").style.display = "none";
+            document.getElementById("plus68").style.pointerEvents = "none";
+            document.getElementById("minus68").style.display = "block";
             setTimeout(() => {
-                document.getElementById("minus68").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus68").style.transform = "rotate(-180deg)";
+                document.getElementById("plus68").style.transform = "rotate(-180deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("minus68").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book68close() {
             document.getElementById("book68").style.height = "60px";
-            document.getElementById("minus68").style.opacity = "0";
+            document.getElementById("status68").style.opacity = "1";
+            document.getElementById("minus68").style.display = "none";
+            document.getElementById("minus68").style.pointerEvents = "none";
+            document.getElementById("plus68").style.display = "block";
             setTimeout(() => {
-                document.getElementById("plus68").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus68").style.transform = "rotate(0deg)";
+                document.getElementById("plus68").style.transform = "rotate(0deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("plus68").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book69open() {
-            document.getElementById("book69").style.height = "200px";
-            document.getElementById("plus69").style.opacity = "0";
+            document.getElementById("book69").style.height = "207px";
+            document.getElementById("status69").style.opacity = "0";
+            document.getElementById("plus69").style.display = "none";
+            document.getElementById("plus69").style.pointerEvents = "none";
+            document.getElementById("minus69").style.display = "block";
             setTimeout(() => {
-                document.getElementById("minus69").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus69").style.transform = "rotate(-180deg)";
+                document.getElementById("plus69").style.transform = "rotate(-180deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("minus69").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book69close() {
             document.getElementById("book69").style.height = "60px";
-            document.getElementById("minus69").style.opacity = "0";
+            document.getElementById("status69").style.opacity = "1";
+            document.getElementById("minus69").style.display = "none";
+            document.getElementById("minus69").style.pointerEvents = "none";
+            document.getElementById("plus69").style.display = "block";
             setTimeout(() => {
-                document.getElementById("plus69").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus69").style.transform = "rotate(0deg)";
+                document.getElementById("plus69").style.transform = "rotate(0deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("plus69").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book70open() {
-            document.getElementById("book70").style.height = "200px";
-            document.getElementById("plus70").style.opacity = "0";
+            document.getElementById("book70").style.height = "207px";
+            document.getElementById("status70").style.opacity = "0";
+            document.getElementById("plus70").style.display = "none";
+            document.getElementById("plus70").style.pointerEvents = "none";
+            document.getElementById("minus70").style.display = "block";
             setTimeout(() => {
-                document.getElementById("minus70").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus70").style.transform = "rotate(-180deg)";
+                document.getElementById("plus70").style.transform = "rotate(-180deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("minus70").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book70close() {
             document.getElementById("book70").style.height = "60px";
-            document.getElementById("minus70").style.opacity = "0";
+            document.getElementById("status70").style.opacity = "1";
+            document.getElementById("minus70").style.display = "none";
+            document.getElementById("minus70").style.pointerEvents = "none";
+            document.getElementById("plus70").style.display = "block";
             setTimeout(() => {
-                document.getElementById("plus70").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus70").style.transform = "rotate(0deg)";
+                document.getElementById("plus70").style.transform = "rotate(0deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("plus70").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book71open() {
-            document.getElementById("book71").style.height = "200px";
-            document.getElementById("plus71").style.opacity = "0";
+            document.getElementById("book71").style.height = "207px";
+            document.getElementById("status71").style.opacity = "0";
+            document.getElementById("plus71").style.display = "none";
+            document.getElementById("plus71").style.pointerEvents = "none";
+            document.getElementById("minus71").style.display = "block";
             setTimeout(() => {
-                document.getElementById("minus71").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus71").style.transform = "rotate(-180deg)";
+                document.getElementById("plus71").style.transform = "rotate(-180deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("minus71").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book71close() {
             document.getElementById("book71").style.height = "60px";
-            document.getElementById("minus71").style.opacity = "0";
+            document.getElementById("status71").style.opacity = "1";
+            document.getElementById("minus71").style.display = "none";
+            document.getElementById("minus71").style.pointerEvents = "none";
+            document.getElementById("plus71").style.display = "block";
             setTimeout(() => {
-                document.getElementById("plus71").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus71").style.transform = "rotate(0deg)";
+                document.getElementById("plus71").style.transform = "rotate(0deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("plus71").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book72open() {
-            document.getElementById("book72").style.height = "200px";
-            document.getElementById("plus72").style.opacity = "0";
+            document.getElementById("book72").style.height = "207px";
+            document.getElementById("status72").style.opacity = "0";
+            document.getElementById("plus72").style.display = "none";
+            document.getElementById("plus72").style.pointerEvents = "none";
+            document.getElementById("minus72").style.display = "block";
             setTimeout(() => {
-                document.getElementById("minus72").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus72").style.transform = "rotate(-180deg)";
+                document.getElementById("plus72").style.transform = "rotate(-180deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("minus72").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book72close() {
             document.getElementById("book72").style.height = "60px";
-            document.getElementById("minus72").style.opacity = "0";
+            document.getElementById("status72").style.opacity = "1";
+            document.getElementById("minus72").style.display = "none";
+            document.getElementById("minus72").style.pointerEvents = "none";
+            document.getElementById("plus72").style.display = "block";
             setTimeout(() => {
-                document.getElementById("plus72").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus72").style.transform = "rotate(0deg)";
+                document.getElementById("plus72").style.transform = "rotate(0deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("plus72").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book73open() {
-            document.getElementById("book73").style.height = "200px";
-            document.getElementById("plus73").style.opacity = "0";
+            document.getElementById("book73").style.height = "207px";
+            document.getElementById("status73").style.opacity = "0";
+            document.getElementById("plus73").style.display = "none";
+            document.getElementById("plus73").style.pointerEvents = "none";
+            document.getElementById("minus73").style.display = "block";
             setTimeout(() => {
-                document.getElementById("minus73").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus73").style.transform = "rotate(-180deg)";
+                document.getElementById("plus73").style.transform = "rotate(-180deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("minus73").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book73close() {
             document.getElementById("book73").style.height = "60px";
-            document.getElementById("minus73").style.opacity = "0";
+            document.getElementById("status73").style.opacity = "1";
+            document.getElementById("minus73").style.display = "none";
+            document.getElementById("minus73").style.pointerEvents = "none";
+            document.getElementById("plus73").style.display = "block";
             setTimeout(() => {
-                document.getElementById("plus73").style.opacity = "1";
-            }, 250);
-        }
-
-        function book74open() {
-            document.getElementById("book74").style.height = "200px";
-            document.getElementById("plus74").style.opacity = "0";
+                document.getElementById("minus73").style.transform = "rotate(0deg)";
+                document.getElementById("plus73").style.transform = "rotate(0deg)";
+            }, 10);
             setTimeout(() => {
-                document.getElementById("minus74").style.opacity = "1";
-            }, 250);
-        }
-
-        function book74close() {
-            document.getElementById("book74").style.height = "60px";
-            document.getElementById("minus74").style.opacity = "0";
-            setTimeout(() => {
-                document.getElementById("plus74").style.opacity = "1";
-            }, 250);
+                document.getElementById("plus73").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book75open() {
-            document.getElementById("book75").style.height = "200px";
-            document.getElementById("plus75").style.opacity = "0";
+            document.getElementById("book75").style.height = "207px";
+            document.getElementById("status75").style.opacity = "0";
+            document.getElementById("plus75").style.display = "none";
+            document.getElementById("plus75").style.pointerEvents = "none";
+            document.getElementById("minus75").style.display = "block";
             setTimeout(() => {
-                document.getElementById("minus75").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus75").style.transform = "rotate(-180deg)";
+                document.getElementById("plus75").style.transform = "rotate(-180deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("minus75").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book75close() {
             document.getElementById("book75").style.height = "60px";
-            document.getElementById("minus75").style.opacity = "0";
+            document.getElementById("status75").style.opacity = "1";
+            document.getElementById("minus75").style.display = "none";
+            document.getElementById("minus75").style.pointerEvents = "none";
+            document.getElementById("plus75").style.display = "block";
             setTimeout(() => {
-                document.getElementById("plus75").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus75").style.transform = "rotate(0deg)";
+                document.getElementById("plus75").style.transform = "rotate(0deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("plus75").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book76open() {
@@ -5264,19 +5516,33 @@
             }, 250);
         }
         function book149open() {
-            document.getElementById("book149").style.height = "200px";
-            document.getElementById("plus149").style.opacity = "0";
+            document.getElementById("book149").style.height = "207px";
+            document.getElementById("status149").style.opacity = "0";
+            document.getElementById("plus149").style.display = "none";
+            document.getElementById("plus149").style.pointerEvents = "none";
+            document.getElementById("minus149").style.display = "block";
             setTimeout(() => {
-                document.getElementById("minus149").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus149").style.transform = "rotate(-180deg)";
+                document.getElementById("plus149").style.transform = "rotate(-180deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("minus149").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book149close() {
             document.getElementById("book149").style.height = "60px";
-            document.getElementById("minus149").style.opacity = "0";
+            document.getElementById("status149").style.opacity = "1";
+            document.getElementById("minus149").style.display = "none";
+            document.getElementById("minus149").style.pointerEvents = "none";
+            document.getElementById("plus149").style.display = "block";
             setTimeout(() => {
-                document.getElementById("plus149").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus149").style.transform = "rotate(0deg)";
+                document.getElementById("plus149").style.transform = "rotate(0deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("plus149").style.pointerEvents = "all";
+            }, 300);
         }
         function book150open() {
             document.getElementById("book150").style.height = "200px";

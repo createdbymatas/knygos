@@ -263,10 +263,10 @@
     </div>
 
 
-    <!-- <div id="screen">
+    <div id="screen">
         <i class="fa-solid fa-book" style="position: absolute; font-size: 30px; color: green; transition: 0.3s; opacity: 0;" id="bookIcon"></i>
         <span class="loader"></span>
-    </div> -->
+    </div>
     <div onclick="searchClose()" style="width: 100%; height: 100%; position: fixed; z-index: 9; top: 0; left: 0; right: 0; bottom: 0; display: none;" id="searchCloser"></div>
     <i class="fa-solid fa-magnifying-glass" style="position: fixed; bottom: 22px; right: 21px; z-index: 11; font-size: 28px; transition: 0.3s;" onclick="searchOpen()" id="glass"></i>
     <input type="text" id="myInput" onkeyup="myFunction()" onfocus="this.value=''" placeholder="Search for books..." title="Type in a book" onclick="searchOpen()">
@@ -745,27 +745,21 @@
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Alma littera</p>
             <p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: red;">unread</span></p>
         </li>
-        <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;"
-            id="book49"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Interneto Gidas <br>
-                <span style="font-size: 17px; margin-top: 0;">Algis Davidavičius, Gediminas...</span></a>
-            <p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;"
-                id="plus49" onclick="book49open()">+</p>
-            <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
-                id="minus49" onclick="book49close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: bottom back</p>
+        <li style="background-color: white; height: 60px; box-shadow: none; overflow: hidden; transition: 0.3s; position: relative; padding: none; border: 2px solid green; border-top: none;" id="book49"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;"><p style="margin: 0; padding: 0; width: 105%; height: 23px; position: absolute; top: 6px; left: 10px;" onclick="book49open()">Interneto Gidas</p><p style="font-size: 17px; margin-top: 30px;">Omnitel komanda</p></a>
+            <i class="fa-solid fa-circle" style="color: red; position: absolute; top: 41px; right: 30px; font-size: 10px;" id="status49"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 25px; display: block; transition: 0.3s; font-size: 20px; color: green;" id="plus49" onclick="book49open()"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 20px; transition: 0.3s; display: none; pointer-events: none; color: green;" id="minus49" onclick="book49close()"></i>
+            <p style="margin-top: -14px; padding-left: 10px; padding-top: 5px; border-top: 2px solid green;">Location: bottom back</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 340</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Omnitel</p>
             <p style="margin-top: -5px; padding-left: 10px;">Status: <span style="color: red;">unread</span></p>
         </li>
-        <li style="background-color: white; height: 60px; border: 3px solid green; box-shadow: none; overflow: hidden; transition: 0.3s; margin-top: 10px; position: relative;"
-            id="book50"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;">Išsamus fotografijos
-                kursas <br> <span style="font-size: 17px; margin-top: 0;">John Garrett, Graeme Harris</span></a>
-            <p style="position: absolute; right: 5px; top: -2px; font-size: 25px; display: block; transition: 0.3s;"
-                id="plus50" onclick="book50open()">+</p>
-            <p style="position: absolute; right: 5px; top: 140px; font-size: 25px; transition: 0.3s; opacity: 0;"
-                id="minus50" onclick="book50close()">-</p>
-            <p style="margin-top: 2px; padding-left: 10px; border-top: 3px solid green;">Location: top back</p>
+        <li style="background-color: white; height: 60px; box-shadow: none; overflow: hidden; transition: 0.3s; position: relative; padding: none; border: 2px solid green; border-top: none;" id="book50"><a href="#" style="font-size: 15px; margin-top: 5px; padding-left: 10px;"><p style="margin: 0; padding: 0; width: 105%; height: 23px; position: absolute; top: 6px; left: 10px;" onclick="book50open()">Išsamus fotografijos kursas</p><p style="font-size: 17px; margin-top: 30px;">John Garrett, Graeme Harris</p></a>
+            <i class="fa-solid fa-circle" style="color: red; position: absolute; top: 41px; right: 30px; font-size: 10px;" id="status50"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 25px; display: block; transition: 0.3s; font-size: 20px; color: green;" id="plus50" onclick="book50open()"></i>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 5px; top: 35px; font-size: 20px; transition: 0.3s; display: none; pointer-events: none; color: green;" id="minus50" onclick="book50close()"></i>
+            <p style="margin-top: -14px; padding-left: 10px; padding-top: 5px; border-top: 2px solid green;">Location: top back</p>
             <p style="margin-top: -15px; padding-left: 10px;">Pages: 194</p>
             <p style="margin-top: -15px; padding-left: 10px;">Information: not for sale</p>
             <p style="margin-top: -15px; padding-left: 10px;">Publisher: Foto profas</p>
@@ -2082,6 +2076,7 @@
                 setTimeout(() => {   document.getElementById("screen").style.transform = "scale(0.8)"; }, 3000);
                 setTimeout(() => {   document.getElementById("screen").style.opacity = "0"; }, 3000);
                 setTimeout(() => {   document.getElementById("screen").style.borderRadius = "100px"; }, 3000);
+                setTimeout(() => {   document.getElementById("screen").style.border = "2px solid green"; }, 3000);
                 setTimeout(() => {   document.getElementById("screen").style.display = "none"; }, 3300);
             }
         window.addEventListener("DOMContentLoaded", function () {
@@ -3642,35 +3637,63 @@
         }
 
         function book49open() {
-            document.getElementById("book49").style.height = "200px";
-            document.getElementById("plus49").style.opacity = "0";
+            document.getElementById("book49").style.height = "207px";
+            document.getElementById("status49").style.opacity = "0";
+            document.getElementById("plus49").style.display = "none";
+            document.getElementById("plus49").style.pointerEvents = "none";
+            document.getElementById("minus49").style.display = "block";
             setTimeout(() => {
-                document.getElementById("minus49").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus49").style.transform = "rotate(-180deg)";
+                document.getElementById("plus49").style.transform = "rotate(-180deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("minus49").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book49close() {
             document.getElementById("book49").style.height = "60px";
-            document.getElementById("minus49").style.opacity = "0";
+            document.getElementById("status49").style.opacity = "1";
+            document.getElementById("minus49").style.display = "none";
+            document.getElementById("minus49").style.pointerEvents = "none";
+            document.getElementById("plus49").style.display = "block";
             setTimeout(() => {
-                document.getElementById("plus49").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus49").style.transform = "rotate(0deg)";
+                document.getElementById("plus49").style.transform = "rotate(0deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("plus49").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book50open() {
-            document.getElementById("book50").style.height = "200px";
-            document.getElementById("plus50").style.opacity = "0";
+            document.getElementById("book50").style.height = "207px";
+            document.getElementById("status50").style.opacity = "0";
+            document.getElementById("plus50").style.display = "none";
+            document.getElementById("plus50").style.pointerEvents = "none";
+            document.getElementById("minus50").style.display = "block";
             setTimeout(() => {
-                document.getElementById("minus50").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus50").style.transform = "rotate(-180deg)";
+                document.getElementById("plus50").style.transform = "rotate(-180deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("minus50").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book50close() {
             document.getElementById("book50").style.height = "60px";
-            document.getElementById("minus50").style.opacity = "0";
+            document.getElementById("status50").style.opacity = "1";
+            document.getElementById("minus50").style.display = "none";
+            document.getElementById("minus50").style.pointerEvents = "none";
+            document.getElementById("plus50").style.display = "block";
             setTimeout(() => {
-                document.getElementById("plus50").style.opacity = "1";
-            }, 250);
+                document.getElementById("minus50").style.transform = "rotate(0deg)";
+                document.getElementById("plus50").style.transform = "rotate(0deg)";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("plus50").style.pointerEvents = "all";
+            }, 300);
         }
 
         function book51open() {

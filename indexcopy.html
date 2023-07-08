@@ -37,7 +37,7 @@
         #header{
             width: 100%;
             height: 60px;
-            background-color: rgb(245, 245, 245, 0.75);
+            background-color: rgba(245, 245, 245, 0.75);
             position: fixed;
             top: 0;
             left: 0;
@@ -103,7 +103,8 @@
             border-radius: 10px;
             box-shadow: 0 0 3px lightgrey;
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
+            flex-direction: column;
             align-items: center;
             padding-right: 0;
             overflow: hidden;
@@ -145,8 +146,15 @@
             <div style="width: 100%; height: 40px; display: none; justify-content: space-between; align-items: center; padding-left: 10px; padding-right: 10px; margin-top: 20px; opacity: 0;" id="paieska3"><button style="opacity: 1; width: 40px;" id="m">M</button><button style="opacity: 1; width: 40px;" id="n">N</button><button style="opacity: 1; width: 40px;" id="o">O</button><button style="opacity: 1; width: 40px;" id="p">P</button><button style="opacity: 1; width: 40px;" id="q">Q</button><button style="opacity: 1; width: 40px;" id="r">R</button></div>
             <div style="width: 100%; height: 40px; display: none; justify-content: space-between; align-items: center; padding-left: 10px; padding-right: 10px; margin-top: 20px; opacity: 0;" id="paieska4"><button style="opacity: 1; width: 40px;" id="s">S</button><button style="opacity: 1; width: 40px;" id="t">T</button><button style="opacity: 1; width: 40px;" id="u">U</button><button style="opacity: 1; width: 40px;" id="v">V</button><button style="opacity: 1; width: 40px;" id="w">W</button><button style="opacity: 1; width: 40px;" id="x">X</button></div>
             <div style="width: 100%; height: 40px; display: none; justify-content: flex-start; align-items: center; padding-left: 10px; padding-right: 10px; margin-top: 20px; opacity: 0;" id="paieska5"><button style="opacity: 1; width: 40px; margin-right: 10px;" id="y">Y</button><button style="opacity: 1; width: 40px; margin-left: 10px;">Z</button></div>
-            <button id="searchBtn1" onclick="searchByAlphabet()">by Alphabet</button>
-            <button id="searchBtn2">by Author</button>
+
+            <div style="width: 100%; height: 50px; display: flex; justify-content: space-around; align-items: center;">
+                <button id="searchBtn3">by Pages</button>
+                <button id="searchBtn4">by Location</button>
+            </div>
+            <div style="width: 100%; height: 50px; display: flex; justify-content: space-around; align-items: center;">
+                <button id="searchBtn1" onclick="searchByAlphabet()">by Alphabet</button>
+                <button id="searchBtn2">by Author</button>
+            </div>
             <i id="searchIcon" class="fa-solid fa-magnifying-glass" style="width: 60px; height: 60px; position: absolute; right: 0; bottom: 0; border-radius: 10px; display: flex; justify-content: center; align-items: center; font-size: 25px;"></i>
         </div>
     </div>
@@ -184,10 +192,10 @@
         <p style="font-size: 20px; position: absolute; left: 60px; top: 10px; overflow: hidden; white-space: nowrap; display: inline-block; text-overflow: ellipsis; width: 100%; padding-right: 100px;">Name</p>
         <p style="font-size: 13px; position: absolute; left: 60px; top: 35px; overflow: hidden; white-space: nowrap; display: inline-block; text-overflow: ellipsis; width: 100%; padding-right: 100px;">Author</p>
         <i class="fa-solid fa-chevron-down" id="chevron1" onclick="book1close()" style="width: 50px; height: 60px; color: darkgrey; font-size: 17px; position: absolute; right: 0; top: 0; display: flex; justify-content: center; align-items: center;"></i>
-        <p style="font-size: 20px; position: absolute; left: 13px; top: 60px;"><i class="fa-solid fa-location-arrow" style="margin-right: 2px;"></i> ---</p>
-        <p style="font-size: 20px; position: absolute; left: 15px; top: 90px;"><i class="fa-regular fa-file" style="margin-right: 3px;"></i> ---</p>
-        <p style="font-size: 20px; position: absolute; left: 19px; top: 120px;"><i class="fa-solid fa-info" style="margin-right: 6px;"></i> ---</p>
-        <p style="font-size: 20px; position: absolute; left: 14px; top: 150px;"><i class="fa-solid fa-arrow-up-from-bracket" style="margin-right: 1px;"></i> ---</p>
+        <p style="font-size: 20px; position: absolute; left: 10px; top: 60px; display: flex; justify-content: flex-start; align-items: center;"><i class="fa-solid fa-location-arrow" style="width: 20px; height: 20px; display: flex; justify-content: center; align-items: center; margin-right: 5px;"></i> ---</p>
+        <p style="font-size: 20px; position: absolute; left: 10px; top: 90px; display: flex; justify-content: flex-start; align-items: center;"><i class="fa-regular fa-file" style="width: 20px; height: 20px; display: flex; justify-content: center; align-items: center; margin-right: 5px;"></i> ---</p>
+        <p style="font-size: 20px; position: absolute; left: 10px; top: 120px; display: flex; justify-content: flex-start; align-items: center;"><i class="fa-solid fa-info" style="width: 20px; height: 20px; display: flex; justify-content: center; align-items: center; margin-right: 5px;"></i> ---</p>
+        <p style="font-size: 20px; position: absolute; left: 10px; top: 150px; display: flex; justify-content: flex-start; align-items: center;"><i class="fa-solid fa-arrow-up-from-bracket" style="width: 20px; height: 20px; display: flex; justify-content: center; align-items: center; margin-right: 5px;"></i> ---</p>
     </div>
     <div class="black" id="black2" onclick="book2close()"></div>
     <div class="info" id="info2" style="top: 140px;">
@@ -195,10 +203,10 @@
         <p style="font-size: 20px; position: absolute; left: 60px; top: 10px; overflow: hidden; white-space: nowrap; display: inline-block; text-overflow: ellipsis; width: 100%; padding-right: 100px;">Name</p>
         <p style="font-size: 13px; position: absolute; left: 60px; top: 35px; overflow: hidden; white-space: nowrap; display: inline-block; text-overflow: ellipsis; width: 100%; padding-right: 100px;">Author</p>
         <i class="fa-solid fa-chevron-down" id="chevron2" onclick="book2close()" style="width: 50px; height: 60px; color: darkgrey; font-size: 17px; position: absolute; right: 0; top: 0; display: flex; justify-content: center; align-items: center;"></i>
-        <p style="font-size: 20px; position: absolute; left: 13px; top: 60px;"><i class="fa-solid fa-location-arrow" style="margin-right: 2px;"></i> ---</p>
-        <p style="font-size: 20px; position: absolute; left: 15px; top: 90px;"><i class="fa-regular fa-file" style="margin-right: 3px;"></i> ---</p>
-        <p style="font-size: 20px; position: absolute; left: 19px; top: 120px;"><i class="fa-solid fa-info" style="margin-right: 6px;"></i> ---</p>
-        <p style="font-size: 20px; position: absolute; left: 14px; top: 150px;"><i class="fa-solid fa-arrow-up-from-bracket" style="margin-right: 1px;"></i> ---</p>
+        <p style="font-size: 20px; position: absolute; left: 10px; top: 60px; display: flex; justify-content: flex-start; align-items: center;"><i class="fa-solid fa-location-arrow" style="width: 20px; height: 20px; display: flex; justify-content: center; align-items: center; margin-right: 5px;"></i> ---</p>
+        <p style="font-size: 20px; position: absolute; left: 10px; top: 90px; display: flex; justify-content: flex-start; align-items: center;"><i class="fa-regular fa-file" style="width: 20px; height: 20px; display: flex; justify-content: center; align-items: center; margin-right: 5px;"></i> ---</p>
+        <p style="font-size: 20px; position: absolute; left: 10px; top: 120px; display: flex; justify-content: flex-start; align-items: center;"><i class="fa-solid fa-info" style="width: 20px; height: 20px; display: flex; justify-content: center; align-items: center; margin-right: 5px;"></i> ---</p>
+        <p style="font-size: 20px; position: absolute; left: 10px; top: 150px; display: flex; justify-content: flex-start; align-items: center;"><i class="fa-solid fa-arrow-up-from-bracket" style="width: 20px; height: 20px; display: flex; justify-content: center; align-items: center; margin-right: 5px;"></i> ---</p>
     </div>
     <div class="black" id="black3" onclick="book3close()"></div>
     <div class="info" id="info3" style="top: 200px;">
@@ -206,17 +214,17 @@
         <p style="font-size: 20px; position: absolute; left: 60px; top: 10px; overflow: hidden; white-space: nowrap; display: inline-block; text-overflow: ellipsis; width: 100%; padding-right: 100px;">Name</p>
         <p style="font-size: 13px; position: absolute; left: 60px; top: 35px; overflow: hidden; white-space: nowrap; display: inline-block; text-overflow: ellipsis; width: 100%; padding-right: 100px;">Author</p>
         <i class="fa-solid fa-chevron-down" id="chevron3" onclick="book3close()" style="width: 50px; height: 60px; color: darkgrey; font-size: 17px; position: absolute; right: 0; top: 0; display: flex; justify-content: center; align-items: center;"></i>
-        <p style="font-size: 20px; position: absolute; left: 13px; top: 60px;"><i class="fa-solid fa-location-arrow" style="margin-right: 2px;"></i> ---</p>
-        <p style="font-size: 20px; position: absolute; left: 15px; top: 90px;"><i class="fa-regular fa-file" style="margin-right: 3px;"></i> ---</p>
-        <p style="font-size: 20px; position: absolute; left: 19px; top: 120px;"><i class="fa-solid fa-info" style="margin-right: 6px;"></i> ---</p>
-        <p style="font-size: 20px; position: absolute; left: 14px; top: 150px;"><i class="fa-solid fa-arrow-up-from-bracket" style="margin-right: 1px;"></i> ---</p>
+        <p style="font-size: 20px; position: absolute; left: 10px; top: 60px; display: flex; justify-content: flex-start; align-items: center;"><i class="fa-solid fa-location-arrow" style="width: 20px; height: 20px; display: flex; justify-content: center; align-items: center; margin-right: 5px;"></i> ---</p>
+        <p style="font-size: 20px; position: absolute; left: 10px; top: 90px; display: flex; justify-content: flex-start; align-items: center;"><i class="fa-regular fa-file" style="width: 20px; height: 20px; display: flex; justify-content: center; align-items: center; margin-right: 5px;"></i> ---</p>
+        <p style="font-size: 20px; position: absolute; left: 10px; top: 120px; display: flex; justify-content: flex-start; align-items: center;"><i class="fa-solid fa-info" style="width: 20px; height: 20px; display: flex; justify-content: center; align-items: center; margin-right: 5px;"></i> ---</p>
+        <p style="font-size: 20px; position: absolute; left: 10px; top: 150px; display: flex; justify-content: flex-start; align-items: center;"><i class="fa-solid fa-arrow-up-from-bracket" style="width: 20px; height: 20px; display: flex; justify-content: center; align-items: center; margin-right: 5px;"></i> ---</p>
     </div>
     <script src="https://kit.fontawesome.com/a11707644f.js" crossorigin="anonymous"></script>
     <script>
         window.onscroll = function() {scrollFunction()};
         function scrollFunction() {
             if (document.body.scrollTop > 5 || document.documentElement.scrollTop > 5) {
-                document.getElementById("header").style.backgroundColor = "rgb(250, 250, 250, 0.75)";
+                document.getElementById("header").style.backgroundColor = "rgba(250, 250, 250, 0.75)";
                 document.getElementById("header").style.boxShadow = "0 0 3px lightgrey";
                 document.getElementById("headerText1").style.marginTop = "15px";
                 document.getElementById("headerText2").style.top = "20px";
@@ -234,7 +242,7 @@
                 }, 300);
             }
             else {
-                document.getElementById("header").style.backgroundColor = "rgb(245, 245, 245, 0.75)";
+                document.getElementById("header").style.backgroundColor = "rgba(245, 245, 245, 0.75)";
                 document.getElementById("header").style.boxShadow = "none";
                 document.getElementById("headerText1").style.marginTop = "25px";
                 document.getElementById("headerText2").style.top = "30px";
@@ -251,6 +259,7 @@
         document.getElementById("blockClicks").style.display = "block";
         document.getElementById("blackSearch").style.display = "block";
         document.getElementById("searchBackground").style.display = "flex";
+        document.getElementById("search").style.display = "none";
         document.getElementById("complete").style.opacity = "0";
         document.getElementById("complete").style.pointerEvents = "none";
         document.getElementById("complete").style.bottom = "15px";
@@ -258,14 +267,33 @@
             document.getElementById("blackSearch").style.opacity = "0.1";
             document.getElementById("searchWindow").style.width = "95%";
         }, 10);
+        // setTimeout(() => {
+        //     document.getElementById("searchBtn2").style.opacity = "1";
+        //     document.getElementById("searchBtn2").style.pointerEvents = "all";
+        // }, 100);
+        // setTimeout(() => {
+        //     document.getElementById("searchBtn1").style.opacity = "1";
+        //     document.getElementById("searchBtn1").style.pointerEvents = "all";
+        // }, 200);
         setTimeout(() => {
-            document.getElementById("searchBtn2").style.opacity = "1";
-            document.getElementById("searchBtn2").style.pointerEvents = "all";
-        }, 100);
+            document.getElementById("blackSearch").style.opacity = "0.1";
+            document.getElementById("searchWindow").style.width = "95%";
+            document.getElementById("searchBackground").style.height = "110px";
+            document.getElementById("searchWindow").style.height = "110px";
+            document.getElementById("searchIcon").style.bottom = "25px";
+        }, 310);
         setTimeout(() => {
             document.getElementById("searchBtn1").style.opacity = "1";
             document.getElementById("searchBtn1").style.pointerEvents = "all";
-        }, 200);
+            document.getElementById("searchBtn2").style.opacity = "1";
+            document.getElementById("searchBtn2").style.pointerEvents = "all";
+        }, 410);
+        setTimeout(() => {
+            document.getElementById("searchBtn3").style.opacity = "1";
+            document.getElementById("searchBtn3").style.pointerEvents = "all";
+            document.getElementById("searchBtn4").style.opacity = "1";
+            document.getElementById("searchBtn4").style.pointerEvents = "all";
+        }, 510);
         setTimeout(() => {
             document.getElementById("blackSearch").style.pointerEvents = "all";
         }, 500);
@@ -277,18 +305,28 @@
         document.getElementById("searchBtn1").style.pointerEvents = "none";
         document.getElementById("searchBtn2").style.opacity = "0";
         document.getElementById("searchBtn2").style.pointerEvents = "none";
+        document.getElementById("searchBtn3").style.opacity = "0";
+        document.getElementById("searchBtn3").style.pointerEvents = "none";
+        document.getElementById("searchBtn4").style.opacity = "0";
+        document.getElementById("searchBtn4").style.pointerEvents = "none";
         document.getElementById("complete").style.opacity = "1";
         document.getElementById("complete").style.pointerEvents = "all";
         document.getElementById("complete").style.bottom = "90px";
         setTimeout(() => {
-            document.getElementById("searchWindow").style.width = "60px";
+            document.getElementById("searchBackground").style.height = "60px";
+            document.getElementById("searchWindow").style.height = "60px";
+            document.getElementById("searchIcon").style.bottom = "0";
         }, 150);
+        setTimeout(() => {
+            document.getElementById("searchWindow").style.width = "60px";
+        }, 450);
         setTimeout(() => {
             document.getElementById("blackSearch").style.display = "none";
             document.getElementById("searchBackground").style.display = "none";
+            document.getElementById("search").style.display = "flex";
             document.getElementById("blockClicks").style.display = "none";
             document.getElementById("body").style.overflow = "scroll";
-        }, 450);
+        }, 750);
     }
     function searchByAlphabet() {
         document.getElementById("blackSearch").style.pointerEvents = "none";
@@ -296,10 +334,16 @@
         document.getElementById("searchBtn1").style.pointerEvents = "none";
         document.getElementById("searchBtn2").style.opacity = "0";
         document.getElementById("searchBtn2").style.pointerEvents = "none";
+        document.getElementById("searchBtn3").style.opacity = "0";
+        document.getElementById("searchBtn3").style.pointerEvents = "none";
+        document.getElementById("searchBtn4").style.opacity = "0";
+        document.getElementById("searchBtn4").style.pointerEvents = "none";
         document.getElementById("searchIcon").style.opacity = "0";
         setTimeout(() => {
             document.getElementById("searchBtn1").style.display = "none";
             document.getElementById("searchBtn2").style.display = "none";
+            document.getElementById("searchBtn3").style.display = "none";
+            document.getElementById("searchBtn4").style.display = "none";
             document.getElementById("searchIcon").style.display = "none";
             document.getElementById("searchBackground").style.height = "350px";
             document.getElementById("searchWindow").style.height = "350px";
@@ -347,6 +391,7 @@
         document.getElementById("paieska5").style.opacity = "0";
         document.getElementById("searchAlphabetText").style.opacity = "0";
         document.getElementById("searchIcon").style.display = "flex";
+        document.getElementById("searchIcon").style.bottom = "0";
         setTimeout(() => {
             document.getElementById("searchWindow").style.height = "60px";
             document.getElementById("searchBackground").style.height = "60px";
@@ -381,6 +426,9 @@
             document.getElementById("body").style.overflow = "scroll";
             document.getElementById("searchBtn1").style.display = "block";
             document.getElementById("searchBtn2").style.display = "block";
+            document.getElementById("searchBtn3").style.display = "block";
+            document.getElementById("searchBtn4").style.display = "block";
+            document.getElementById("search").style.display = "flex";
         }, 750);
     }
     function book1open() {

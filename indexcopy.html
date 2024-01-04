@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="lt">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book library</title>
+    <title>Knygų biblioteka</title>
     <link rel="shortcut icon" type="image/jpg" href="favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +21,6 @@
             margin: 0;
             padding: 0;
             font-weight: 400;
-            /* color: #1e3d7b; */
         }
         ::-webkit-scrollbar {
             width: 0;
@@ -124,19 +122,19 @@
             display: inline-block; 
             text-overflow: ellipsis; 
             width: 100%; 
-            padding-right: 100px;
+            padding-right: 105px;
         }
         .autorius{
             font-size: 13px; 
             position: absolute; 
             left: 60px; 
-            top: 33px; 
+            top: 34px; 
             overflow: hidden; 
             white-space: nowrap; 
             display: inline-block; 
             text-overflow: ellipsis; 
             width: 100%; 
-            padding-right: 100px;
+            padding-right: 105px;
         }
         .chevron{
             width: 30px; 
@@ -171,7 +169,7 @@
             font-size: 13px; 
             position: absolute; 
             left: 60px; 
-            top: 33px; 
+            top: 34px; 
             overflow: hidden; 
             white-space: nowrap; 
             display: inline-block; 
@@ -327,6 +325,321 @@
         <p class="autorius">Francisco Arredondo, Lidia Di Blasi, Juan Xarrié, José M.a Rueda</p>
         <i onclick="book5open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
     </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+        <p class="pavadinimas">25+1 Kalėdų istorijos</p>
+        <p class="autorius">Bruno Ferrero</p>
+        <i onclick="book6open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+        <p class="pavadinimas">500 klausimų ir atsakymų - enciklopedija vaikams</p>
+        <p class="autorius">Asta Bieliauskaitė, Evelina Juodagalvė, Eglė Jurėvičiūtė, Laura Klyvienė, Jovita Martišiūtė, Meda Piečytė, Viktorija Poderskytė, Kristina Rimkutė, Raimonda Šukaitė, Rūta Vyžintaitė</p>
+        <i onclick="book7open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: darkorange; display: flex;"></i>
+        <p class="pavadinimas">Akordeono pradžiamokslis</p>
+        <p class="autorius">V. Burinskas</p>
+        <i onclick="book8open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+        <p class="pavadinimas">Akvariumo ABC</p>
+        <p class="autorius">Algis Bubinas</p>
+        <i onclick="book9open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+        <p class="pavadinimas">Akvariumo istorijos - Lilė ir melo pinklės</p>
+        <p class="autorius">Rimas Valeikis</p>
+        <i onclick="book10open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+        <p class="pavadinimas">Angelų pasakos</p>
+        <p class="autorius">Vytautas V. Landsbergis</p>
+        <i onclick="book11open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+        <p class="pavadinimas">Anglų kalbos gramatika</p>
+        <p class="autorius">Autorių kolektyvas</p>
+        <i onclick="book12open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+        <p class="pavadinimas">Aplink žemę per 80 dienų</p>
+        <p class="autorius">Jules Verne</p>
+        <i onclick="book13open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+        <p class="pavadinimas">Aš esu Kosmas</p>
+        <p class="autorius">Carlie Sorosiak</p>
+        <i onclick="book14open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+        <p class="pavadinimas">Auksinis kalnas</p>
+        <p class="autorius">Autorių kolektyvas</p>
+        <i onclick="book15open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+        <p class="pavadinimas">Balta skrybėlaitė</p>
+        <p class="autorius">Ona Jautakė</p>
+        <i onclick="book16open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+        <p class="pavadinimas">Baltasis liūtas</p>
+        <p class="autorius">Michael Morpugo</p>
+        <i onclick="book17open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+        <p class="pavadinimas">Be šeimos</p>
+        <p class="autorius">Hector Malot</p>
+        <i onclick="book18open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+        <p class="pavadinimas">Berniukams apie tai</p>
+        <p class="autorius">Lizzie Cox</p>
+        <i onclick="book19open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+        <p class="pavadinimas">Berniukas su žvaigžde kojinėje</p>
+        <p class="autorius">Dee White</p>
+        <i onclick="book20open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+        <p class="pavadinimas">(Beveik) paauglio berniuko knyga (kone) apie viską</p>
+        <p class="autorius">Sharie Coombes</p>
+        <i onclick="book21open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+        <p class="pavadinimas">Biblija vaikams</p>
+        <p class="autorius">Autorių kolektyvas</p>
+        <i onclick="book22open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+        <p class="pavadinimas">Bidstrup</p>
+        <p class="autorius">H. Bidstrupas</p>
+        <i onclick="book23open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+        <p class="pavadinimas">Bolekas ir Liolekas - Pasaulio atlasas</p>
+        <p class="autorius">Ewa Miedzinka</p>
+        <i onclick="book24open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+        <p class="pavadinimas">Boltas</p>
+        <p class="autorius">Disney Enterprises</p>
+        <i onclick="book25open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+        <p class="pavadinimas">Bumba Dumba Kabančių riestainių gatvėje</p>
+        <p class="autorius">Tomas S. Butkus</p>
+        <i onclick="book26open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+        <p class="pavadinimas">CanonOne magazine</p>
+        <p class="autorius">Canon Europa</p>
+        <i onclick="book27open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+        <p class="pavadinimas">Civilizacijų aušra</p>
+        <p class="autorius">Autorių kolektyvas</p>
+        <i onclick="book28open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+        <p class="pavadinimas">Čyru vyru</p>
+        <p class="autorius">Eduardas Miezelaitis</p>
+        <i onclick="book29open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+        <p class="pavadinimas">Didžioji gyvūnų kolekcija</p>
+        <p class="autorius">Aldona Stepanavičiūtė</p>
+        <i onclick="book30open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+        <p class="pavadinimas">Didžioji rusų pasakų ir bylinų knyga</p>
+        <p class="autorius">I. Karnauchova</p>
+        <i onclick="book31open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+        <p class="pavadinimas">Dienoraštis iš bunkerio</p>
+        <p class="autorius">Kevin Brooks</p>
+        <i onclick="book32open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+        <p class="pavadinimas">Džiugioji Velykų žinia</p>
+        <p class="autorius">Angela M. Burrin</p>
+        <i onclick="book33open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+        <p class="pavadinimas">Emilis ir jo žvalgai</p>
+        <p class="autorius">Ėrichas Kestneris</p>
+        <i onclick="book34open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+        <p class="pavadinimas">Findusas išsikrausto</p>
+        <p class="autorius">Sven Nordqvist</p>
+        <i onclick="book35open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+        <p class="pavadinimas">Frenkis Fišas ir garsinis lagaminas</p>
+        <p class="autorius">Peter Helliar</p>
+        <i onclick="book36open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+        <p class="pavadinimas">Galvosūkių pasaulis</p>
+        <p class="autorius">K. Klimavičius</p>
+        <i onclick="book37open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+        <p class="pavadinimas">Geriausias pasaulyje tėvelis</p>
+        <p class="autorius">Eleni Zabini ir Susanne Lütje</p>
+        <i onclick="book38open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+        <p class="pavadinimas">Gilės nuotykiai ydų šalyje</p>
+        <p class="autorius">Vytautas Petkevičius</p>
+        <i onclick="book39open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+        <p class="pavadinimas">Gražiausios Brolių Grimų pasakos</p>
+        <p class="autorius">Autorių kolektyvas</p>
+        <i onclick="book40open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+        <p class="pavadinimas">Gražiausios mano vaikystės pasakos</p>
+        <p class="autorius">Kristīne Skrīvele</p>
+        <i onclick="book41open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+        <p class="pavadinimas">Gražiausios Rytų šalių pasakos</p>
+        <p class="autorius">Autorių kolektyvas</p>
+        <i onclick="book42open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+        <p class="pavadinimas">Grybų karas</p>
+        <p class="autorius">Justinas Marcinkevičius</p>
+        <i onclick="book43open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+        <p class="pavadinimas">Gudrių atsakymų knyga - technika</p>
+        <p class="autorius">Rainer Kothe</p>
+        <i onclick="book44open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+        <p class="pavadinimas">Gulbė karaliaus pati</p>
+        <p class="autorius">Aldona Liobytė</p>
+        <i onclick="book45open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+        <p class="pavadinimas">Guro</p>
+        <p class="autorius">Anė Katrinė Vestli</p>
+        <i onclick="book46open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+        <p class="pavadinimas">Haris Poteris ir išminties akmuo</p>
+        <p class="autorius">J. K. Rowling</p>
+        <i onclick="book47open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+        <p class="pavadinimas">Haris Poteris ir paslapčių kambarys</p>
+        <p class="autorius">J. K. Rowling</p>
+        <i onclick="book48open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+        <p class="pavadinimas">I was born for this</p>
+        <p class="autorius">Alice Oseman</p>
+        <i onclick="book49open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
+    <div class="hrDiv"><hr></div>
+    <div class="book">
+        <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+        <p class="pavadinimas">Interneto gidas</p>
+        <p class="autorius">Autorių kolektyvas</p>
+        <i onclick="book50open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
+    </div>
 
 
 
@@ -384,6 +697,501 @@
         <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>508</p>
         <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
         <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Trys nykštukai</p>
+    </div>
+    <div class="knyga" id="knyga6">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+            <p class="pavadinimas2">25+1 Kalėdų istorijos</p>
+            <p class="autorius2">Bruno Ferrero</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti viršuje gale</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>80</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Katalikų pasaulio leidiniai</p>
+    </div>
+    <div class="knyga" id="knyga7">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+            <p class="pavadinimas2">500 klausimų ir atsakymų - enciklopedija vaikams</p>
+            <p class="autorius2">Asta Bieliauskaitė, Evelina Juodagalvė, Eglė Jurėvičiūtė, Laura Klyvienė, Jovita Martišiūtė, Meda Piečytė, Viktorija Poderskytė, Kristina Rimkutė, Raimonda Šukaitė, Rūta Vyžintaitė</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti apačioje priekyje</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>208</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Debesų ganyklos</p>
+    </div>
+    <div class="knyga" id="knyga8">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: darkorange; display: flex;"></i>
+            <p class="pavadinimas2">Akordeono pradžiamokslis</p>
+            <p class="autorius2">V. Burinskas</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti apačioje gale</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>183</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Vaga</p>
+    </div>
+    <div class="knyga" id="knyga9">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+            <p class="pavadinimas2">Akvariumo ABC</p>
+            <p class="autorius2">Algis Bubinas</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti apačioje gale</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>130</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Mokslas</p>
+    </div>
+    <div class="knyga" id="knyga10">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+            <p class="pavadinimas2">Akvariumo istorijos - Lilė ir melo pinklės</p>
+            <p class="autorius2">Rimas Valeikis</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti apačioje priekyje</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>40</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Baltic RED</p>
+    </div>
+    <div class="knyga" id="knyga11">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+            <p class="pavadinimas2">Angelų pasakos</p>
+            <p class="autorius2">Vytautas V. Landsbergis</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti viršuje gale</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>162</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Dominicus Lituanus</p>
+    </div>
+    <div class="knyga" id="knyga12">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+            <p class="pavadinimas2">Anglų kalbos gramatika</p>
+            <p class="autorius2">Autorių kolektyvas</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti apačioje gale</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>370</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Mokslo ir enciklopedijų leidybos institutas</p>
+    </div>
+    <div class="knyga" id="knyga13">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+            <p class="pavadinimas2">Aplink žemę per 80 dienų</p>
+            <p class="autorius2">Jules Verne</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti apačioje priekyje</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>248</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Nieko rimto</p>
+    </div>
+    <div class="knyga" id="knyga14">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+            <p class="pavadinimas2">Aš esu Kosmas</p>
+            <p class="autorius2">Carlie Sorosiak</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti viršuje priekyje</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>288</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Alma littera</p>
+    </div>
+    <div class="knyga" id="knyga15">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+            <p class="pavadinimas2">Auksinis kalnas</p>
+            <p class="autorius2">Autorių kolektyvas</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti apačioje gale</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>378</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Vaga</p>
+    </div>
+    <div class="knyga" id="knyga16">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+            <p class="pavadinimas2">Balta skrybėlaitė</p>
+            <p class="autorius2">Ona Jautakė</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti viršuje gale</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>64</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Kauko laiptai</p>
+    </div>
+    <div class="knyga" id="knyga17">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+            <p class="pavadinimas2">Baltasis liūtas</p>
+            <p class="autorius2">Michael Morpugo</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti viršuje gale</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>144</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Alma littera</p>
+    </div>
+    <div class="knyga" id="knyga18">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+            <p class="pavadinimas2">Be šeimos</p>
+            <p class="autorius2">Hector Malot</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti viršuje gale</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>464</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Alma littera</p>
+    </div>
+    <div class="knyga" id="knyga19">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+            <p class="pavadinimas2">Berniukams apie tai</p>
+            <p class="autorius2">Lizzie Cox</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti viršuje priekyje</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>64</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Alma littera</p>
+    </div>
+    <div class="knyga" id="knyga20">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+            <p class="pavadinimas2">Berniukas su žvaigžde kojinėje</p>
+            <p class="autorius2">Dee White</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti viršuje priekyje</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>248</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Alma littera</p>
+    </div>
+    <div class="knyga" id="knyga21">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+            <p class="pavadinimas2">(Beveik) paauglio berniuko knyga (kone) apie viską</p>
+            <p class="autorius2">Sharie Coombes</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti apačioje priekyje</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>72</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Vaiga</p>
+    </div>
+    <div class="knyga" id="knyga22">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+            <p class="pavadinimas2">Biblija vaikams</p>
+            <p class="autorius2">Autorių kolektyvas</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti apačioje gale</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>536</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Lietuvos Biblijos draugija</p>
+    </div>
+    <div class="knyga" id="knyga23">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
+            <p class="pavadinimas2">Bidstrup</p>
+            <p class="autorius2">H. Bidstrupas</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti apačioje gale</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>---</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>LTSR žurnalistų sąjunga</p>
+    </div>
+    <div class="knyga" id="knyga24">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+            <p class="pavadinimas2">Bolekas ir Liolekas - Pasaulio atlasas</p>
+            <p class="autorius2">Ewa Miedzinka</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti apačioje priekyje</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>49</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Mūsų knyga</p>
+    </div>
+    <div class="knyga" id="knyga25">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+            <p class="pavadinimas2">Boltas</p>
+            <p class="autorius2">Disney Enterprises</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti viršuje gale</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>32</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Egmont</p>
+    </div>
+    <div class="knyga" id="knyga26">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+            <p class="pavadinimas2">Akvariumo istorijos - Lilė ir melo pinklės</p>
+            <p class="autorius2">Rimas Valeikis</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti apačioje priekyje</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>40</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Baltic RED</p>
+    </div>
+    <div class="knyga" id="knyga27">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+            <p class="pavadinimas2">Akvariumo istorijos - Lilė ir melo pinklės</p>
+            <p class="autorius2">Rimas Valeikis</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti apačioje priekyje</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>40</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Baltic RED</p>
+    </div>
+    <div class="knyga" id="knyga28">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+            <p class="pavadinimas2">Akvariumo istorijos - Lilė ir melo pinklės</p>
+            <p class="autorius2">Rimas Valeikis</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti apačioje priekyje</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>40</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Baltic RED</p>
+    </div>
+    <div class="knyga" id="knyga29">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+            <p class="pavadinimas2">Akvariumo istorijos - Lilė ir melo pinklės</p>
+            <p class="autorius2">Rimas Valeikis</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti apačioje priekyje</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>40</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Baltic RED</p>
+    </div>
+    <div class="knyga" id="knyga30">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+            <p class="pavadinimas2">Akvariumo istorijos - Lilė ir melo pinklės</p>
+            <p class="autorius2">Rimas Valeikis</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti apačioje priekyje</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>40</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Baltic RED</p>
+    </div>
+    <div class="knyga" id="knyga31">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+            <p class="pavadinimas2">Akvariumo istorijos - Lilė ir melo pinklės</p>
+            <p class="autorius2">Rimas Valeikis</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti apačioje priekyje</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>40</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Baltic RED</p>
+    </div>
+    <div class="knyga" id="knyga32">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+            <p class="pavadinimas2">Akvariumo istorijos - Lilė ir melo pinklės</p>
+            <p class="autorius2">Rimas Valeikis</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti apačioje priekyje</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>40</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Baltic RED</p>
+    </div>
+    <div class="knyga" id="knyga33">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+            <p class="pavadinimas2">Akvariumo istorijos - Lilė ir melo pinklės</p>
+            <p class="autorius2">Rimas Valeikis</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti apačioje priekyje</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>40</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Baltic RED</p>
+    </div>
+    <div class="knyga" id="knyga34">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+            <p class="pavadinimas2">Akvariumo istorijos - Lilė ir melo pinklės</p>
+            <p class="autorius2">Rimas Valeikis</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti apačioje priekyje</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>40</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Baltic RED</p>
+    </div>
+    <div class="knyga" id="knyga35">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+            <p class="pavadinimas2">Akvariumo istorijos - Lilė ir melo pinklės</p>
+            <p class="autorius2">Rimas Valeikis</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti apačioje priekyje</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>40</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Baltic RED</p>
+    </div>
+    <div class="knyga" id="knyga36">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+            <p class="pavadinimas2">Akvariumo istorijos - Lilė ir melo pinklės</p>
+            <p class="autorius2">Rimas Valeikis</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti apačioje priekyje</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>40</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Baltic RED</p>
+    </div>
+    <div class="knyga" id="knyga37">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+            <p class="pavadinimas2">Akvariumo istorijos - Lilė ir melo pinklės</p>
+            <p class="autorius2">Rimas Valeikis</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti apačioje priekyje</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>40</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Baltic RED</p>
+    </div>
+    <div class="knyga" id="knyga38">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+            <p class="pavadinimas2">Akvariumo istorijos - Lilė ir melo pinklės</p>
+            <p class="autorius2">Rimas Valeikis</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti apačioje priekyje</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>40</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Baltic RED</p>
+    </div>
+    <div class="knyga" id="knyga39">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+            <p class="pavadinimas2">Akvariumo istorijos - Lilė ir melo pinklės</p>
+            <p class="autorius2">Rimas Valeikis</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti apačioje priekyje</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>40</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Baltic RED</p>
+    </div>
+    <div class="knyga" id="knyga40">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+            <p class="pavadinimas2">Akvariumo istorijos - Lilė ir melo pinklės</p>
+            <p class="autorius2">Rimas Valeikis</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti apačioje priekyje</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>40</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Baltic RED</p>
+    </div>
+    <div class="knyga" id="knyga41">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+            <p class="pavadinimas2">Akvariumo istorijos - Lilė ir melo pinklės</p>
+            <p class="autorius2">Rimas Valeikis</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti apačioje priekyje</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>40</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Baltic RED</p>
+    </div>
+    <div class="knyga" id="knyga42">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+            <p class="pavadinimas2">Akvariumo istorijos - Lilė ir melo pinklės</p>
+            <p class="autorius2">Rimas Valeikis</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti apačioje priekyje</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>40</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Baltic RED</p>
+    </div>
+    <div class="knyga" id="knyga43">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+            <p class="pavadinimas2">Akvariumo istorijos - Lilė ir melo pinklės</p>
+            <p class="autorius2">Rimas Valeikis</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti apačioje priekyje</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>40</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Baltic RED</p>
+    </div>
+    <div class="knyga" id="knyga44">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+            <p class="pavadinimas2">Akvariumo istorijos - Lilė ir melo pinklės</p>
+            <p class="autorius2">Rimas Valeikis</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti apačioje priekyje</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>40</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Baltic RED</p>
+    </div>
+    <div class="knyga" id="knyga45">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+            <p class="pavadinimas2">Akvariumo istorijos - Lilė ir melo pinklės</p>
+            <p class="autorius2">Rimas Valeikis</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti apačioje priekyje</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>40</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Baltic RED</p>
+    </div>
+    <div class="knyga" id="knyga46">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+            <p class="pavadinimas2">Akvariumo istorijos - Lilė ir melo pinklės</p>
+            <p class="autorius2">Rimas Valeikis</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti apačioje priekyje</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>40</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Baltic RED</p>
+    </div>
+    <div class="knyga" id="knyga47">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+            <p class="pavadinimas2">Akvariumo istorijos - Lilė ir melo pinklės</p>
+            <p class="autorius2">Rimas Valeikis</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti apačioje priekyje</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>40</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Baltic RED</p>
+    </div>
+    <div class="knyga" id="knyga48">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+            <p class="pavadinimas2">Akvariumo istorijos - Lilė ir melo pinklės</p>
+            <p class="autorius2">Rimas Valeikis</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti apačioje priekyje</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>40</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Baltic RED</p>
+    </div>
+    <div class="knyga" id="knyga49">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+            <p class="pavadinimas2">Akvariumo istorijos - Lilė ir melo pinklės</p>
+            <p class="autorius2">Rimas Valeikis</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti apačioje priekyje</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>40</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Baltic RED</p>
+    </div>
+    <div class="knyga" id="knyga50">
+        <div class="book" style="background-color: transparent;">
+            <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
+            <p class="pavadinimas2">Akvariumo istorijos - Lilė ir melo pinklės</p>
+            <p class="autorius2">Rimas Valeikis</p>
+        </div>
+        <i class="fa-solid fa-location-arrow i1" style="display: flex;"></i><p class="p1"><span class="bookSpan">Vieta</span>ieškoti apačioje priekyje</p>
+        <i class="fa-regular fa-file i2" style="display: flex;"></i><p class="p2"><span class="bookSpan">Puslapiai</span>40</p>
+        <i class="fa-solid fa-info i3" style="display: flex;"></i><p class="p3"><span class="bookSpan">Informacija</span>neparduodama</p>
+        <i class="fa-solid fa-arrow-up-from-bracket i4" style="display: flex;"></i><p class="p4"><span class="bookSpan">Leidėjas</span>Baltic RED</p>
     </div>
 
     <div style="width: 10px; height: 1000px; border: 1px solid red; margin-left: 15px; margin-top: 15px;"></div>
@@ -466,15 +1274,599 @@
                 document.getElementById("black").style.pointerEvents = "all";
             }, 310);
         }
+        function book6open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga6").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book7open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga7").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book8open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga8").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book9open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga9").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book10open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga10").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book11open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga11").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book12open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga12").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book13open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga13").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book14open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga14").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book15open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga15").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book16open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga16").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book17open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga17").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book18open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga18").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book19open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga19").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book20open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga20").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book21open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga21").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book11open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga11").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book11open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga11").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book22open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga22").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book11open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga11").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book23open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga23").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book24open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga24").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book25open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga25").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book26open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga26").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book27open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga27").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book28open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga28").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book29open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga29").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book30open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga30").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book31open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga31").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book32open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga32").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book33open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga33").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book34open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga34").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book35open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga35").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book36open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga36").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book37open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga37").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book38open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga38").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book39open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga39").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book40open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga40").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book11open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga11").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book41open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga41").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book42open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga42").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book43open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga43").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book44open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga44").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book45open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga45").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book46open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga11").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book47open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga11").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book48open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga11").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book49open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga11").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
+        function book50open() {
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("black").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("black").style.opacity = "1";
+                document.getElementById("knyga11").style.bottom = "0";
+            }, 10);
+            setTimeout(() => {
+                document.getElementById("black").style.pointerEvents = "all";
+            }, 310);
+        }
         function closeBooks() {
             document.getElementById("black").style.pointerEvents = "none";
             setTimeout(() => {
                 document.getElementById("black").style.opacity = "0";
-                document.getElementById("knyga1").style.bottom = "-200%";
-                document.getElementById("knyga2").style.bottom = "-200%";
-                document.getElementById("knyga3").style.bottom = "-200%";
-                document.getElementById("knyga4").style.bottom = "-200%";
-                document.getElementById("knyga5").style.bottom = "-200%";
+                document.getElementById("knyga1").style.bottom = "-100%";
+                document.getElementById("knyga2").style.bottom = "-100%";
+                document.getElementById("knyga3").style.bottom = "-100%";
+                document.getElementById("knyga4").style.bottom = "-100%";
+                document.getElementById("knyga5").style.bottom = "-100%";
+                document.getElementById("knyga6").style.bottom = "-100%";
+                document.getElementById("knyga7").style.bottom = "-100%";
+                document.getElementById("knyga8").style.bottom = "-100%";
+                document.getElementById("knyga9").style.bottom = "-100%";
+                document.getElementById("knyga10").style.bottom = "-100%";
+                document.getElementById("knyga11").style.bottom = "-100%";
+                document.getElementById("knyga12").style.bottom = "-100%";
+                document.getElementById("knyga13").style.bottom = "-100%";
+                document.getElementById("knyga14").style.bottom = "-100%";
+                document.getElementById("knyga15").style.bottom = "-100%";
+                document.getElementById("knyga16").style.bottom = "-100%";
+                document.getElementById("knyga17").style.bottom = "-100%";
+                document.getElementById("knyga18").style.bottom = "-100%";
+                document.getElementById("knyga19").style.bottom = "-100%";
+                document.getElementById("knyga20").style.bottom = "-100%";
+                document.getElementById("knyga21").style.bottom = "-100%";
+                document.getElementById("knyga22").style.bottom = "-100%";
+                document.getElementById("knyga23").style.bottom = "-100%";
+                document.getElementById("knyga24").style.bottom = "-100%";
+                document.getElementById("knyga25").style.bottom = "-100%";
+                document.getElementById("knyga26").style.bottom = "-100%";
+                document.getElementById("knyga27").style.bottom = "-100%";
+                document.getElementById("knyga28").style.bottom = "-100%";
+                document.getElementById("knyga29").style.bottom = "-100%";
+                document.getElementById("knyga30").style.bottom = "-100%";
+                document.getElementById("knyga31").style.bottom = "-100%";
+                document.getElementById("knyga32").style.bottom = "-100%";
+                document.getElementById("knyga33").style.bottom = "-100%";
+                document.getElementById("knyga34").style.bottom = "-100%";
+                document.getElementById("knyga35").style.bottom = "-100%";
+                document.getElementById("knyga36").style.bottom = "-100%";
+                document.getElementById("knyga37").style.bottom = "-100%";
+                document.getElementById("knyga38").style.bottom = "-100%";
+                document.getElementById("knyga39").style.bottom = "-100%";
+                document.getElementById("knyga40").style.bottom = "-100%";
+                document.getElementById("knyga41").style.bottom = "-100%";
+                document.getElementById("knyga42").style.bottom = "-100%";
+                document.getElementById("knyga43").style.bottom = "-100%";
+                document.getElementById("knyga44").style.bottom = "-100%";
+                document.getElementById("knyga45").style.bottom = "-100%";
+                document.getElementById("knyga46").style.bottom = "-100%";
+                document.getElementById("knyga47").style.bottom = "-100%";
+                document.getElementById("knyga48").style.bottom = "-100%";
+                document.getElementById("knyga49").style.bottom = "-100%";
+                document.getElementById("knyga50").style.bottom = "-100%";
             }, 10);
             setTimeout(() => {
                 document.getElementById("black").style.display = "none";

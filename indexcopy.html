@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
 </head>
-<body id="body">
+<body onload="loadFunction()" id="body">
     <style>
         * {
             margin: 0;
@@ -32,10 +32,126 @@
         body{
             background-color: rgb(245, 245, 245);
             padding-bottom: 15px;
+            padding-top: 120px;
         }
         a{
             color: black;
             text-decoration: none;
+            pointer-events: none;
+        }
+        .hidden{
+            display: none;
+        }
+        #loading{
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            background-color: rgb(245, 245, 245);
+        }
+        #createdByMatas{
+            position: absolute;
+            bottom: 30px;
+            opacity: 0;
+            color: black;
+            text-align: center;
+        }
+        .spin-loader{
+	        border-radius: 80%;
+	        display: block;
+	        height: 50px;
+	        width: 50px;
+	        position: relative;
+	        animation: spin 0.65s linear 0s infinite normal;
+	        background: lightgrey;
+        }
+        .spin-loader:before, .spin-loader:after{
+	        content: "";
+	        display: block;
+	        position: absolute;
+        }
+        .spin-loader:before{
+	        border-radius: 0 90px 90px 0;
+	        height: 50px;
+	        width: 50%;
+	        top: 0;
+	        right: 0;
+	        z-index: 1;
+	        background: black;
+	        background-image: linear-gradient(lightgrey, black);
+        }
+        .spin-loader:after{
+	        border-radius: 80%;
+	        height: 40px;
+	        width: 40px;
+	        top: 50%;
+	        left: 50%;
+	        transform: translate(-50%, -50%);
+	        z-index: 1;
+	        background: rgb(245, 245, 245);
+        }
+        #screenSize{
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 90;
+            background-color: rgb(245, 245, 245);
+        }
+        #screenSizeTekstas1{
+            font-size: 25px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: black;
+        }
+        #screenSizeTekstas2{
+            font-size: 17px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: black;
+        }
+        #sizeDiv{
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #phoneIcon{
+            font-size: 70px;
+            position: absolute;
+            color: black;
+        }
+        #xIcon{
+            font-size: 30px;
+            color: red;
+            background-color: rgb(245, 245, 245);
+            border-radius: 100%;
+            margin-top: 60px;
+            z-index: 2;
+            margin-left: 45px;
+        }
+        @keyframes spin {
+            0%{
+                transform: rotate(0);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
         }
         #header{
             width: 100%;
@@ -157,6 +273,10 @@
         }
         .chevron:active{
             opacity: 0.2;
+        }
+        #bookCount{
+            text-align: center;
+            margin-top: 15px;
         }
         .pavadinimas2{
             font-size: 20px; 
@@ -287,7 +407,31 @@
             border-top: 0.5px solid lightgrey; 
             width: 100%;
         }
+        @media only screen and (max-width: 750px){
+            #screenSize{
+                display: none;
+            }
+        }
+        #myUL {
+  /* Remove default list styling */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
     </style>
+
+    <div id="loading">
+        <div class="spin-loader" aria-hidden="true"></div>
+        <p id="createdByMatas"><span id="raide1">C</span><span id="raide2">r</span><span id="raide3">e</span><span id="raide4">a</span><span id="raide5">t</span><span id="raide6">e</span><span id="raide7">d</span> <span id="raide8">b</span><span id="raide9">y</span> <span id="raide10">M</span><span id="raide11">a</span><span id="raide12">t</span><span id="raide13">a</span><span id="raide14">s</span></p>
+    </div>
+    <div id="screenSize">
+        <p id="screenSizeTekstas1">Ekranas per didelis</p>
+        <p id="screenSizeTekstas2">Tinklalapis pritaikytas telefonui</p>
+        <div id="sizeDiv">
+            <i class="fa-solid fa-mobile-screen-button" id="phoneIcon"></i>
+            <i class="fa-regular fa-circle-xmark" id="xIcon"></i>
+        </div>
+    </div>
 
     <div id="header">
         <h1 id="headerText1">Knygų biblioteka</h1>
@@ -295,356 +439,407 @@
     </div>
 
     <div id="black" onclick="closeBooks()"></div>
-
-    <div class="book" id="book1" style="margin-top: 120px; border-radius: 15px 15px 0 0;">
+    <input type="text" id="myInput" style="position: fixed; bottom: 5px; right: 5px; z-index: 10; padding: 5px;" onkeyup="myFunction()" placeholder="Ieškoti knygų... (laikinai)">
+    <ul id="myUL">
+    <li class="book" id="book1" style="border-radius: 15px 15px 0 0;">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
         <p class="pavadinimas">100 dalykų lietingai dienai - ką veikti, kai nėra ko veikti</p>
         <p class="autorius">Emil Hoffmann</p>
-        <i onclick="book1open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book1open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">100 dalykų lietingai dienai - ką veikti, kai nėra ko veikti   Emil Hoffmann   viršuje gale   224   neparduodama   Vaiga</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: darkorange; display: flex;"></i>
         <p class="pavadinimas">100 dalykų, kuriuos reikia žinoti kiekvienam berniukui</p>
         <p class="autorius">Emil Hoffmann</p>
-        <i onclick="book2open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book2open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">100 dalykų, kuriuos reikia žinoti kiekvienam berniukui   Emil Hoffmann   apačioje priekyje   224   neparduodama   Vaiga</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: darkorange; display: flex;"></i>
         <p class="pavadinimas">1000 dalykų, kuriuos turėtum žinoti</p>
         <p class="autorius">Danguolė Kandrotienė</p>
-        <i onclick="book3open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book3open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">1000 dalykų, kuriuos turėtum žinoti   Danguolė Kandrotienė   apačioje priekyje   224   neparduodama   Debesų ganyklos</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
         <p class="pavadinimas">1000 klausimų ir atsakymų - Lietuvos tūkstantmečio vaikai</p>
         <p class="autorius">Danguolė Kandrotienė, Julija Matulaitė, Dalia Ramančauskaitė, Roma Blėkienė</p>
-        <i onclick="book4open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book4open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">1000 klausimų ir atsakymų - Lietuvos tūkstantmečio vaikai   Danguolė Kandrotienė, Julija Matulaitė, Dalia Ramančauskaitė, Roma Blėkienė   apačioje priekyje   216   neparduodama   Debesų ganyklos</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
         <p class="pavadinimas">1000 klausimų ir atsakymų apie gyvūnus</p>
         <p class="autorius">Francisco Arredondo, Lidia Di Blasi, Juan Xarrié, José M.a Rueda</p>
-        <i onclick="book5open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book5open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">1000 klausimų ir atsakymų apie gyvūnus   Francisco Arredondo, Lidia Di Blasi, Juan Xarrié, José M.a Rueda   viršuje gale   508   neparduodama   Trys nykštukai</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
         <p class="pavadinimas">25+1 Kalėdų istorijos</p>
         <p class="autorius">Bruno Ferrero</p>
-        <i onclick="book6open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book6open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">25+1 Kalėdų istorijos   Bruno Ferrero   viršuje gale   80   neparduodama   Katalikų pasaulio leidiniai</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
         <p class="pavadinimas">500 klausimų ir atsakymų - enciklopedija vaikams</p>
         <p class="autorius">Asta Bieliauskaitė, Evelina Juodagalvė, Eglė Jurėvičiūtė, Laura Klyvienė, Jovita Martišiūtė, Meda Piečytė, Viktorija Poderskytė, Kristina Rimkutė, Raimonda Šukaitė, Rūta Vyžintaitė</p>
-        <i onclick="book7open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book7open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">500 klausimų ir atsakymų - enciklopedija vaikams   Asta Bieliauskaitė, Evelina Juodagalvė, Eglė Jurėvičiūtė, Laura Klyvienė, Jovita Martišiūtė, Meda Piečytė, Viktorija Poderskytė, Kristina Rimkutė, Raimonda Šukaitė, Rūta Vyžintaitė   apačioje priekyje   208   neparduodama   Debesų ganyklos</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: darkorange; display: flex;"></i>
         <p class="pavadinimas">Akordeono pradžiamokslis</p>
         <p class="autorius">V. Burinskas</p>
-        <i onclick="book8open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book8open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Akordeono pradžiamokslis   V. Burinskas   apačioje gale   183   neparduodama   Vaga</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
         <p class="pavadinimas">Akvariumo ABC</p>
         <p class="autorius">Algis Bubinas</p>
-        <i onclick="book9open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book9open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Akvariumo ABC   Algis Bubinas   apačioje gale   130   neparduodama   Mokslas</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
         <p class="pavadinimas">Akvariumo istorijos - Lilė ir melo pinklės</p>
         <p class="autorius">Rimas Valeikis</p>
-        <i onclick="book10open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book10open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Akvariumo istorijos - Lilė ir melo pinklės   Rimas Valeikis   apačioje priekyje   40   neparduodama   Baltic RED</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
         <p class="pavadinimas">Angelų pasakos</p>
         <p class="autorius">Vytautas V. Landsbergis</p>
-        <i onclick="book11open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book11open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Angelų pasakos   Vytautas V. Landsbergis   viršuje gale   162   neparduodama   Dominicus Lituanus</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
         <p class="pavadinimas">Anglų kalbos gramatika</p>
         <p class="autorius">Autorių kolektyvas</p>
-        <i onclick="book12open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book12open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Anglų kalbos gramatika   Autorių kolektyvas   apačioje gale   370   neparduodama   Mokslo ir enciklopedijų leidybos institutas</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
         <p class="pavadinimas">Aplink žemę per 80 dienų</p>
         <p class="autorius">Jules Verne</p>
-        <i onclick="book13open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book13open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Aplink žemę per 80 dienų   Jules Verne   apačioje priekyje   248   neparduodama   Nieko rimto</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
         <p class="pavadinimas">Aš esu Kosmas</p>
         <p class="autorius">Carlie Sorosiak</p>
-        <i onclick="book14open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book14open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Aš esu Kosmas   Carlie Sorosiak   viršuje priekyje   288   neparduodama   Alma littera</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
         <p class="pavadinimas">Auksinis kalnas</p>
         <p class="autorius">Autorių kolektyvas</p>
-        <i onclick="book15open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book15open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Auksinis kalnas   Autorių kolektyvas   apačioje gale   378   neparduodama   Vaga</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
         <p class="pavadinimas">Balta skrybėlaitė</p>
         <p class="autorius">Ona Jautakė</p>
-        <i onclick="book16open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book16open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Balta skrybėlaitė   Ona Jautakė   viršuje gale   64   neparduodama   Kauko laiptai</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
         <p class="pavadinimas">Baltasis liūtas</p>
         <p class="autorius">Michael Morpugo</p>
-        <i onclick="book17open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book17open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Baltasis liūtas   Michael Morpugo   viršuje gale   144   neparduodama   Alma littera</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
         <p class="pavadinimas">Be šeimos</p>
         <p class="autorius">Hector Malot</p>
-        <i onclick="book18open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book18open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Be šeimos   Hector Malot   viršuje gale   464   neparduodama   Alma littera</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
         <p class="pavadinimas">Berniukams apie tai</p>
         <p class="autorius">Lizzie Cox</p>
-        <i onclick="book19open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book19open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Berniukams apie tai   Lizzie Cox   viršuje priekyje   64   neparduodama   Alma littera</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
         <p class="pavadinimas">Berniukas su žvaigžde kojinėje</p>
         <p class="autorius">Dee White</p>
-        <i onclick="book20open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book20open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Berniukas su žvaigžde kojinėje   Dee White   viršuje priekyje   248   neparduodama   Alma littera</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
         <p class="pavadinimas">(Beveik) paauglio berniuko knyga (kone) apie viską</p>
         <p class="autorius">Sharie Coombes</p>
-        <i onclick="book21open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book21open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">(Beveik) paauglio berniuko knyga (kone) apie viską   Sharie Coombes   apačioje priekyje   72   neparduodama   Vaiga</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
         <p class="pavadinimas">Biblija vaikams</p>
         <p class="autorius">Autorių kolektyvas</p>
-        <i onclick="book22open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book22open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Biblija vaikams   Autorių kolektyvas   apačioje gale   536   neparduodama   Lietuvos Biblijos draugija</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
         <p class="pavadinimas">Bidstrup</p>
         <p class="autorius">H. Bidstrupas</p>
-        <i onclick="book23open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book23open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Bidstrup   H. Bidstrupas   apačioje gale   ---   neparduodama   LTSR žurnalistų sąjunga</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
         <p class="pavadinimas">Bolekas ir Liolekas - Pasaulio atlasas</p>
         <p class="autorius">Ewa Miedzinka</p>
-        <i onclick="book24open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book24open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Bolekas ir Liolekas - Pasaulio atlasas   Ewa Miedzinka   apačioje priekyje   49   neparduodama   Mūsų knyga</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
         <p class="pavadinimas">Boltas</p>
         <p class="autorius">Disney Enterprises</p>
-        <i onclick="book25open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book25open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Boltas   Disney Enterprises   viršuje gale   32   neparduodama   Egmont</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
         <p class="pavadinimas">Bumba Dumba Kabančių riestainių gatvėje</p>
         <p class="autorius">Tomas S. Butkus</p>
-        <i onclick="book26open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book26open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Bumba Dumba Kabančių riestainių gatvėje   Tomas S. Butkus   viršuje gale   40   neparduodama   Vario burnos</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
         <p class="pavadinimas">CanonOne magazine</p>
         <p class="autorius">Canon Europa</p>
-        <i onclick="book27open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book27open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">CanonOne magazine   Canon Europa   viršuje gale   224   neparduodama   Canon Europa</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
         <p class="pavadinimas">Civilizacijų aušra</p>
         <p class="autorius">Autorių kolektyvas</p>
-        <i onclick="book28open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book28open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Civilizacijų aušra   Autorių kolektyvas   viršuje gale   101   neparduodama   Alma littera</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
         <p class="pavadinimas">Čyru vyru</p>
         <p class="autorius">Eduardas Miezelaitis</p>
-        <i onclick="book29open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book29open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Čyru vyru   Eduardas Miezelaitis   apačioje gale   180   neparduodama   Vaga</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
         <p class="pavadinimas">Didžioji gyvūnų kolekcija</p>
         <p class="autorius">Aldona Stepanavičiūtė</p>
-        <i onclick="book30open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book30open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Didžioji gyvūnų kolekcija   Aldona Stepanavičiūtė   apačioje priekyje   80   neparduodama   Jūsų Flintas</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
         <p class="pavadinimas">Didžioji rusų pasakų ir bylinų knyga</p>
         <p class="autorius">I. Karnauchova</p>
-        <i onclick="book31open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book31open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Didžioji rusų pasakų ir bylinų knyga   I. Karnauchova   apačioje gale   296   neparduodama   Vaiga</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
         <p class="pavadinimas">Dienoraštis iš bunkerio</p>
         <p class="autorius">Kevin Brooks</p>
-        <i onclick="book32open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book32open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Dienoraštis iš bunkerio   Kevin Brooks   viršuje priekyje   240   neparduodama   Alma littera</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
         <p class="pavadinimas">Džiugioji Velykų žinia</p>
         <p class="autorius">Angela M. Burrin</p>
-        <i onclick="book33open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book33open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Džiugioji Velykų žinia   Angela M. Burrin   viršuje gale   28   neparduodama   Lietuvos Biblijos draugija</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
         <p class="pavadinimas">Emilis ir jo žvalgai</p>
         <p class="autorius">Ėrichas Kestneris</p>
-        <i onclick="book34open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book34open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Emilis ir jo žvalgai   Ėrichas Kestneris   viršuje gale   96   neparduodama   Norekso valdos</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
         <p class="pavadinimas">Findusas išsikrausto</p>
         <p class="autorius">Sven Nordqvist</p>
-        <i onclick="book35open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book35open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Findusas išsikrausto   Sven Nordqvist   apačioje priekyje   28   neparduodama   Nieko rimto</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
         <p class="pavadinimas">Frenkis Fišas ir garsinis lagaminas</p>
         <p class="autorius">Peter Helliar</p>
-        <i onclick="book36open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book36open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Frenkis Fišas ir garsinis lagaminas   Peter Helliar   pardavimo lentynoje   240   parduodama Vinted   Alma littera</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
         <p class="pavadinimas">Galvosūkių pasaulis</p>
         <p class="autorius">K. Klimavičius</p>
-        <i onclick="book37open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book37open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Galvosūkių pasaulis   K. Klimavičius   apačioje gale   104   neparduodama   Mokslas</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
         <p class="pavadinimas">Geriausias pasaulyje tėvelis</p>
         <p class="autorius">Eleni Zabini ir Susanne Lütje</p>
-        <i onclick="book38open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book38open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Geriausias pasaulyje tėvelis  Eleni Zabini ir Susanne Lütje   viršuje gale   10   neparduodama   Nieko rimto</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
         <p class="pavadinimas">Gilės nuotykiai ydų šalyje</p>
         <p class="autorius">Vytautas Petkevičius</p>
-        <i onclick="book39open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book39open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Gilės nuotykiai ydų šalyje   Vytautas Petkevičius   apačioje gale   138   neparduodama   Vaga</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
         <p class="pavadinimas">Gražiausios Brolių Grimų pasakos</p>
         <p class="autorius">Autorių kolektyvas</p>
-        <i onclick="book40open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book40open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Gražiausios Brolių Grimų pasakos   Autorių kolektyvas   apačioje gale   224   neparduodama   Vaiga</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
         <p class="pavadinimas">Gražiausios mano vaikystės pasakos</p>
         <p class="autorius">Kristīne Skrīvele</p>
-        <i onclick="book41open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book41open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Gražiausios mano vaikystės pasakos   Kristīne Skrīvele   apačioje gale   66   neparduodama   Alma littera</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
         <p class="pavadinimas">Gražiausios Rytų šalių pasakos</p>
         <p class="autorius">Autorių kolektyvas</p>
-        <i onclick="book42open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book42open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Gražiausios Rytų šalių pasakos   Autorių kolektyvas   apačioje gale   240   neparduodama   Debesų ganyklos</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
         <p class="pavadinimas">Grybų karas</p>
         <p class="autorius">Justinas Marcinkevičius</p>
-        <i onclick="book43open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book43open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Grybų karas   Justinas Marcinkevičius   viršuje gale   24   neparduodama   Alma littera</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
         <p class="pavadinimas">Gudrių atsakymų knyga - technika</p>
         <p class="autorius">Rainer Kothe</p>
-        <i onclick="book44open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book44open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Gudrių atsakymų knyga - technika   Rainer Kothe   viršuje gale   128   neparduodama   Mūsų knyga</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
         <p class="pavadinimas">Gulbė karaliaus pati</p>
         <p class="autorius">Aldona Liobytė</p>
-        <i onclick="book45open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book45open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Gulbė karaliaus pati   Aldona Liobytė   apačioje gale   290   neparduodama   Vyturys</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
         <p class="pavadinimas">Guro</p>
         <p class="autorius">Anė Katrinė Vestli</p>
-        <i onclick="book46open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book46open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Guro   Anė Katrinė Vestli   apačioje gale   112   neparduodama   Vaga</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: darkseagreen; display: flex;"></i>
         <p class="pavadinimas">Haris Poteris ir išminties akmuo</p>
         <p class="autorius">J. K. Rowling</p>
-        <i onclick="book47open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book47open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Haris Poteris ir išminties akmuo   J. K. Rowling   apačioje priekyje   246   neparduodama   Alma littera</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
         <p class="pavadinimas">Haris Poteris ir paslapčių kambarys</p>
         <p class="autorius">J. K. Rowling</p>
-        <i onclick="book48open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book48open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Haris Poteris ir paslapčių kambarys   J. K. Rowling   apačioje priekyje   272   neparduodama   Alma littera</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
         <p class="pavadinimas">I Was Born For This</p>
         <p class="autorius">Alice Oseman</p>
-        <i onclick="book49open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book49open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">I Was Born For This   Alice Oseman   viršuje priekyje   384   neparduodama   Harper Collins</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
-    <div class="book">
+    <li class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
         <p class="pavadinimas">Interneto gidas</p>
         <p class="autorius">Autorių kolektyvas</p>
-        <i onclick="book50open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
-    </div>
+        <i onclick="book50open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i>
+        <p class="hidden"><a href="#">Interneto gidas   Autorių kolektyvas   apačioje gale   360   neparduodama   Omnitel</a></p>
+    </li>
     <div class="hrDiv"><hr></div>
     <div class="book">
         <i class="fa-regular fa-bookmark bookmark" style="background-color: crimson; display: flex;"></i>
@@ -1317,6 +1512,8 @@
         <p class="autorius">Janosch</p>
         <i onclick="book146open()" class="fa-solid fa-chevron-down chevron" ontouchstart style="display: flex;"></i> 
     </div>
+</ul>
+    <p id="bookCount">Viso: 146 knygos</p>
 
 
 
@@ -2929,12 +3126,85 @@
 
     <script src="https://kit.fontawesome.com/a11707644f.js" crossorigin="anonymous"></script>
     <script>
-         window.onscroll = function() {scrollFunction()};
+        function myFunction() {
+  // Declare variables
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById('myInput');
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myUL");
+  li = ul.getElementsByTagName('li');
+
+  // Loop through all list items, and hide those who don't match the search query
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+        setTimeout(() => {
+            document.getElementById("createdByMatas").style.opacity = "1";
+        }, 100);
+        function loadFunction() {
+            setTimeout(() => {
+                document.getElementById("raide14").style.opacity = "0";
+            }, 1600);
+            setTimeout(() => {
+                document.getElementById("raide13").style.opacity = "0";
+            }, 1700);
+            setTimeout(() => {
+                document.getElementById("raide12").style.opacity = "0";
+            }, 1800);
+            setTimeout(() => {
+                document.getElementById("raide11").style.opacity = "0";
+            }, 1900);
+            setTimeout(() => {
+                document.getElementById("raide10").style.opacity = "0";
+            }, 2000);
+            setTimeout(() => {
+                document.getElementById("raide9").style.opacity = "0";
+            }, 2100);
+            setTimeout(() => {
+                document.getElementById("raide8").style.opacity = "0";
+            }, 2200);
+            setTimeout(() => {
+                document.getElementById("raide7").style.opacity = "0";
+            }, 2300);
+            setTimeout(() => {
+                document.getElementById("raide6").style.opacity = "0";
+            }, 2400);
+            setTimeout(() => {
+                document.getElementById("raide5").style.opacity = "0";
+            }, 2500);
+            setTimeout(() => {
+                document.getElementById("raide4").style.opacity = "0";
+            }, 2600);
+            setTimeout(() => {
+                document.getElementById("raide3").style.opacity = "0";
+            }, 2700);
+            setTimeout(() => {
+                document.getElementById("raide2").style.opacity = "0";
+            }, 2800);
+            setTimeout(() => {
+                document.getElementById("raide1").style.opacity = "0";
+            }, 2900);
+            setTimeout(() => {
+                    document.getElementById("loading").style.opacity = "0";
+                    document.getElementById("createdByMatas").style.display = "none";
+            }, 3000);
+            setTimeout(() => {
+                document.getElementById("loading").style.display = "none";
+            }, 3300);
+        }
+        window.onscroll = function() {scrollFunction()};
         function scrollFunction() {
             if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
                 document.getElementById("header").style.backgroundColor = "rgba(250, 250, 250, 0.75)";
                 document.getElementById("header").style.boxShadow = "0 0 10px lightgrey";
-                document.getElementById("book1").style.marginTop = "75px";
+                document.getElementById("body").style.paddingTop = "75px";
 
                 document.getElementById("headerText1").style.fontSize = "20px";
                 document.getElementById("headerText1").style.top = "-7px";
@@ -2943,7 +3213,7 @@
             else {
                 document.getElementById("header").style.backgroundColor = "rgba(245, 245, 245, 0.75)";
                 document.getElementById("header").style.boxShadow = "none";
-                document.getElementById("book1").style.marginTop = "120px";
+                document.getElementById("body").style.paddingTop = "120px";
 
                 document.getElementById("headerText1").style.fontSize = "30px";
                 document.getElementById("headerText1").style.top = "40px";

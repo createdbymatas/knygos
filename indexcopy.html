@@ -207,14 +207,14 @@
             top: 120px;
             left: 2.5%;
             width: 40px;
-            height: 60px;
+            height: 30px;
             z-index: 1;
         }
         #roundStyleTopLeft div{
             width: 100%;
             height: 100%;
             background-color: white;
-            border-radius: 15px;
+            border-radius: 15px 0 0 0;
         }
         #roundStyleTopRight{
             background-color: rgb(245, 245, 245);
@@ -222,44 +222,44 @@
             top: 120px;
             right: 2.5%;
             width: 40px;
-            height: 60px;
+            height: 30px;
             z-index: 1;
         }
         #roundStyleTopRight div{
             width: 100%;
             height: 100%;
             background-color: white;
-            border-radius: 15px;
+            border-radius: 0 15px 0 0;
         }
         #roundStyleBottomLeft{
             background-color: rgb(245, 245, 245);
             position: absolute;
             left: 2.5%;
-            margin-top: -105px;
+            margin-top: -75px;
             width: 40px;
-            height: 60px;
+            height: 30px;
             z-index: 3;
         }
         #roundStyleBottomLeft div{
             width: 100%;
             height: 100%;
             background-color: white;
-            border-radius: 15px;
+            border-radius: 0 0 0 15px;
         }
         #roundStyleBottomRight{
             background-color: rgb(245, 245, 245);
             position: absolute;
             right: 2.5%;
-            margin-top: -105px;
+            margin-top: -75px;
             width: 40px;
-            height: 60px;
+            height: 30px;
             z-index: 3;
         }
         #roundStyleBottomRight div{
             width: 100%;
             height: 100%;
             background-color: white;
-            border-radius: 15px;
+            border-radius: 0 0 15px 0;
         }
         #hideLastHr{
             width: 95%;
@@ -287,6 +287,7 @@
             justify-content: center;
             align-items: center;
             transition: none;
+            cursor: pointer;
         }
         #searchButton i{
             font-size: 20px;
@@ -329,6 +330,7 @@
             justify-content: center;
             align-items: center;
             overflow: hidden;
+            cursor: pointer;
         }
         #searchI{
             font-size: 20px;
@@ -343,14 +345,23 @@
             align-items: center;
             z-index: 1;
             background-color: rgb(245, 245, 245);
-            pointer-events: none;
         }
         #searchMinus{
+            font-size: 20px;
+            width: 60px;
+            height: 60px;
             position: absolute;
-            font-size: 10px;
-            top: 23px;
-            left: 23.5px;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+            background-color: rgb(245, 245, 245);
+            pointer-events: none;
             opacity: 0;
+            cursor: pointer;
         }
         #searchInput{
             border: none;
@@ -378,6 +389,7 @@
             background-color: white;
             border-radius: 5px 15px 15px 5px;
             opacity: 0;
+            cursor: pointer;
         }
         ::placeholder {
             color: darkgrey;
@@ -633,7 +645,7 @@
 
     <div id="black" onclick="closeBooks()"></div>
     <button id="searchButton" onclick="search()"><i class="fa-solid fa-magnifying-glass"></i></button>
-    <div id="searchBackgroundBottom"><button id="searchWindow"><i class="fa-solid fa-magnifying-glass" id="searchI" onclick="closeSearch()"><i class="fa-solid fa-minus" id="searchMinus"></i></i><input type="text" id="searchInput" onkeyup="myFunction()" placeholder="Ieškoti knygų..."><i class="fa-solid fa-filter" id="filterI"></i></button></div>
+    <div id="searchBackgroundBottom"><button id="searchWindow"><i class="fa-solid fa-magnifying-glass" id="searchI"><i class="fa-solid fa-magnifying-glass-minus" id="searchMinus" onclick="closeSearch()"></i></i><input type="text" id="searchInput" onkeyup="myFunction()" placeholder="Ieškoti knygų..."><i class="fa-solid fa-filter" id="filterI"></i></button></div>
 
     <div id="roundStyleTopLeft"><div></div></div>
     <div id="roundStyleTopRight"><div></div></div>
@@ -3456,7 +3468,7 @@
                 document.getElementById("filterI").style.opacity = "1";
                 document.getElementById("searchInput").style.opacity = "1";
                 document.getElementById("searchInput").focus();
-                document.getElementById("searchI").style.pointerEvents = "all";
+                document.getElementById("searchMinus").style.pointerEvents = "all";
                 document.getElementById("searchMinus").style.opacity = "1";
             }, 160);
         }
@@ -3464,7 +3476,7 @@
             setTimeout(() => {
                 document.getElementById("filterI").style.opacity = "0";
                 document.getElementById("searchInput").style.opacity = "0";
-                document.getElementById("searchI").style.pointerEvents = "none";
+                document.getElementById("searchMinus").style.pointerEvents = "none";
                 document.getElementById("searchMinus").style.opacity = "0";
             }, 10);
             setTimeout(() => {

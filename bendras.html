@@ -62,6 +62,14 @@
             cursor: default;
             color: black;
         }
+        #topInformationText2{
+            font-size: 17px;
+            font-weight: 600;
+            opacity: 0;
+            display: none;
+            cursor: default;
+            color: black;
+        }
         nav{
             width: 100%;
             height: 60px;
@@ -95,10 +103,12 @@
             list-style: none;
             color: darkgrey;
             cursor: pointer;
+            transition: none;
         }
         nav li i{
-            font-size: 20px;
+            font-size: 23px;
             margin-bottom: 7px;
+            transition: none;
         }
         nav li p{
             width: 100%;
@@ -108,6 +118,7 @@
             display: inline-block;
             text-overflow: ellipsis;
             text-align: center;
+            transition: none;
         }
         h1{
             font-weight: 900;
@@ -127,11 +138,11 @@
             text-overflow: ellipsis;
         }
         h2{
-            font-weight: 600;
+            font-weight: 900;
             font-size: 20px;
             position: absolute;
             margin-left: 20px;
-            margin-top: -40px;
+            margin-top: -45px;
             z-index: 5;
             cursor: pointer;
             color: black;
@@ -166,6 +177,15 @@
             cursor: pointer;
         }
         #user2{
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            cursor: pointer;
+        }
+        #userSmall{
             width: 30px;
             height: 30px;
             border-radius: 100%;
@@ -177,13 +197,25 @@
         }
         #pagrindinis{
             width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        #biblioteka{
+            width: 100%;
             height: auto;
-            /* outline: 1px solid green; */
+            display: none;
+        }
+        #pageTop{
+            position: absolute;
+            top: 0;
+        }
+        #pageTop2{
+            position: absolute;
+            top: 0;
         }
         #kategorija1{
             width: 100%;
             height: auto;
-            /* outline: 1px solid red; */
             margin-top: 140px;
             overflow-x: scroll;
             overflow-y: hidden;
@@ -205,7 +237,6 @@
         #kategorija2{
             width: 100%;
             height: auto;
-            /* outline: 1px solid blue; */
             overflow-x: scroll;
             overflow-y: hidden;
             white-space: nowrap; 
@@ -226,7 +257,6 @@
         #kategorija3{
             width: 100%;
             height: auto;
-            /* outline: 1px solid orange; */
             overflow-x: scroll;
             overflow-y: hidden;
             white-space: nowrap; 
@@ -244,6 +274,82 @@
             box-shadow: 0 0 5px darkgrey;
             cursor: pointer;
         }
+        .knyga{
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            position: relative;
+        }
+        .knyga hr{
+            border: none;
+            border-top: 0.5px solid lightgrey;
+            width: 100%;
+        }
+        .hr{
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .knyga img{
+            width: 60px;
+            height: auto;
+            margin-left: 20px;
+            background-color: lightgrey;
+            border-radius: 5px;
+            box-shadow: 0 0 2px darkgrey;
+        }
+        .knygaText{
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            position: absolute;
+            width: 100%;
+            padding-left: 90px;
+            padding-right: 110px;
+        }
+        .knyga button{
+            width: 80px;
+            height: 30px;
+            font-size: 13px;
+            border-radius: 50px;
+            border: none;
+            background-color: lightgrey;
+            color: black;
+            position: absolute;
+            right: 20px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .p1{
+            width: 100%;
+            font-size: 15px;
+            overflow: hidden;
+            white-space: nowrap;
+            display: inline-block;
+            text-overflow: ellipsis;
+            margin-bottom: 7px;
+            font-weight: 600;
+            cursor: default;
+        }
+        .p2{
+            width: 100%;
+            font-size: 13px;
+            overflow: hidden;
+            white-space: nowrap;
+            display: inline-block;
+            text-overflow: ellipsis;
+            font-weight: 400;
+            cursor: default;
+        }
         .endText{
             font-size: 13px;
             text-align: center;
@@ -254,19 +360,22 @@
     </style>
     <div id="topInformation">
         <p id="topInformationText">Pagrindinis</p>
-        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXw3NjA4Mjc3NHx8ZW58MHx8fHx8" alt="Naudotojas - profilis" id="user2">
+        <p id="topInformationText2">Biblioteka</p>
+        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXw3NjA4Mjc3NHx8ZW58MHx8fHx8" alt="Naudotojas - profilis" id="userSmall">
     </div>
     <nav>
         <ul>
-            <li style="color: black;"><i class="fa-solid fa-house"></i> <p>Pagrindinis</p></li>
-            <li><i class="fa-solid fa-book-bookmark"></i> <p>Biblioteka</p></li>
-            <li><i class="fa-solid fa-magnifying-glass"></i> <p>Paieška</p></li>
+            <li id="pagrLi" onclick="pagrindinis()" style="color: black;"><i class="fa-solid fa-house"></i> <p>Pagrindinis</p></li>
+            <li id="biblLi" onclick="biblioteka()"><i class="fa-solid fa-book-bookmark"></i> <p>Biblioteka</p></li>
+            <li id="paieLi"><i class="fa-solid fa-magnifying-glass"></i> <p>Paieška</p></li>
         </ul>
     </nav>
     <div id="pagrindinis">
+        <div id="pageTop"></div>
         <h1 id="pagrindinisText">Pagrindinis</h1>
         <h3>Knygos</h3>
         <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXw3NjA4Mjc3NHx8ZW58MHx8fHx8" alt="Naudotojas - profilis" id="user">
+
         <div id="kategorija1">
             <h2>Neskaitytos <i class="fa-solid fa-chevron-right"></i></h2>
             <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/-/i/-isskirtiniai-sekmingu-zmoniu-paslaptis.jpg" alt="nuotrauka" style="margin-left: 20px;"></img>
@@ -289,6 +398,121 @@
             <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/v/i/vidurnakcio-biblioteka-.jpg" alt="nuotrauka" style="margin-right: 20px;"></img>
         </div>
     </div>
+    <div id="biblioteka">
+        <div id="pageTop2"></div>
+        <h1 id="bibliotekaText">Biblioteka</h1>
+        <h3>Knygos</h3>
+        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXw3NjA4Mjc3NHx8ZW58MHx8fHx8" alt="Naudotojas - profilis" id="user2">
+        
+        <div class="knyga" style="margin-top: 140px;">
+            <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/-/i/-isskirtiniai-sekmingu-zmoniu-paslaptis.jpg" alt="Išskirtiniai. Sėkmingų žmonių paslaptis">
+            <div class="knygaText">
+                <p class="p1">Išskirtiniai. Sėkmingų žmonių paslaptis</p>
+                <p class="p2">Malcolm Gladwell</p>
+            </div>
+            <button>Peržiūrėti</button>
+            <div class="hr"><hr></div>
+        </div>
+        <div class="knyga">
+            <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/d/z/dziaugiuosi-kad-mire-mano-mama.jpg" alt="Džiaugiuosi, kad mirė mano mama">
+            <div class="knygaText">
+                <p class="p1">Džiaugiuosi, kad mirė mano mama</p>
+                <p class="p2">Jennette McCurdy</p>
+            </div>
+            <button>Peržiūrėti</button>
+            <div class="hr"><hr></div>
+        </div>
+        <div class="knyga">
+            <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/i/s/isgydytos-mintys-gyvenimo-prasmes-terapija.jpg" alt="Išgydytos mintys. Gyvenimo prasmės terapija">
+            <div class="knygaText">
+                <p class="p1">Išgydytos mintys. Gyvenimo prasmės terapija</p>
+                <p class="p2">Benas Lyris</p>
+            </div>
+            <button>Peržiūrėti</button>
+            <div class="hr"><hr></div>
+        </div>
+        <div class="knyga">
+            <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/m/o/moneta--labirintas-ii.jpg" alt="Moneta & labirintas">
+            <div class="knygaText">
+                <p class="p1">Moneta & labirintas</p>
+                <p class="p2">Mantas Adomėnas</p>
+            </div>
+            <button>Peržiūrėti</button>
+            <div class="hr"><hr></div>
+        </div>
+        <div class="knyga">
+            <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/1/9/1984-ieji-4-as-leidimas_1.jpg" alt="1984-ieji">
+            <div class="knygaText">
+                <p class="p1">1984-ieji</p>
+                <p class="p2">Džordžas Orvelas (George Orwell)</p>
+            </div>
+            <button>Peržiūrėti</button>
+            <div class="hr"><hr></div>
+        </div>
+        <div class="knyga">
+            <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/i/o/iogunas-pirma-knyga.jpg" alt="Šiogūnas. Pirma knyga">
+            <div class="knygaText">
+                <p class="p1">Šiogūnas. Pirma knyga</p>
+                <p class="p2">James Clavell</p>
+            </div>
+            <button>Peržiūrėti</button>
+            <div class="hr"><hr></div>
+        </div>
+        <div class="knyga">
+            <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/k/a/kaifuotoja-tikra-gniauzianti-kvapa-istorija-apie-dviguba.jpg" alt="Kaifuotoja. Tikra, gniaužianti kvapą istorija apie dvigubą narkomanės gyvenimą">
+            <div class="knygaText">
+                <p class="p1">Kaifuotoja. Tikra, gniaužianti kvapą istorija apie dvigubą narkomanės gyvenimą</p>
+                <p class="p2">Tiffany Jenkins</p>
+            </div>
+            <button>Peržiūrėti</button>
+            <div class="hr"><hr></div>
+        </div>
+        <div class="knyga">
+            <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/e/n/enciklopedija-apie-viska-su-tukstanciais-neitiketinu-faktu.jpg" alt="Enciklopedija apie viską. Su tūkstančiais neįtikėtinų faktų">
+            <div class="knygaText">
+                <p class="p1">Enciklopedija apie viską. Su tūkstančiais neįtikėtinų faktų</p>
+                <p class="p2">-</p>
+            </div>
+            <button>Peržiūrėti</button>
+            <div class="hr"><hr></div>
+        </div>
+        <div class="knyga">
+            <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/g/y/gyvuliu-ukis_1.jpg" alt="Gyvulių ūkis">
+            <div class="knygaText">
+                <p class="p1">Gyvulių ūkis</p>
+                <p class="p2">Džordžas Orvelas (George Orwell)</p>
+            </div>
+            <button>Peržiūrėti</button>
+            <div class="hr"><hr></div>
+        </div>
+        <div class="knyga">
+            <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/j/u/jura-vandenynas.jpg" alt="Jūra vandenynas">
+            <div class="knygaText">
+                <p class="p1">Jūra vandenynas</p>
+                <p class="p2">Alessandro Baricco</p>
+            </div>
+            <button>Peržiūrėti</button>
+            <div class="hr"><hr></div>
+        </div>
+        <div class="knyga">
+            <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/a/p/apie-peles-ir-zmones.jpg" alt="Apie peles ir žmones">
+            <div class="knygaText">
+                <p class="p1">Apie peles ir žmones</p>
+                <p class="p2">John Steinbeck</p>
+            </div>
+            <button>Peržiūrėti</button>
+            <div class="hr"><hr></div>
+        </div>
+        <div class="knyga" style="margin-bottom: 10px;">
+            <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/v/i/vidurnakcio-biblioteka-.jpg" alt="Vidurnakčio biblioteka">
+            <div class="knygaText">
+                <p class="p1">Vidurnakčio biblioteka</p>
+                <p class="p2">Matt Haig</p>
+            </div>
+            <button>Peržiūrėti</button>
+            <div class="hr"><hr></div>
+        </div>
+    </div>
     <p class="endText" style="margin-top: 5px;">Kasparavičių šeimos knygų biblioteka</p>
     <p class="endText">Created by Matas</p>
     <script src="https://kit.fontawesome.com/a11707644f.js" crossorigin="anonymous"></script>
@@ -300,19 +524,77 @@
                 document.getElementById("topInformation").style.boxShadow = "0 0 10px lightgrey";
                 document.getElementById("topInformation").style.backgroundColor = "rgba(245, 245, 245, 0.75)";
                 document.getElementById("topInformationText").style.opacity = "1";
+                document.getElementById("topInformationText2").style.opacity = "1";
                 document.getElementById("pagrindinisText").style.opacity = "0";
+                document.getElementById("bibliotekaText").style.opacity = "0";
                 document.getElementById("user").style.opacity = "0";
-                document.getElementById("user2").style.opacity = "1";
+                document.getElementById("user2").style.opacity = "0";
+                document.getElementById("userSmall").style.opacity = "1";
             }
             else
             {
                 document.getElementById("topInformation").style.boxShadow = "none";
                 document.getElementById("topInformation").style.backgroundColor = "rgba(245, 245, 245, 1)";
                 document.getElementById("topInformationText").style.opacity = "0";
+                document.getElementById("topInformationText2").style.opacity = "0";
                 document.getElementById("pagrindinisText").style.opacity = "1";
+                document.getElementById("bibliotekaText").style.opacity = "1";
                 document.getElementById("user").style.opacity = "1";
-                document.getElementById("user2").style.opacity = "0";
+                document.getElementById("user2").style.opacity = "1";
+                document.getElementById("userSmall").style.opacity = "0";
             }
+        }
+        function pagrindinis() {
+            setTimeout(() => {
+                document.querySelector('#pageTop').scrollIntoView({
+                    behavior: 'auto'
+                });
+            }, 1);
+            document.getElementById("pagrindinis").style.display = "block";
+            document.getElementById("biblioteka").style.display = "none";
+            document.getElementById("pagrLi").style.color = "black";
+            document.getElementById("biblLi").style.color = "darkgrey";
+            document.getElementById("topInformationText").style.display = "block";
+            document.getElementById("topInformationText2").style.display = "none";
+
+            document.getElementById("topInformation").style.transition = "none";
+            document.getElementById("topInformationText").style.transition = "none";
+            document.getElementById("pagrindinisText").style.transition = "none";
+            document.getElementById("user").style.transition = "none";
+            document.getElementById("userSmall").style.transition = "none";
+            setTimeout(() => {
+                document.getElementById("topInformation").style.transition = "0.3s";
+                document.getElementById("topInformationText").style.transition = "0.3s";
+                document.getElementById("pagrindinisText").style.transition = "0.3s";
+                document.getElementById("user").style.transition = "0.3s";
+                document.getElementById("userSmall").style.transition = "0.3s";
+            }, 50);
+        }
+        function biblioteka() {
+            setTimeout(() => {
+                document.querySelector('#pageTop2').scrollIntoView({
+                    behavior: 'auto'
+                });
+            }, 1);
+            document.getElementById("pagrindinis").style.display = "none";
+            document.getElementById("biblioteka").style.display = "block";
+            document.getElementById("pagrLi").style.color = "darkgrey";
+            document.getElementById("biblLi").style.color = "black";
+            document.getElementById("topInformationText").style.display = "none";
+            document.getElementById("topInformationText2").style.display = "block";
+            
+            document.getElementById("topInformation").style.transition = "none";
+            document.getElementById("topInformationText2").style.transition = "none";
+            document.getElementById("bibliotekaText").style.transition = "none";
+            document.getElementById("user2").style.transition = "none";
+            document.getElementById("userSmall").style.transition = "none";
+            setTimeout(() => {
+                document.getElementById("topInformation").style.transition = "0.3s";
+                document.getElementById("topInformationText2").style.transition = "0.3s";
+                document.getElementById("bibliotekaText").style.transition = "0.3s";
+                document.getElementById("user2").style.transition = "0.3s";
+                document.getElementById("userSmall").style.transition = "0.3s";
+            }, 50);
         }
     </script>
 </body>

@@ -140,11 +140,11 @@
             transition: none;
         }
         #iVirsu{
-            width: 80px;
-            height: 35px;
+            width: 90px;
+            height: 40px;
             position: fixed;
             right: 10px;
-            bottom: -45px;
+            bottom: -50px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -154,7 +154,7 @@
             backdrop-filter: blur(8px);
             z-index: 10;
             border: none;
-            font-size: 12px;
+            font-size: 13px;
             border-radius: 50px;
             color: black;
             cursor: pointer;
@@ -538,9 +538,9 @@
                 document.getElementById("bibliotekaText").style.opacity = "0";
                 document.getElementById("topInformation").style.top = "-1px";
                 document.getElementById("topInformation").style.boxShadow = "0 0 10px lightgrey";
+                document.getElementById("iVirsu").style.bottom = "10px";
                 document.getElementById("nav").style.bottom = "-60px";
                 document.getElementById("nav").style.boxShadow = "none";
-                document.getElementById("iVirsu").style.bottom = "10px";
             }
             else
             {
@@ -548,7 +548,7 @@
                 document.getElementById("bibliotekaText").style.opacity = "1";
                 document.getElementById("topInformation").style.top = "-50px";
                 document.getElementById("topInformation").style.boxShadow = "none";
-                document.getElementById("iVirsu").style.bottom = "-45px";
+                document.getElementById("iVirsu").style.bottom = "-50px";
                 document.getElementById("nav").style.bottom = "-1px";
                 document.getElementById("nav").style.boxShadow = "0 0 10px lightgrey";
             }

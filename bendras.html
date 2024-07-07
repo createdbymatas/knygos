@@ -737,21 +737,21 @@
         <h3>Knygos</h3>
 
         <div id="kategorija1">
-            <h2>Neskaitytos <i class="fa-solid fa-chevron-right"></i></h2>
+            <h2>Nauja <i class="fa-solid fa-chevron-right"></i></h2>
             <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/-/i/-isskirtiniai-sekmingu-zmoniu-paslaptis.jpg" alt="nuotrauka" style="margin-left: 20px;"></img>
             <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/d/z/dziaugiuosi-kad-mire-mano-mama.jpg" alt="nuotrauka"></img>
             <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/i/s/isgydytos-mintys-gyvenimo-prasmes-terapija.jpg" alt="nuotrauka"></img>
             <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/m/o/moneta--labirintas-ii.jpg" alt="nuotrauka" style="margin-right: 20px;"></img>
         </div>
         <div id="kategorija2">
-            <h2>Pradėtos skaityti <i class="fa-solid fa-chevron-right"></i></h2>
+            <h2>Grožinė literatūra <i class="fa-solid fa-chevron-right"></i></h2>
             <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/1/9/1984-ieji-4-as-leidimas_1.jpg" alt="nuotrauka" style="margin-left: 20px;"></img>
             <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/i/o/iogunas-pirma-knyga.jpg" alt="nuotrauka"></img>
             <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/k/a/kaifuotoja-tikra-gniauzianti-kvapa-istorija-apie-dviguba.jpg" alt="nuotrauka"></img>
             <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/e/n/enciklopedija-apie-viska-su-tukstanciais-neitiketinu-faktu.jpg" alt="nuotrauka" style="margin-right: 20px;"></img>
         </div>
         <div id="kategorija3">
-            <h2>Skaitytos <i class="fa-solid fa-chevron-right"></i></h2>
+            <h2>Dalykinė literatūra <i class="fa-solid fa-chevron-right"></i></h2>
             <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/g/y/gyvuliu-ukis_1.jpg" alt="nuotrauka" style="margin-left: 20px;"></img>
             <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/j/u/jura-vandenynas.jpg" alt="nuotrauka"></img>
             <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/a/p/apie-peles-ir-zmones.jpg" alt="nuotrauka"></img>
@@ -877,10 +877,11 @@
         <h1 id="paieskaText">Paieška</h1>
         <h3>Knygos</h3>
 
-        <div id="rankinePaieska">
+        <form id="rankinePaieska">
             <i class="fa-solid fa-magnifying-glass" id="searchIconInput"></i>
-            <input type="text" placeholder="Ieškoti knygų">
-        </div>
+            <input type="text" placeholder="Ieškoti knygų" id="paieskosInput" name="paieskosInput" onkeydown="paspaustiGerai()" onkeyup="paspaustiGerai()">
+            <button id="gerai" type="button" onclick="check(this.form)" style="display: none;"></button>
+        </form>
         <p id="ieskotiPagal">Ieškoti pagal...</p>
         <div id="kategorijosPaieska">
             <p><i class="fa-solid fa-list"></i> kategoriją:</p>
@@ -1093,6 +1094,30 @@
                 document.getElementById("selectSortBy").style.height = "0";
                 document.getElementById("selectSortBy").style.width = "0";
             }, 300);
+        }
+        document.getElementById('paieskosInput').addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                event.preventDefault(); // prevent default behavior
+            }
+        });
+        function paspaustiGerai() {
+            document.getElementById("gerai").click();
+        }
+        function check(form) {
+            if(form.paieskosInput.value == ''){
+                document.getElementById("ieskotiPagal").style.display = "inline-block";
+                document.getElementById("kategorijosPaieska").style.display = "inline-block";
+                document.getElementById("puslapiuPaieska").style.display = "inline-block";
+                document.getElementById("kalbosPaieska").style.display = "inline-block";
+                document.getElementById("leidyklosPaieska").style.display = "inline-block";
+            }
+            else{
+                document.getElementById("ieskotiPagal").style.display = "none";
+                document.getElementById("kategorijosPaieska").style.display = "none";
+                document.getElementById("puslapiuPaieska").style.display = "none";
+                document.getElementById("kalbosPaieska").style.display = "none";
+                document.getElementById("leidyklosPaieska").style.display = "none";
+            }
         }
     </script>
 </body>

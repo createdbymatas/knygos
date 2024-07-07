@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <link rel="apple-touch-icon" href="knygosApple.png">
+    <link rel="apple-touch-icon" href="knygos.png">
 </head>
 <body id="body">
     <style>
@@ -41,6 +41,79 @@
             overflow: hidden;
             overflow-y: scroll;
         }
+        #loading{
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            transform: scale(1);
+            background-color: #f2f2f2;
+            cursor: wait;
+        }
+        #loadImage{
+            width: 40px;
+            border-radius: 100%;
+            position: absolute;
+            z-index: 1;
+            background-color: lightgrey;
+            opacity: 0;
+        }
+        #createdByMatas{
+            position: absolute;
+            bottom: 30px;
+            opacity: 0;
+            color: black;
+            text-align: center;
+        }
+        .spin-loader{
+	        border-radius: 80%;
+	        display: block;
+	        height: 50px;
+	        width: 50px;
+	        position: relative;
+	        animation: spin 0.65s linear 0s infinite normal;
+	        background: lightgrey;
+        }
+        .spin-loader:before, .spin-loader:after{
+	        content: "";
+	        display: block;
+	        position: absolute;
+        }
+        .spin-loader:before{
+	        border-radius: 0 90px 90px 0;
+	        height: 50px;
+	        width: 50%;
+	        top: 0;
+	        right: 0;
+	        z-index: 1;
+	        background: black;
+	        background-image: linear-gradient(lightgrey, black);
+        }
+        .spin-loader:after{
+	        border-radius: 80%;
+	        height: 40px;
+	        width: 40px;
+	        top: 50%;
+	        left: 50%;
+	        transform: translate(-50%, -50%);
+	        z-index: 1;
+	        background: #f2f2f2;
+        }
+        @keyframes spin {
+            0%{
+                transform: rotate(0);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
         #topInformation{
             width: 100%;
             height: 50px;
@@ -58,7 +131,7 @@
             align-items: center;
             opacity: 1;
         }
-        #topInformationText{
+        #topInformationTextPagrindinis{
             font-size: 17px;
             font-weight: 600;
             opacity: 1;
@@ -66,7 +139,15 @@
             cursor: default;
             color: black;
         }
-        #topInformationText2{
+        #topInformationTextBiblioteka{
+            font-size: 17px;
+            font-weight: 600;
+            opacity: 1;
+            display: none;
+            cursor: default;
+            color: black;
+        }
+        #topInformationTextPaieska{
             font-size: 17px;
             font-weight: 600;
             opacity: 1;
@@ -227,7 +308,7 @@
             left: 0;
             width: 100%;
             padding-left: 20px;
-            padding-right: 80px;
+            padding-right: 20px;
             z-index: 5;
             cursor: default;
             color: black;
@@ -258,7 +339,7 @@
             left: 0;
             width: 100%;
             padding-left: 20px;
-            padding-right: 80px;
+            padding-right: 20px;
             cursor: default;
             color: black;
             overflow: hidden;
@@ -269,18 +350,26 @@
         #pagrindinis{
             width: 100%;
             height: 100%;
-            overflow: hidden;
         }
         #biblioteka{
             width: 100%;
             height: auto;
             display: none;
         }
-        #pageTop{
+        #paieska{
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+        #pageTopPagrindinis{
             position: absolute;
             top: 0;
         }
-        #pageTop2{
+        #pageTopBiblioteka{
+            position: absolute;
+            top: 0;
+        }
+        #pageTopPaieska{
             position: absolute;
             top: 0;
         }
@@ -421,6 +510,56 @@
             font-weight: 400;
             cursor: default;
         }
+        #rankinePaieska{
+            width: 100%;
+            height: 30px;
+            margin-top: 140px;
+            padding-left: 20px;
+            padding-right: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #rankinePaieska input{
+            width: 100%;
+            height: 30px;
+            font-size: 14px;
+            border-radius: 15px;
+            border: none;
+            outline: none;
+            background-color: lightgrey;
+            color: black;
+            padding: 5px;
+            padding-left: 30px;
+            padding-right: 10px;
+        }
+        ::placeholder {
+            color: darkgrey;
+            opacity: 1;
+        }
+
+        ::-ms-input-placeholder {
+            color: darkgrey;
+        }
+        #rankinePaieska i{
+            position: absolute;
+            color: darkgrey;
+            left: 30px;
+        }
+        #ieskotiPagal{
+            font-weight: 400;
+            font-size: 15px;
+            width: 100%;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-top: 10px;
+            cursor: default;
+            color: black;
+            overflow: hidden;
+            white-space: nowrap;
+            display: inline-block;
+            text-overflow: ellipsis;
+        }
         .endText{
             font-size: 13px;
             text-align: center;
@@ -429,9 +568,15 @@
             cursor: default;
         }
     </style>
+    <!-- <div id="loading">
+        <img src="knygos.png" alt="Knygos" id="loadImage" onload="showLoadImage()">
+        <div class="spin-loader" aria-hidden="true"></div>
+        <p id="createdByMatas"><span id="raide1">C</span><span id="raide2">r</span><span id="raide3">e</span><span id="raide4">a</span><span id="raide5">t</span><span id="raide6">e</span><span id="raide7">d</span> <span id="raide8">b</span><span id="raide9">y</span> <span id="raide10">M</span><span id="raide11">a</span><span id="raide12">t</span><span id="raide13">a</span><span id="raide14">s</span></p>
+    </div> -->
     <div id="topInformation">
-        <p id="topInformationText">Pagrindinis</p>
-        <p id="topInformationText2">Biblioteka</p>
+        <p id="topInformationTextPagrindinis">Pagrindinis</p>
+        <p id="topInformationTextBiblioteka">Biblioteka</p>
+        <p id="topInformationTextPaieska">Paieška</p>
     </div>
     <i class="fa-solid fa-arrow-down-short-wide" id="sortBy" onclick="sortByMenu()" ontouchstart></i>
     <div id="disableSortBy" onclick="closeSortByMenu()"></div>
@@ -439,7 +584,7 @@
         <ul>
             <li id="pagrLi" onclick="pagrindinis()" ontouchstart style="color: black;"><i class="fa-solid fa-house"></i> <p>Pagrindinis</p></li>
             <li id="biblLi" onclick="biblioteka()" ontouchstart><i class="fa-solid fa-book-bookmark"></i> <p>Biblioteka</p></li>
-            <li id="paieLi" ontouchstart><i class="fa-solid fa-magnifying-glass"></i> <p>Paieška</p></li>
+            <li id="paieLi" onclick="paieska()" ontouchstart><i class="fa-solid fa-magnifying-glass"></i> <p>Paieška</p></li>
         </ul>
     </nav>
     <button id="iVirsu" onclick="scrollToTop()" ontouchstart><i class="fa-solid fa-arrow-up" style="margin-right: 5px;"></i> į viršų</button>
@@ -451,7 +596,7 @@
         <button style="border-bottom: none;"><i class="fa-solid fa-check"></i> autorių: nuo Ž iki A</button>
     </div>
     <div id="pagrindinis">
-        <div id="pageTop"></div>
+        <div id="pageTopPagrindinis"></div>
         <h1 id="pagrindinisText">Pagrindinis</h1>
         <h3>Knygos</h3>
 
@@ -478,7 +623,7 @@
         </div>
     </div>
     <div id="biblioteka">
-        <div id="pageTop2"></div>
+        <div id="pageTopBiblioteka"></div>
         <h1 id="bibliotekaText">Biblioteka</h1>
         <h3>Knygos</h3>
         
@@ -591,11 +736,113 @@
             <div class="hr"><hr></div>
         </div>
     </div>
+    <div id="paieska">
+        <div id="pageTopPaieska"></div>
+        <h1 id="paieskaText">Paieška</h1>
+        <h3>Knygos</h3>
+
+        <div id="rankinePaieska">
+            <i class="fa-solid fa-magnifying-glass" id="searchIconInput"></i>
+            <input type="text" placeholder="Ieškoti knygų">
+        </div>
+        <p id="ieskotiPagal">Ieškoti pagal...</p>
+        <div id="kategorijosPaieska">
+            <p><i class="fa-solid fa-list"></i> kategoriją:</p>
+            <button>kategorija1</button>
+            <button>kategorija2</button>
+            <button>kategorija3</button>
+            <button>kategorija4</button>
+        </div>
+        <div id="puslapiuPaieska">
+            <p><i class="fa-regular fa-file-lines"></i> puslapių skaičių:</p>
+            <button>0-99</button>
+            <button>100-199</button>
+            <button>200-299</button>
+            <button>300-399</button>
+            <button>400-499</button>
+            <button>500-599</button>
+            <button>600-699</button>
+            <button>700-799</button>
+            <button>800-899</button>
+            <button>900-999</button>
+        </div>
+        <div id="kalbosPaieska">
+            <p><i class="fa-solid fa-language"></i> kalbą:</p>
+            <button>lietuvių</button>
+            <button>anglų</button>
+        </div>
+        <div id="leidyklosPaieska">
+            <p><i class="fa-solid fa-arrow-up-from-bracket"></i> leidyklą:</p>
+            <button>leidykla1</button>
+            <button>leidykla2</button>
+            <button>leidykla3</button>
+            <button>leidykla4</button>
+        </div>
+    </div>
     <p class="endText" style="color: black; margin-top: 10px; opacity: 0.1;"><i class="fa-regular fa-circle-question"></i> Pagalbos centras</p>
     <p class="endText" style="margin-top: 5px;">Kasparavičių šeimos knygų biblioteka</p>
     <p class="endText">Created by Matas</p>
     <script src="https://kit.fontawesome.com/a11707644f.js" crossorigin="anonymous"></script>
     <script>
+        setTimeout(() => {
+            document.getElementById("createdByMatas").style.opacity = "1";
+        }, 100);
+        setTimeout(() => {
+            document.getElementById("raide14").style.opacity = "0";
+        }, 1600);
+        setTimeout(() => {
+            document.getElementById("raide13").style.opacity = "0";
+        }, 1700);
+        setTimeout(() => {
+            document.getElementById("raide12").style.opacity = "0";
+        }, 1800);
+        setTimeout(() => {
+            document.getElementById("raide11").style.opacity = "0";
+        }, 1900);
+        setTimeout(() => {
+            document.getElementById("raide10").style.opacity = "0";
+        }, 2000);
+        setTimeout(() => {
+            document.getElementById("raide9").style.opacity = "0";
+        }, 2100);
+        setTimeout(() => {
+            document.getElementById("raide8").style.opacity = "0";
+        }, 2200);
+        setTimeout(() => {
+            document.getElementById("raide7").style.opacity = "0";
+        }, 2300);
+        setTimeout(() => {
+            document.getElementById("raide6").style.opacity = "0";
+        }, 2400);
+        setTimeout(() => {
+            document.getElementById("raide5").style.opacity = "0";
+        }, 2500);
+        setTimeout(() => {
+            document.getElementById("raide4").style.opacity = "0";
+        }, 2600);
+        setTimeout(() => {
+            document.getElementById("raide3").style.opacity = "0";
+        }, 2700);
+        setTimeout(() => {
+            document.getElementById("raide2").style.opacity = "0";
+        }, 2800);
+        setTimeout(() => {
+            document.getElementById("raide1").style.opacity = "0";
+        }, 2900);
+        setTimeout(() => {
+            document.getElementById("loading").style.opacity = "0";
+            document.getElementById("createdByMatas").style.display = "none";
+        }, 3000);
+        setTimeout(() => {
+            document.getElementById("loading").style.display = "none";
+        }, 3300);
+
+        function showLoadImage() {
+            document.getElementById("loadImage").style.opacity = "1";
+        }
+
+
+
         window.onscroll = function() {scrollFunction()};
         function scrollFunction() {
             if(document.body.scrollTop > 30 || document.documentElement.scrollTop > 30)
@@ -621,43 +868,71 @@
         }
         function pagrindinis() {
             setTimeout(() => {
-                document.querySelector('#pageTop').scrollIntoView({
+                document.querySelector('#pageTopPagrindinis').scrollIntoView({
                     behavior: 'auto'
                 });
             }, 1);
             document.getElementById("pagrindinis").style.display = "block";
             document.getElementById("biblioteka").style.display = "none";
+            document.getElementById("paieska").style.display = "none";
             document.getElementById("pagrLi").style.color = "black";
             document.getElementById("biblLi").style.color = "darkgrey";
-            document.getElementById("topInformationText").style.display = "block";
-            document.getElementById("topInformationText2").style.display = "none";
+            document.getElementById("paieLi").style.color = "darkgrey";
+            document.getElementById("topInformationTextPagrindinis").style.display = "block";
+            document.getElementById("topInformationTextBiblioteka").style.display = "none";
+            document.getElementById("topInformationTextPaieska").style.display = "none";
             document.getElementById("sortBy").style.display = "none";
         }
         function biblioteka() {
             setTimeout(() => {
-                document.querySelector('#pageTop2').scrollIntoView({
+                document.querySelector('#pageTopBiblioteka').scrollIntoView({
                     behavior: 'auto'
                 });
             }, 1);
             document.getElementById("pagrindinis").style.display = "none";
             document.getElementById("biblioteka").style.display = "block";
+            document.getElementById("paieska").style.display = "none";
             document.getElementById("pagrLi").style.color = "darkgrey";
             document.getElementById("biblLi").style.color = "black";
-            document.getElementById("topInformationText").style.display = "none";
-            document.getElementById("topInformationText2").style.display = "block";
+            document.getElementById("paieLi").style.color = "darkgrey";
+            document.getElementById("topInformationTextPagrindinis").style.display = "none";
+            document.getElementById("topInformationTextBiblioteka").style.display = "block";
+            document.getElementById("topInformationTextPaieska").style.display = "none";
             document.getElementById("sortBy").style.display = "flex";
+        }
+        function paieska() {
+            setTimeout(() => {
+                document.querySelector('#pageTopPaieska').scrollIntoView({
+                    behavior: 'auto'
+                });
+            }, 1);
+            document.getElementById("pagrindinis").style.display = "none";
+            document.getElementById("biblioteka").style.display = "none";
+            document.getElementById("paieska").style.display = "block";
+            document.getElementById("pagrLi").style.color = "darkgrey";
+            document.getElementById("biblLi").style.color = "darkgrey";
+            document.getElementById("paieLi").style.color = "black";
+            document.getElementById("topInformationTextPagrindinis").style.display = "none";
+            document.getElementById("topInformationTextBiblioteka").style.display = "none";
+            document.getElementById("topInformationTextPaieska").style.display = "black";
+            document.getElementById("sortBy").style.display = "none";
         }
         function scrollToTop() {
             setTimeout(() => {
-                document.querySelector('#pageTop').scrollIntoView({
+                document.querySelector('#pageTopPagrindinis').scrollIntoView({
                     behavior: 'smooth'
                 });
             }, 1);
             setTimeout(() => {
-                document.querySelector('#pageTop2').scrollIntoView({
+                document.querySelector('#pageTopBiblioteka').scrollIntoView({
                     behavior: 'smooth'
                 });
             }, 2);
+            setTimeout(() => {
+                document.querySelector('#pageTopPaieska').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }, ę);
         }
         function sortByMenu() {
             document.getElementById("selectSortBy").style.width = "235px";
@@ -667,7 +942,7 @@
             document.getElementById("body").style.overflowY = "hidden";
             setTimeout(() => {
                 document.getElementById("selectSortBy").style.opacity = "1";
-            }, 75);
+            }, 80);
             setTimeout(() => {
                 document.getElementById("selectSortBy").style.width = "230px";
                 document.getElementById("selectSortBy").style.height = "210px";

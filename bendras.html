@@ -120,9 +120,9 @@
         #selectSortBy button{
             color: black;
             background-color: transparent;
-            font-size: 14px;
+            font-size: 15px;
             width: 100%;
-            height: 40px;
+            height: 45px;
             display: flex;
             justify-content: flex-start;
             align-items: center;
@@ -660,16 +660,16 @@
         }
         function sortByMenu() {
             document.getElementById("selectSortBy").style.width = "235px";
-            document.getElementById("selectSortBy").style.height = "195px";
+            document.getElementById("selectSortBy").style.height = "215px";
             document.getElementById("selectSortBy").style.pointerEvents = "all";
             document.getElementById("disableSortBy").style.display = "block";
             document.getElementById("body").style.overflowY = "hidden";
             setTimeout(() => {
                 document.getElementById("selectSortBy").style.opacity = "1";
-            }, 70);
+            }, 75);
             setTimeout(() => {
                 document.getElementById("selectSortBy").style.width = "230px";
-                document.getElementById("selectSortBy").style.height = "190px";
+                document.getElementById("selectSortBy").style.height = "210px";
             }, 200);
         }
         function closeSortByMenu() {

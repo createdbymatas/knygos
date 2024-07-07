@@ -319,7 +319,7 @@
         }
         h2{
             font-weight: 900;
-            font-size: 20px;
+            font-size: 23px;
             position: absolute;
             margin-left: 20px;
             margin-top: -45px;
@@ -522,16 +522,15 @@
         }
         #rankinePaieska input{
             width: 100%;
-            height: 30px;
-            font-size: 14px;
-            border-radius: 15px;
+            height: 40px;
+            font-size: 17px;
+            border-radius: 50px;
             border: none;
             outline: none;
             background-color: lightgrey;
             color: black;
             padding: 5px;
-            padding-left: 30px;
-            padding-right: 10px;
+            padding-left: 35px;
         }
         ::placeholder {
             color: darkgrey;
@@ -545,6 +544,7 @@
             position: absolute;
             color: darkgrey;
             left: 30px;
+            font-size: 20px;
         }
         #ieskotiPagal{
             font-weight: 400;
@@ -552,13 +552,149 @@
             width: 100%;
             padding-left: 20px;
             padding-right: 20px;
-            margin-top: 10px;
+            margin-top: 25px;
             cursor: default;
-            color: black;
+            color: darkgrey;
             overflow: hidden;
             white-space: nowrap;
             display: inline-block;
             text-overflow: ellipsis;
+        }
+        #kategorijosPaieska{
+            width: 100%;
+            height: 60px;
+            margin-top: 10px;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            white-space: nowrap; 
+            display: inline-block;
+            padding-top: 30px;
+        }
+        #kategorijosPaieska p{
+            font-weight: 600;
+            font-size: 18px;
+            position: absolute;
+            margin-left: 20px;
+            margin-top: -30px;
+            z-index: 5;
+            cursor: pointer;
+            color: black;
+        }
+        #kategorijosPaieska button{
+            width: auto;
+            height: 30px;
+            border: none;
+            background-color: lightgrey;
+            color: black;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 50px;
+            padding: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-right: 10px;
+        }
+        #puslapiuPaieska{
+            width: 100%;
+            height: 60px;
+            margin-top: 10px;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            white-space: nowrap; 
+            display: inline-block;
+            padding-top: 30px;
+        }
+        #puslapiuPaieska p{
+            font-weight: 600;
+            font-size: 18px;
+            position: absolute;
+            margin-left: 20px;
+            margin-top: -30px;
+            z-index: 5;
+            cursor: pointer;
+            color: black;
+        }
+        #puslapiuPaieska button{
+            width: auto;
+            height: 30px;
+            border: none;
+            background-color: lightgrey;
+            color: black;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 50px;
+            padding: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-right: 10px;
+        }
+        #kalbosPaieska{
+            width: 100%;
+            height: 60px;
+            margin-top: 10px;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            white-space: nowrap; 
+            display: inline-block;
+            padding-top: 30px;
+        }
+        #kalbosPaieska p{
+            font-weight: 600;
+            font-size: 18px;
+            position: absolute;
+            margin-left: 20px;
+            margin-top: -30px;
+            z-index: 5;
+            cursor: pointer;
+            color: black;
+        }
+        #kalbosPaieska button{
+            width: auto;
+            height: 30px;
+            border: none;
+            background-color: lightgrey;
+            color: black;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 50px;
+            padding: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-right: 10px;
+        }
+        #leidyklosPaieska{
+            width: 100%;
+            height: 60px;
+            margin-top: 10px;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            white-space: nowrap; 
+            display: inline-block;
+            padding-top: 30px;
+        }
+        #leidyklosPaieska p{
+            font-weight: 600;
+            font-size: 18px;
+            position: absolute;
+            margin-left: 20px;
+            margin-top: -30px;
+            z-index: 5;
+            cursor: pointer;
+            color: black;
+        }
+        #leidyklosPaieska button{
+            width: auto;
+            height: 30px;
+            border: none;
+            background-color: lightgrey;
+            color: black;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 50px;
+            padding: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-right: 10px;
         }
         .endText{
             font-size: 13px;
@@ -748,14 +884,14 @@
         <p id="ieskotiPagal">Ieškoti pagal...</p>
         <div id="kategorijosPaieska">
             <p><i class="fa-solid fa-list"></i> kategoriją:</p>
-            <button>kategorija1</button>
+            <button style="margin-left: 20px;">kategorija1</button>
             <button>kategorija2</button>
             <button>kategorija3</button>
-            <button>kategorija4</button>
+            <button style="margin-right: 20px;">kategorija4</button>
         </div>
         <div id="puslapiuPaieska">
             <p><i class="fa-regular fa-file-lines"></i> puslapių skaičių:</p>
-            <button>0-99</button>
+            <button style="margin-left: 20px;">0-99</button>
             <button>100-199</button>
             <button>200-299</button>
             <button>300-399</button>
@@ -764,19 +900,19 @@
             <button>600-699</button>
             <button>700-799</button>
             <button>800-899</button>
-            <button>900-999</button>
+            <button style="margin-right: 20px;">900-999</button>
         </div>
         <div id="kalbosPaieska">
             <p><i class="fa-solid fa-language"></i> kalbą:</p>
-            <button>lietuvių</button>
-            <button>anglų</button>
+            <button style="margin-left: 20px;">lietuvių</button>
+            <button style="margin-right: 20px;">anglų</button>
         </div>
         <div id="leidyklosPaieska">
             <p><i class="fa-solid fa-arrow-up-from-bracket"></i> leidyklą:</p>
-            <button>leidykla1</button>
+            <button style="margin-left: 20px;">leidykla1</button>
             <button>leidykla2</button>
             <button>leidykla3</button>
-            <button>leidykla4</button>
+            <button style="margin-right: 20px;">leidykla4</button>
         </div>
     </div>
     <p class="endText" style="color: black; margin-top: 10px; opacity: 0.1;"><i class="fa-regular fa-circle-question"></i> Pagalbos centras</p>

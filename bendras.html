@@ -36,17 +36,17 @@
         }
         body{
             background-color: rgb(245, 245, 245);
-            padding-bottom: 70px;
+            padding-bottom: 55px;
         }
         #topInformation{
             width: 100%;
             height: 50px;
             position: fixed;
-            top: 0;
+            top: -50px;
             left: 0;
             right: 0;
             box-shadow: none;
-            background-color: rgba(245, 245, 245, 1);
+            background-color: rgba(245, 245, 245, 0.9);
             -webkit-backdrop-filter: blur(8px);
             backdrop-filter: blur(8px);
             z-index: 10;
@@ -58,42 +58,60 @@
         #topInformationText{
             font-size: 17px;
             font-weight: 600;
-            opacity: 0;
+            opacity: 1;
+            display: block;
             cursor: default;
             color: black;
         }
         #topInformationText2{
             font-size: 17px;
             font-weight: 600;
-            opacity: 0;
+            opacity: 1;
             display: none;
             cursor: default;
             color: black;
         }
-        nav{
+        #sortBy{
+            width: 25px;
+            height: 25px;
+            background-color: lightgrey;
+            border-radius: 100%;
+            position: fixed;
+            top: 12.5px;
+            right: 15px;
+            cursor: pointer;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+        }
+        #sortBy:active{
+            opacity: 0.2;
+        }
+        #nav{
             width: 100%;
             height: 60px;
             position: fixed;
             left: 0;
             right: 0;
-            bottom: 0;
+            bottom: -1px;
             display: flex;
             justify-content: center;
             align-items: center;
             box-shadow: 0 0 10px lightgrey;
-            background-color: rgba(245, 245, 245, 0.75);
+            background-color: rgba(245, 245, 245, 0.9);
             -webkit-backdrop-filter: blur(8px);
             backdrop-filter: blur(8px);
             z-index: 10;
         }
-        nav ul{
+        #nav ul{
             width: 100%;
             height: 60px;
             display: flex;
             justify-content: space-around;
             align-items: center;
         }
-        nav li{
+        #nav li{
             width: 30%;
             height: 60px;
             display: flex;
@@ -105,12 +123,12 @@
             cursor: pointer;
             transition: none;
         }
-        nav li i{
+        #nav li i{
             font-size: 23px;
             margin-bottom: 7px;
             transition: none;
         }
-        nav li p{
+        #nav li p{
             width: 100%;
             font-size: 10px;
             overflow: hidden;
@@ -119,6 +137,29 @@
             text-overflow: ellipsis;
             text-align: center;
             transition: none;
+        }
+        #iVirsu{
+            width: 80px;
+            height: 35px;
+            position: fixed;
+            right: 10px;
+            bottom: -45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 10px lightgrey;
+            background-color: rgba(245, 245, 245, 0.9);
+            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+            z-index: 10;
+            border: none;
+            font-size: 12px;
+            border-radius: 50px;
+            color: black;
+            cursor: pointer;
+        }
+        #iVirsu:active{
+            transform: scale(0.8);
         }
         h1{
             font-weight: 900;
@@ -166,34 +207,6 @@
             white-space: nowrap;
             display: inline-block;
             text-overflow: ellipsis;
-        }
-        #user{
-            width: 50px;
-            height: 50px;
-            border-radius: 100%;
-            position: absolute;
-            top: 60px;
-            right: 20px;
-            cursor: pointer;
-        }
-        #user2{
-            width: 50px;
-            height: 50px;
-            border-radius: 100%;
-            position: absolute;
-            top: 60px;
-            right: 20px;
-            cursor: pointer;
-        }
-        #userSmall{
-            width: 30px;
-            height: 30px;
-            border-radius: 100%;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-            opacity: 0;
         }
         #pagrindinis{
             width: 100%;
@@ -361,20 +374,20 @@
     <div id="topInformation">
         <p id="topInformationText">Pagrindinis</p>
         <p id="topInformationText2">Biblioteka</p>
-        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXw3NjA4Mjc3NHx8ZW58MHx8fHx8" alt="Naudotojas - profilis" id="userSmall">
     </div>
-    <nav>
+    <i class="fa-solid fa-arrow-down-short-wide" id="sortBy"></i>
+    <nav id="nav">
         <ul>
-            <li id="pagrLi" onclick="pagrindinis()" style="color: black;"><i class="fa-solid fa-house"></i> <p>Pagrindinis</p></li>
-            <li id="biblLi" onclick="biblioteka()"><i class="fa-solid fa-book-bookmark"></i> <p>Biblioteka</p></li>
-            <li id="paieLi"><i class="fa-solid fa-magnifying-glass"></i> <p>Paieška</p></li>
+            <li id="pagrLi" onclick="pagrindinis()" ontouchstart style="color: black;"><i class="fa-solid fa-house"></i> <p>Pagrindinis</p></li>
+            <li id="biblLi" onclick="biblioteka()" ontouchstart><i class="fa-solid fa-book-bookmark"></i> <p>Biblioteka</p></li>
+            <li id="paieLi" ontouchstart><i class="fa-solid fa-magnifying-glass"></i> <p>Paieška</p></li>
         </ul>
     </nav>
+    <button id="iVirsu" onclick="scrollToTop()" ontouchstart><i class="fa-solid fa-arrow-up" style="margin-right: 5px;"></i> į viršų</button>
     <div id="pagrindinis">
         <div id="pageTop"></div>
         <h1 id="pagrindinisText">Pagrindinis</h1>
         <h3>Knygos</h3>
-        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXw3NjA4Mjc3NHx8ZW58MHx8fHx8" alt="Naudotojas - profilis" id="user">
 
         <div id="kategorija1">
             <h2>Neskaitytos <i class="fa-solid fa-chevron-right"></i></h2>
@@ -402,7 +415,6 @@
         <div id="pageTop2"></div>
         <h1 id="bibliotekaText">Biblioteka</h1>
         <h3>Knygos</h3>
-        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXw3NjA4Mjc3NHx8ZW58MHx8fHx8" alt="Naudotojas - profilis" id="user2">
         
         <div class="knyga" style="margin-top: 140px;">
             <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/-/i/-isskirtiniai-sekmingu-zmoniu-paslaptis.jpg" alt="Išskirtiniai. Sėkmingų žmonių paslaptis">
@@ -410,7 +422,7 @@
                 <p class="p1">Išskirtiniai. Sėkmingų žmonių paslaptis</p>
                 <p class="p2">Malcolm Gladwell</p>
             </div>
-            <button>Peržiūrėti</button>
+            <button ontouchstart>Peržiūrėti</button>
             <div class="hr"><hr></div>
         </div>
         <div class="knyga">
@@ -419,7 +431,7 @@
                 <p class="p1">Džiaugiuosi, kad mirė mano mama</p>
                 <p class="p2">Jennette McCurdy</p>
             </div>
-            <button>Peržiūrėti</button>
+            <button ontouchstart>Peržiūrėti</button>
             <div class="hr"><hr></div>
         </div>
         <div class="knyga">
@@ -428,7 +440,7 @@
                 <p class="p1">Išgydytos mintys. Gyvenimo prasmės terapija</p>
                 <p class="p2">Benas Lyris</p>
             </div>
-            <button>Peržiūrėti</button>
+            <button ontouchstart>Peržiūrėti</button>
             <div class="hr"><hr></div>
         </div>
         <div class="knyga">
@@ -437,7 +449,7 @@
                 <p class="p1">Moneta & labirintas</p>
                 <p class="p2">Mantas Adomėnas</p>
             </div>
-            <button>Peržiūrėti</button>
+            <button ontouchstart>Peržiūrėti</button>
             <div class="hr"><hr></div>
         </div>
         <div class="knyga">
@@ -446,7 +458,7 @@
                 <p class="p1">1984-ieji</p>
                 <p class="p2">Džordžas Orvelas (George Orwell)</p>
             </div>
-            <button>Peržiūrėti</button>
+            <button ontouchstart>Peržiūrėti</button>
             <div class="hr"><hr></div>
         </div>
         <div class="knyga">
@@ -455,7 +467,7 @@
                 <p class="p1">Šiogūnas. Pirma knyga</p>
                 <p class="p2">James Clavell</p>
             </div>
-            <button>Peržiūrėti</button>
+            <button ontouchstart>Peržiūrėti</button>
             <div class="hr"><hr></div>
         </div>
         <div class="knyga">
@@ -464,7 +476,7 @@
                 <p class="p1">Kaifuotoja. Tikra, gniaužianti kvapą istorija apie dvigubą narkomanės gyvenimą</p>
                 <p class="p2">Tiffany Jenkins</p>
             </div>
-            <button>Peržiūrėti</button>
+            <button ontouchstart>Peržiūrėti</button>
             <div class="hr"><hr></div>
         </div>
         <div class="knyga">
@@ -473,7 +485,7 @@
                 <p class="p1">Enciklopedija apie viską. Su tūkstančiais neįtikėtinų faktų</p>
                 <p class="p2">-</p>
             </div>
-            <button>Peržiūrėti</button>
+            <button ontouchstart>Peržiūrėti</button>
             <div class="hr"><hr></div>
         </div>
         <div class="knyga">
@@ -482,7 +494,7 @@
                 <p class="p1">Gyvulių ūkis</p>
                 <p class="p2">Džordžas Orvelas (George Orwell)</p>
             </div>
-            <button>Peržiūrėti</button>
+            <button ontouchstart>Peržiūrėti</button>
             <div class="hr"><hr></div>
         </div>
         <div class="knyga">
@@ -491,7 +503,7 @@
                 <p class="p1">Jūra vandenynas</p>
                 <p class="p2">Alessandro Baricco</p>
             </div>
-            <button>Peržiūrėti</button>
+            <button ontouchstart>Peržiūrėti</button>
             <div class="hr"><hr></div>
         </div>
         <div class="knyga">
@@ -500,7 +512,7 @@
                 <p class="p1">Apie peles ir žmones</p>
                 <p class="p2">John Steinbeck</p>
             </div>
-            <button>Peržiūrėti</button>
+            <button ontouchstart>Peržiūrėti</button>
             <div class="hr"><hr></div>
         </div>
         <div class="knyga" style="margin-bottom: 10px;">
@@ -509,7 +521,7 @@
                 <p class="p1">Vidurnakčio biblioteka</p>
                 <p class="p2">Matt Haig</p>
             </div>
-            <button>Peržiūrėti</button>
+            <button ontouchstart>Peržiūrėti</button>
             <div class="hr"><hr></div>
         </div>
     </div>
@@ -519,29 +531,25 @@
     <script>
         window.onscroll = function() {scrollFunction()};
         function scrollFunction() {
-            if(document.body.scrollTop > 25 || document.documentElement.scrollTop > 25)
+            if(document.body.scrollTop > 28 || document.documentElement.scrollTop > 28)
             {
-                document.getElementById("topInformation").style.boxShadow = "0 0 10px lightgrey";
-                document.getElementById("topInformation").style.backgroundColor = "rgba(245, 245, 245, 0.75)";
-                document.getElementById("topInformationText").style.opacity = "1";
-                document.getElementById("topInformationText2").style.opacity = "1";
                 document.getElementById("pagrindinisText").style.opacity = "0";
                 document.getElementById("bibliotekaText").style.opacity = "0";
-                document.getElementById("user").style.opacity = "0";
-                document.getElementById("user2").style.opacity = "0";
-                document.getElementById("userSmall").style.opacity = "1";
+                document.getElementById("topInformation").style.top = "-1px";
+                document.getElementById("topInformation").style.boxShadow = "0 0 10px lightgrey";
+                document.getElementById("nav").style.bottom = "-60px";
+                document.getElementById("nav").style.boxShadow = "none";
+                document.getElementById("iVirsu").style.bottom = "10px";
             }
             else
             {
-                document.getElementById("topInformation").style.boxShadow = "none";
-                document.getElementById("topInformation").style.backgroundColor = "rgba(245, 245, 245, 1)";
-                document.getElementById("topInformationText").style.opacity = "0";
-                document.getElementById("topInformationText2").style.opacity = "0";
                 document.getElementById("pagrindinisText").style.opacity = "1";
                 document.getElementById("bibliotekaText").style.opacity = "1";
-                document.getElementById("user").style.opacity = "1";
-                document.getElementById("user2").style.opacity = "1";
-                document.getElementById("userSmall").style.opacity = "0";
+                document.getElementById("topInformation").style.top = "-50px";
+                document.getElementById("topInformation").style.boxShadow = "none";
+                document.getElementById("iVirsu").style.bottom = "-45px";
+                document.getElementById("nav").style.bottom = "-1px";
+                document.getElementById("nav").style.boxShadow = "0 0 10px lightgrey";
             }
         }
         function pagrindinis() {
@@ -556,19 +564,7 @@
             document.getElementById("biblLi").style.color = "darkgrey";
             document.getElementById("topInformationText").style.display = "block";
             document.getElementById("topInformationText2").style.display = "none";
-
-            document.getElementById("topInformation").style.transition = "none";
-            document.getElementById("topInformationText").style.transition = "none";
-            document.getElementById("pagrindinisText").style.transition = "none";
-            document.getElementById("user").style.transition = "none";
-            document.getElementById("userSmall").style.transition = "none";
-            setTimeout(() => {
-                document.getElementById("topInformation").style.transition = "0.3s";
-                document.getElementById("topInformationText").style.transition = "0.3s";
-                document.getElementById("pagrindinisText").style.transition = "0.3s";
-                document.getElementById("user").style.transition = "0.3s";
-                document.getElementById("userSmall").style.transition = "0.3s";
-            }, 50);
+            document.getElementById("sortBy").style.display = "none";
         }
         function biblioteka() {
             setTimeout(() => {
@@ -582,19 +578,19 @@
             document.getElementById("biblLi").style.color = "black";
             document.getElementById("topInformationText").style.display = "none";
             document.getElementById("topInformationText2").style.display = "block";
-            
-            document.getElementById("topInformation").style.transition = "none";
-            document.getElementById("topInformationText2").style.transition = "none";
-            document.getElementById("bibliotekaText").style.transition = "none";
-            document.getElementById("user2").style.transition = "none";
-            document.getElementById("userSmall").style.transition = "none";
+            document.getElementById("sortBy").style.display = "flex";
+        }
+        function scrollToTop() {
             setTimeout(() => {
-                document.getElementById("topInformation").style.transition = "0.3s";
-                document.getElementById("topInformationText2").style.transition = "0.3s";
-                document.getElementById("bibliotekaText").style.transition = "0.3s";
-                document.getElementById("user2").style.transition = "0.3s";
-                document.getElementById("userSmall").style.transition = "0.3s";
-            }, 50);
+                document.querySelector('#pageTop').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }, 1);
+            setTimeout(() => {
+                document.querySelector('#pageTop2').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }, 2);
         }
     </script>
 </body>

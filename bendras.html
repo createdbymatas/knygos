@@ -162,7 +162,7 @@
             border-radius: 100%;
             position: fixed;
             top: 10px;
-            right: 15px;
+            right: 10px;
             cursor: pointer;
             display: none;
             justify-content: center;
@@ -171,6 +171,7 @@
             z-index: 11;
         }
         #sortBy:active{
+            transform: scale(0.8);
             opacity: 0.2;
         }
         #selectSortBy{
@@ -489,6 +490,10 @@
             font-weight: 600;
             cursor: pointer;
         }
+        .knyga button:active{
+            transform: scale(0.8);
+            opacity: 0.2;
+        }
         .p1{
             width: 100%;
             font-size: 15px;
@@ -560,7 +565,7 @@
             display: inline-block;
             text-overflow: ellipsis;
         }
-        #kategorijosPaieska{
+        #zanroPaieska{
             width: 100%;
             height: 60px;
             margin-top: 10px;
@@ -570,17 +575,49 @@
             display: inline-block;
             padding-top: 30px;
         }
-        #kategorijosPaieska p{
+        #zanroPaieska p{
             font-weight: 600;
             font-size: 18px;
             position: absolute;
             margin-left: 20px;
             margin-top: -30px;
             z-index: 5;
-            cursor: pointer;
             color: black;
         }
-        #kategorijosPaieska button{
+        #zanroPaieska button{
+            width: auto;
+            height: 30px;
+            border: none;
+            background-color: lightgrey;
+            color: black;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 50px;
+            padding: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-right: 10px;
+        }
+        #metuPaieska{
+            width: 100%;
+            height: 60px;
+            margin-top: 10px;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            white-space: nowrap; 
+            display: inline-block;
+            padding-top: 30px;
+        }
+        #metuPaieska p{
+            font-weight: 600;
+            font-size: 18px;
+            position: absolute;
+            margin-left: 20px;
+            margin-top: -30px;
+            z-index: 5;
+            color: black;
+        }
+        #metuPaieska button{
             width: auto;
             height: 30px;
             border: none;
@@ -611,7 +648,6 @@
             margin-left: 20px;
             margin-top: -30px;
             z-index: 5;
-            cursor: pointer;
             color: black;
         }
         #puslapiuPaieska button{
@@ -645,7 +681,6 @@
             margin-left: 20px;
             margin-top: -30px;
             z-index: 5;
-            cursor: pointer;
             color: black;
         }
         #kalbosPaieska button{
@@ -679,7 +714,6 @@
             margin-left: 20px;
             margin-top: -30px;
             z-index: 5;
-            cursor: pointer;
             color: black;
         }
         #leidyklosPaieska button{
@@ -702,6 +736,144 @@
             color: darkgrey;
             margin-top: 2px;
             cursor: default;
+        }
+        .pilnaKnyga{
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: -105%;
+            background-color: rgb(245, 245, 245);
+            box-shadow: 0 0 15px darkgrey;
+            z-index: 20;
+            padding-top: 50px;
+            padding-bottom: 10px;
+            overflow: hidden;
+            overflow-y: scroll;
+            transform: scale(0.8);
+            border-radius: 15px;
+        }
+        .shadowPilna{
+            width: 100%;
+            height: 50px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 21;
+            background-image: linear-gradient(rgb(245, 245, 245), transparent);
+            display: none;
+            opacity: 0;
+        }
+        .uzdarytiPilnaKnyga{
+            width: 30px;
+            height: 30px;
+            background-color: lightgrey;
+            border-radius: 100%;
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            font-size: 17px;
+            z-index: 22;
+            opacity: 0;
+        }
+        .uzdarytiPilnaKnyga:active{
+            transform: scale(0.8);
+            opacity: 0.2;
+        }
+        .pilnaKnyga img{
+            width: 80%;
+            margin-left: 10%;
+            background-color: lightgrey;
+            border-radius: 10px;
+            box-shadow: 0 0 5px darkgrey;
+        }
+        .pilnasPavadinimas{
+            width: 100%;
+            padding-left: 20px;
+            padding-right: 20px;
+            font-weight: 600;
+            text-align: center;
+            font-size: 20px;
+            margin-top: 20px;
+            cursor: default;
+        }
+        .pilnasAutorius{
+            width: 100%;
+            padding-left: 20px;
+            padding-right: 20px;
+            font-weight: 400;
+            text-align: center;
+            font-size: 15px;
+            margin-top: 10px;
+            cursor: default;
+        }
+        .trumpasAprasymas{
+            width: 100%;
+            height: auto;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-top: 20px;
+            cursor: default;
+        }
+        .aprP{
+            font-size: 13px;
+            color: darkgrey;
+            font-weight: 600;
+        }
+        .tekP{
+            margin-top: 5px;
+            font-size: 13px;
+            color: black;
+        }
+        .apiePilnaKnyga{
+            width: 100%;
+            height: 100px;
+            margin-top: 10px;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            white-space: nowrap; 
+            display: inline-block;
+            padding-top: 25px;
+        }
+        .apiePilnaKnyga p{
+            font-weight: 600;
+            font-size: 18px;
+            position: absolute;
+            margin-left: 20px;
+            margin-top: -25px;
+            z-index: 5;
+            font-size: 13px;
+            color: darkgrey;
+            cursor: default;
+        }
+        .apiePilnaKnyga div{
+            height: 70px;
+            border: none;
+            border-right: 0.5px solid darkgrey;
+            color: black;
+            font-weight: 400;
+            cursor: default;
+            display: inline-block;
+            text-align: center;
+            padding-top: 15px;
+            margin-left: -3px;
+        }
+        .span1{
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 5px;
+            display: block;
+        }
+        .span2{
+            font-weight: 400;
+            font-size: 13px;
+            display: block;
         }
     </style>
     <div id="loading">
@@ -731,6 +903,33 @@
         <button><i class="fa-solid fa-check"></i> autorių: nuo A iki Ž</button>
         <button style="border-bottom: none;"><i class="fa-solid fa-check"></i> autorių: nuo Ž iki A</button>
     </div>
+
+
+
+    <div class="shadowPilna" id="seselis1"></div>
+    <i class="fa-solid fa-xmark uzdarytiPilnaKnyga" id="uzdaryti1" onclick="uzdaryti1Knyga()" ontouchstart></i>
+    <div class="pilnaKnyga" id="pilnaKnyga1">
+        <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/-/i/-isskirtiniai-sekmingu-zmoniu-paslaptis.jpg" alt="nuotrauka"></img>
+        <p class="pilnasPavadinimas">Išskirtiniai. Sėkmingų žmonių paslaptis</p>
+        <p class="pilnasAutorius">Malcolm Gladwell</p>
+        <div class="trumpasAprasymas">
+            <p class="aprP"><i class="fa-solid fa-align-left"></i> Trumpas aprašymas:</p>
+            <p class="tekP">Kodėl kai kuriems žmonėms tiesiog neįtikėtinai sekasi?<br><br>Būkime atviri, kiek kartų esate girdėję, kad sėkmė visada yra sunkaus ir tik sunkaus darbo rezultatas? Neeilinės sėkmės istorijos dažniausiai paaiškinamos dviem dalykais – intelektu ir ambicijomis. Knygoje Malcolmas Gladwellas imasi parodyti, kad tikroji sėkmės istorija yra visai kitokia.<br><br>Jei norime suprasti, kodėl kai kuriems žmonėms taip sekasi, turime pastebėti visai nereikšmingas detales: jų kultūrą, šeimą ir ypatingą jų auklėjimo patirtį. Šių žmonių sėkmės paslaptis yra daug sudėtingesnė ir įdomesnė, nei gali pasirodyti iš pirmo žvilgsnio.<br><br>Išskirtinių – tų, kurių pasiekimai peržengia įprastas ribas – gyvenimo istorijos klostosi pagal ypatingą, netikėtą logiką, kurią atskleisdamas autorius kuria puikų ir kartu provokuojantį planą.</p>
+        </div>
+        <div class="apiePilnaKnyga">
+            <p><i class="fa-regular fa-bookmark"></i> Apie knygą:</p>
+            <div style="margin-left: 20px; width: 130px; border-left: 0.5px solid darkgrey;"><span class="span1"><i class="fa-solid fa-list"></i> Žanras</span><span class="span2">Sėkmės istorijos</span></div>
+            <div style="width: 160px;"><span class="span1"><i class="fa-regular fa-calendar"></i> Išleidimo metai</span><span class="span2">2023</span></div>
+            <div style="width: 170px;"><span class="span1"><i class="fa-regular fa-file-lines"></i> Puslapių skaičius</span><span class="span2">272</span></div>
+            <div style="width: 90px;"><span class="span1"><i class="fa-solid fa-language"></i> Kalba</span><span class="span2">lietuvių</span></div>
+            <div style="margin-right: 20px; width: 110px;"><span class="span1"><i class="fa-solid fa-arrow-up-from-bracket"></i> Leidykla</span><span class="span2">Eugrimas</span></div>
+        </div>
+    </div>
+
+
+
+
+
     <div id="pagrindinis">
         <div id="pageTopPagrindinis"></div>
         <h1 id="pagrindinisText">Pagrindinis</h1>
@@ -769,7 +968,7 @@
                 <p class="p1">Išskirtiniai. Sėkmingų žmonių paslaptis</p>
                 <p class="p2">Malcolm Gladwell</p>
             </div>
-            <button ontouchstart>Peržiūrėti</button>
+            <button onclick="atidaryti1Knyga()" ontouchstart>Peržiūrėti</button>
             <div class="hr"><hr></div>
         </div>
         <div class="knyga">
@@ -883,12 +1082,40 @@
             <button id="gerai" type="button" onclick="check(this.form)" style="display: none;"></button>
         </form>
         <p id="ieskotiPagal">Ieškoti pagal...</p>
-        <div id="kategorijosPaieska">
-            <p><i class="fa-solid fa-list"></i> kategoriją:</p>
-            <button style="margin-left: 20px;">kategorija1</button>
-            <button>kategorija2</button>
-            <button>kategorija3</button>
-            <button style="margin-right: 20px;">kategorija4</button>
+        <div id="zanroPaieska">
+            <p><i class="fa-solid fa-list"></i> žanrą:</p>
+            <button style="margin-left: 20px;">žanras1</button>
+            <button>žanras2</button>
+            <button>žanras3</button>
+            <button style="margin-right: 20px;">žanras4</button>
+        </div>
+        <div id="metuPaieska">
+            <p><i class="fa-regular fa-calendar"></i> išleidimo metus:</p>
+            <button style="margin-left: 20px;">2000</button>
+            <button>2001</button>
+            <button>2002</button>
+            <button>2003</button>
+            <button>2004</button>
+            <button>2005</button>
+            <button>2006</button>
+            <button>2007</button>
+            <button>2008</button>
+            <button>2009</button>
+            <button>2010</button>
+            <button>2011</button>
+            <button>2012</button>
+            <button>2013</button>
+            <button>2014</button>
+            <button>2015</button>
+            <button>2016</button>
+            <button>2017</button>
+            <button>2018</button>
+            <button>2019</button>
+            <button>2020</button>
+            <button>2021</button>
+            <button>2022</button>
+            <button>2023</button>
+            <button style="margin-right: 20px;">2024</button>
         </div>
         <div id="puslapiuPaieska">
             <p><i class="fa-regular fa-file-lines"></i> puslapių skaičių:</p>
@@ -1118,6 +1345,32 @@
                 document.getElementById("kalbosPaieska").style.display = "none";
                 document.getElementById("leidyklosPaieska").style.display = "none";
             }
+        }
+        function atidaryti1Knyga() {
+            document.getElementById("pilnaKnyga1").style.bottom = "0";
+            document.getElementById("uzdaryti1").style.display = "flex";
+            document.getElementById("seselis1").style.display = "block";
+            document.getElementById("body").style.overflowY = "hidden";
+            setTimeout(() => {
+                document.getElementById("pilnaKnyga1").style.transform = "scale(1)";
+                document.getElementById("pilnaKnyga1").style.borderRadius = "0";
+                document.getElementById("seselis1").style.opacity = "1";
+                document.getElementById("uzdaryti1").style.opacity = "1";
+            }, 200);
+        }
+        function uzdaryti1Knyga() {
+            document.getElementById("pilnaKnyga1").style.transform = "scale(0.8)";
+            document.getElementById("pilnaKnyga1").style.borderRadius = "15px";
+            document.getElementById("seselis1").style.opacity = "0";
+            document.getElementById("uzdaryti1").style.opacity = "0";
+            setTimeout(() => {
+                document.getElementById("pilnaKnyga1").style.bottom = "-105%";
+            }, 100);
+            setTimeout(() => {
+                document.getElementById("uzdaryti1").style.display = "flex";
+                document.getElementById("seselis1").style.display = "block";
+                document.getElementById("body").style.overflowY = "scroll";
+            }, 300);
         }
     </script>
 </body>

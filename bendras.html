@@ -175,17 +175,21 @@
             opacity: 0.2;
         }
         #selectSortBy{
-            width: 0;
-            height: 0;
+            width: 230px;
+            height: 210px;
             position: fixed;
-            top: 45px;
-            right: 10px;
+            /* top: 45px; */
+            /* right: 10px; */
+            top: -20px;
+            right: -25px;
             z-index: 15;
             border-radius: 15px;
             box-shadow: 0 0 100px darkgrey;
             background-color: rgb(245, 245, 245);
             opacity: 0;
             pointer-events: none;
+            transform: scale(0.7);
+            display: none;
             transition: 0.2s;
         }
         #selectSortBy p{
@@ -1341,28 +1345,28 @@
             }, ę);
         }
         function sortByMenu() {
-            document.getElementById("selectSortBy").style.width = "235px";
-            document.getElementById("selectSortBy").style.height = "215px";
+            document.getElementById("selectSortBy").style.display = "block";
             document.getElementById("selectSortBy").style.pointerEvents = "all";
             document.getElementById("disableSortBy").style.display = "block";
             document.getElementById("body").style.overflowY = "hidden";
             setTimeout(() => {
+                document.getElementById("selectSortBy").style.transform = "scale(1)";
                 document.getElementById("selectSortBy").style.opacity = "1";
-            }, 80);
-            setTimeout(() => {
-                document.getElementById("selectSortBy").style.width = "230px";
-                document.getElementById("selectSortBy").style.height = "210px";
-            }, 200);
+                document.getElementById("selectSortBy").style.top = "45px";
+                document.getElementById("selectSortBy").style.right = "10px";
+            }, 10);
         }
         function closeSortByMenu() {
             document.getElementById("selectSortBy").style.opacity = "0";
             document.getElementById("selectSortBy").style.pointerEvents = "none";
+            document.getElementById("selectSortBy").style.transform = "scale(0.7)";
+            document.getElementById("selectSortBy").style.top = "-20px";
+            document.getElementById("selectSortBy").style.right = "-25px";
             document.getElementById("disableSortBy").style.display = "none";
             document.getElementById("body").style.overflowY = "scroll";
             setTimeout(() => {
-                document.getElementById("selectSortBy").style.height = "0";
-                document.getElementById("selectSortBy").style.width = "0";
-            }, 300);
+                document.getElementById("selectSortBy").style.display = "none";
+            }, 200);
         }
         document.getElementById('paieskosInput').addEventListener('keydown', (event) => {
             if (event.key === 'Enter') {

@@ -53,7 +53,7 @@
         body{
             background-color: rgb(245, 245, 245);
             padding-bottom: 55px;
-            overflow: hidden;
+            overflow-x: hidden;
             overflow-y: scroll;
         }
         #loading{
@@ -147,7 +147,7 @@
             opacity: 1;
         }
         #topInformationTextPagrindinis{
-            font-size: 17px;
+            font-size: 20px;
             font-weight: 600;
             opacity: 1;
             display: block;
@@ -155,7 +155,7 @@
             color: black;
         }
         #topInformationTextBiblioteka{
-            font-size: 17px;
+            font-size: 20px;
             font-weight: 600;
             opacity: 1;
             display: none;
@@ -163,7 +163,7 @@
             color: black;
         }
         #topInformationTextPaieska{
-            font-size: 17px;
+            font-size: 20px;
             font-weight: 600;
             opacity: 1;
             display: none;
@@ -199,7 +199,7 @@
             right: -25px;
             z-index: 15;
             border-radius: 15px;
-            box-shadow: 0 0 100px darkgrey;
+            box-shadow: 0 0 50px lightgrey;
             background-color: rgb(245, 245, 245);
             opacity: 0;
             pointer-events: none;
@@ -513,7 +513,7 @@
             transform: scale(0.8);
             opacity: 0.2;
         }
-        .p1{
+        .knygosPavadinimas{
             width: 100%;
             font-size: 15px;
             overflow: hidden;
@@ -524,7 +524,7 @@
             font-weight: 600;
             cursor: default;
         }
-        .p2{
+        .knygosAutorius{
             width: 100%;
             font-size: 13px;
             overflow: hidden;
@@ -565,7 +565,6 @@
             color: darkgrey;
             opacity: 1;
         }
-
         ::-ms-input-placeholder {
             color: darkgrey;
         }
@@ -774,7 +773,7 @@
             transform: scale(0.8);
             opacity: 0.2;
         }
-        .endText{
+        .pabaigosTekstas{
             font-size: 13px;
             text-align: center;
             color: darkgrey;
@@ -801,7 +800,7 @@
             display: none;
             border-radius: 15px;
         }
-        .shadowPilna{
+        .seselisPilnosKnygosVirsuje{
             width: 100%;
             height: 50px;
             position: fixed;
@@ -868,20 +867,20 @@
             margin-top: 20px;
             cursor: default;
         }
-        .vieP{
+        .vietaP{
             font-size: 13px;
             color: darkgrey;
             font-weight: 600;
         }
-        .locP{
+        .detaliVietaP{
             margin-top: 5px;
             font-size: 15px;
             color: black;
         }
-        .locP b{
+        .detaliVietaP b{
             font-weight: 600;
         }
-        .locP span{
+        .detaliVietaP span{
             background-color: black;
             color: white;
             padding-top: 2px;
@@ -898,12 +897,12 @@
             margin-top: 20px;
             cursor: default;
         }
-        .aprP{
+        .trumpasAprasymasP{
             font-size: 13px;
             color: darkgrey;
             font-weight: 600;
         }
-        .tekP{
+        .aprasymasP{
             margin-top: 5px;
             font-size: 13px;
             color: black;
@@ -931,6 +930,7 @@
         }
         .apiePilnaKnyga div{
             height: 70px;
+            width: auto;
             border: none;
             border-right: 0.5px solid darkgrey;
             color: black;
@@ -940,24 +940,26 @@
             text-align: center;
             padding-top: 15px;
             margin-left: -3px;
+            padding-left: 10px;
+            padding-right: 10px;
         }
-        .span1{
+        .apieParyskintaInformacija{
             font-weight: 600;
             font-size: 15px;
             margin-bottom: 5px;
             display: block;
         }
-        .span2{
+        .apieDetaliau{
             font-weight: 400;
             font-size: 13px;
             display: block;
         }
     </style>
-    <div id="loading">
+    <!-- <div id="loading">
         <img src="knygos.png" alt="Knygos" id="loadImage" onload="showLoadImage()">
         <div class="spin-loader" aria-hidden="true"></div>
         <p id="createdByMatas"><span id="raide1">C</span><span id="raide2">r</span><span id="raide3">e</span><span id="raide4">a</span><span id="raide5">t</span><span id="raide6">e</span><span id="raide7">d</span> <span id="raide8">b</span><span id="raide9">y</span> <span id="raide10">M</span><span id="raide11">a</span><span id="raide12">t</span><span id="raide13">a</span><span id="raide14">s</span></p>
-    </div>
+    </div> -->
     <div id="topInformation">
         <p id="topInformationTextPagrindinis">Pagrindinis</p>
         <p id="topInformationTextBiblioteka">Biblioteka</p>
@@ -975,7 +977,7 @@
     <button id="iVirsu" onclick="scrollToTop()" ontouchstart><i class="fa-solid fa-arrow-up" style="margin-right: 5px;"></i> į viršų</button>
     <div id="selectSortBy">
         <p>Rikiuoti pagal...</p>
-        <button><i class="fa-solid fa-check"></i> pavadinimą: nuo A iki Ž</button>
+        <button><i class="fa-solid fa-check" style="opacity: 1;"></i> pavadinimą: nuo A iki Ž</button>
         <button><i class="fa-solid fa-check"></i> pavadinimą: nuo Ž iki A</button>
         <button><i class="fa-solid fa-check"></i> autorių: nuo A iki Ž</button>
         <button style="border-bottom: none;"><i class="fa-solid fa-check"></i> autorių: nuo Ž iki A</button>
@@ -1016,8 +1018,8 @@
         <div class="knyga" style="margin-top: 140px;">
             <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/-/i/-isskirtiniai-sekmingu-zmoniu-paslaptis.jpg" alt="Išskirtiniai. Sėkmingų žmonių paslaptis">
             <div class="knygaText">
-                <p class="p1">Išskirtiniai. Sėkmingų žmonių paslaptis</p>
-                <p class="p2">Malcolm Gladwell</p>
+                <p class="knygosPavadinimas">Išskirtiniai. Sėkmingų žmonių paslaptis</p>
+                <p class="knygosAutorius">Malcolm Gladwell</p>
             </div>
             <button onclick="atidaryti1Knyga()" ontouchstart>Peržiūrėti</button>
             <div class="hr"><hr></div>
@@ -1025,8 +1027,8 @@
         <div class="knyga">
             <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/d/z/dziaugiuosi-kad-mire-mano-mama.jpg" alt="Džiaugiuosi, kad mirė mano mama">
             <div class="knygaText">
-                <p class="p1">Džiaugiuosi, kad mirė mano mama</p>
-                <p class="p2">Jennette McCurdy</p>
+                <p class="knygosPavadinimas">Džiaugiuosi, kad mirė mano mama</p>
+                <p class="knygosAutorius">Jennette McCurdy</p>
             </div>
             <button ontouchstart>Peržiūrėti</button>
             <div class="hr"><hr></div>
@@ -1034,8 +1036,8 @@
         <div class="knyga">
             <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/i/s/isgydytos-mintys-gyvenimo-prasmes-terapija.jpg" alt="Išgydytos mintys. Gyvenimo prasmės terapija">
             <div class="knygaText">
-                <p class="p1">Išgydytos mintys. Gyvenimo prasmės terapija</p>
-                <p class="p2">Benas Lyris</p>
+                <p class="knygosPavadinimas">Išgydytos mintys. Gyvenimo prasmės terapija</p>
+                <p class="knygosAutorius">Benas Lyris</p>
             </div>
             <button ontouchstart>Peržiūrėti</button>
             <div class="hr"><hr></div>
@@ -1043,8 +1045,8 @@
         <div class="knyga">
             <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/m/o/moneta--labirintas-ii.jpg" alt="Moneta & labirintas">
             <div class="knygaText">
-                <p class="p1">Moneta & labirintas</p>
-                <p class="p2">Mantas Adomėnas</p>
+                <p class="knygosPavadinimas">Moneta & labirintas</p>
+                <p class="knygosAutorius">Mantas Adomėnas</p>
             </div>
             <button ontouchstart>Peržiūrėti</button>
             <div class="hr"><hr></div>
@@ -1052,8 +1054,8 @@
         <div class="knyga">
             <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/1/9/1984-ieji-4-as-leidimas_1.jpg" alt="1984-ieji">
             <div class="knygaText">
-                <p class="p1">1984-ieji</p>
-                <p class="p2">Džordžas Orvelas (George Orwell)</p>
+                <p class="knygosPavadinimas">1984-ieji</p>
+                <p class="knygosAutorius">Džordžas Orvelas (George Orwell)</p>
             </div>
             <button ontouchstart>Peržiūrėti</button>
             <div class="hr"><hr></div>
@@ -1061,8 +1063,8 @@
         <div class="knyga">
             <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/i/o/iogunas-pirma-knyga.jpg" alt="Šiogūnas. Pirma knyga">
             <div class="knygaText">
-                <p class="p1">Šiogūnas. Pirma knyga</p>
-                <p class="p2">James Clavell</p>
+                <p class="knygosPavadinimas">Šiogūnas. Pirma knyga</p>
+                <p class="knygosAutorius">James Clavell</p>
             </div>
             <button ontouchstart>Peržiūrėti</button>
             <div class="hr"><hr></div>
@@ -1070,8 +1072,8 @@
         <div class="knyga">
             <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/k/a/kaifuotoja-tikra-gniauzianti-kvapa-istorija-apie-dviguba.jpg" alt="Kaifuotoja. Tikra, gniaužianti kvapą istorija apie dvigubą narkomanės gyvenimą">
             <div class="knygaText">
-                <p class="p1">Kaifuotoja. Tikra, gniaužianti kvapą istorija apie dvigubą narkomanės gyvenimą</p>
-                <p class="p2">Tiffany Jenkins</p>
+                <p class="knygosPavadinimas">Kaifuotoja. Tikra, gniaužianti kvapą istorija apie dvigubą narkomanės gyvenimą</p>
+                <p class="knygosAutorius">Tiffany Jenkins</p>
             </div>
             <button ontouchstart>Peržiūrėti</button>
             <div class="hr"><hr></div>
@@ -1079,8 +1081,8 @@
         <div class="knyga">
             <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/e/n/enciklopedija-apie-viska-su-tukstanciais-neitiketinu-faktu.jpg" alt="Enciklopedija apie viską. Su tūkstančiais neįtikėtinų faktų">
             <div class="knygaText">
-                <p class="p1">Enciklopedija apie viską. Su tūkstančiais neįtikėtinų faktų</p>
-                <p class="p2">-</p>
+                <p class="knygosPavadinimas">Enciklopedija apie viską. Su tūkstančiais neįtikėtinų faktų</p>
+                <p class="knygosAutorius">-</p>
             </div>
             <button ontouchstart>Peržiūrėti</button>
             <div class="hr"><hr></div>
@@ -1088,8 +1090,8 @@
         <div class="knyga">
             <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/g/y/gyvuliu-ukis_1.jpg" alt="Gyvulių ūkis">
             <div class="knygaText">
-                <p class="p1">Gyvulių ūkis</p>
-                <p class="p2">Džordžas Orvelas (George Orwell)</p>
+                <p class="knygosPavadinimas">Gyvulių ūkis</p>
+                <p class="knygosAutorius">Džordžas Orvelas (George Orwell)</p>
             </div>
             <button ontouchstart>Peržiūrėti</button>
             <div class="hr"><hr></div>
@@ -1097,8 +1099,8 @@
         <div class="knyga">
             <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/j/u/jura-vandenynas.jpg" alt="Jūra vandenynas">
             <div class="knygaText">
-                <p class="p1">Jūra vandenynas</p>
-                <p class="p2">Alessandro Baricco</p>
+                <p class="knygosPavadinimas">Jūra vandenynas</p>
+                <p class="knygosAutorius">Alessandro Baricco</p>
             </div>
             <button ontouchstart>Peržiūrėti</button>
             <div class="hr"><hr></div>
@@ -1106,8 +1108,8 @@
         <div class="knyga">
             <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/a/p/apie-peles-ir-zmones.jpg" alt="Apie peles ir žmones">
             <div class="knygaText">
-                <p class="p1">Apie peles ir žmones</p>
-                <p class="p2">John Steinbeck</p>
+                <p class="knygosPavadinimas">Apie peles ir žmones</p>
+                <p class="knygosAutorius">John Steinbeck</p>
             </div>
             <button ontouchstart>Peržiūrėti</button>
             <div class="hr"><hr></div>
@@ -1115,8 +1117,8 @@
         <div class="knyga" style="margin-bottom: 10px;">
             <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/v/i/vidurnakcio-biblioteka-.jpg" alt="Vidurnakčio biblioteka">
             <div class="knygaText">
-                <p class="p1">Vidurnakčio biblioteka</p>
-                <p class="p2">Matt Haig</p>
+                <p class="knygosPavadinimas">Vidurnakčio biblioteka</p>
+                <p class="knygosAutorius">Matt Haig</p>
             </div>
             <button ontouchstart>Peržiūrėti</button>
             <div class="hr"><hr></div>
@@ -1127,7 +1129,7 @@
         <h1 id="paieskaText">Paieška</h1>
         <h3>Knygos</h3>
 
-        <form id="rankinePaieska">
+        <form id="rankinePaieska" autocomplete="off">
             <i class="fa-solid fa-magnifying-glass" id="searchIconInput"></i>
             <input type=”search” autocomplete=”off” placeholder="Ieškoti pagal pavadinimą ar autorių..." id="paieskosInput" name="paieskosInput" onkeydown="paspaustiGerai()" onkeyup="paspaustiGerai()">
             <button id="gerai" type="button" onclick="check(this.form)" style="display: none;"></button>
@@ -1194,15 +1196,15 @@
             <button style="margin-right: 20px;" ontouchstart>leidykla4</button>
         </div>
     </div>
-    <p class="endText" style="color: black; margin-top: 10px; opacity: 0.1;"><i class="fa-regular fa-circle-question"></i> Pagalbos centras</p>
-    <p class="endText" style="margin-top: 5px;">Kasparavičių šeimos knygų biblioteka</p>
-    <p class="endText">Created by Matas</p>
+    <p class="pabaigosTekstas" style="color: black; margin-top: 10px; opacity: 0.1;"><i class="fa-regular fa-circle-question"></i> Pagalbos centras</p>
+    <p class="pabaigosTekstas" style="margin-top: 5px;">Kasparavičių šeimos knygų biblioteka</p>
+    <p class="pabaigosTekstas">Created by Matas</p>
 
 
 
 
 
-    <div class="shadowPilna" id="seselis1"></div>
+    <div class="seselisPilnosKnygosVirsuje" id="seselis1"></div>
         <div id="pageTopKnyga1" style="position: absolute; top: 0;"></div>
         <i class="fa-solid fa-xmark uzdarytiPilnaKnyga" style="display: none;" id="uzdaryti1" onclick="uzdaryti1Knyga()" ontouchstart></i>
         <div class="pilnaKnyga" id="pilnaKnyga1">
@@ -1210,20 +1212,20 @@
             <p class="pilnasPavadinimas">Išskirtiniai. Sėkmingų žmonių paslaptis</p>
             <p class="pilnasAutorius">Malcolm Gladwell</p>
             <div class="vieta">
-                <p class="vieP"><i class="fa-solid fa-location-arrow"></i> Vieta:</p>
-                <p class="locP"><b>bendra</b> biblioteka: <span>?</span> eilė, <span>?</span> vieta</p>
+                <p class="vietaP"><i class="fa-solid fa-location-arrow"></i> Vieta:</p>
+                <p class="detaliVietaP"><b>bendra</b> biblioteka: <span>?</span> eilė, <span>?</span> vieta</p>
             </div>
             <div class="trumpasAprasymas">
-                <p class="aprP"><i class="fa-solid fa-align-left"></i> Trumpas aprašymas:</p>
-                <p class="tekP">Kodėl kai kuriems žmonėms tiesiog neįtikėtinai sekasi?<br><br>Būkime atviri, kiek kartų esate girdėję, kad sėkmė visada yra sunkaus ir tik sunkaus darbo rezultatas? Neeilinės sėkmės istorijos dažniausiai paaiškinamos dviem dalykais – intelektu ir ambicijomis. Knygoje Malcolmas Gladwellas imasi parodyti, kad tikroji sėkmės istorija yra visai kitokia.<br><br>Jei norime suprasti, kodėl kai kuriems žmonėms taip sekasi, turime pastebėti visai nereikšmingas detales: jų kultūrą, šeimą ir ypatingą jų auklėjimo patirtį. Šių žmonių sėkmės paslaptis yra daug sudėtingesnė ir įdomesnė, nei gali pasirodyti iš pirmo žvilgsnio.<br><br>Išskirtinių – tų, kurių pasiekimai peržengia įprastas ribas – gyvenimo istorijos klostosi pagal ypatingą, netikėtą logiką, kurią atskleisdamas autorius kuria puikų ir kartu provokuojantį planą.</p>
+                <p class="trumpasAprasymasP"><i class="fa-solid fa-align-left"></i> Trumpas aprašymas:</p>
+                <p class="aprasymasP">Kodėl kai kuriems žmonėms tiesiog neįtikėtinai sekasi?<br><br>Būkime atviri, kiek kartų esate girdėję, kad sėkmė visada yra sunkaus ir tik sunkaus darbo rezultatas? Neeilinės sėkmės istorijos dažniausiai paaiškinamos dviem dalykais – intelektu ir ambicijomis. Knygoje Malcolmas Gladwellas imasi parodyti, kad tikroji sėkmės istorija yra visai kitokia.<br><br>Jei norime suprasti, kodėl kai kuriems žmonėms taip sekasi, turime pastebėti visai nereikšmingas detales: jų kultūrą, šeimą ir ypatingą jų auklėjimo patirtį. Šių žmonių sėkmės paslaptis yra daug sudėtingesnė ir įdomesnė, nei gali pasirodyti iš pirmo žvilgsnio.<br><br>Išskirtinių – tų, kurių pasiekimai peržengia įprastas ribas – gyvenimo istorijos klostosi pagal ypatingą, netikėtą logiką, kurią atskleisdamas autorius kuria puikų ir kartu provokuojantį planą.</p>
             </div>
             <div class="apiePilnaKnyga">
                 <p><i class="fa-regular fa-bookmark"></i> Apie knygą:</p>
-                <div style="margin-left: 20px; width: 130px; border-left: 0.5px solid darkgrey;"><span class="span1"><i class="fa-solid fa-list"></i> Žanras</span><span class="span2">Sėkmės istorijos</span></div>
-                <div style="width: 160px;"><span class="span1"><i class="fa-regular fa-calendar"></i> Išleidimo metai</span><span class="span2">2023</span></div>
-                <div style="width: 170px;"><span class="span1"><i class="fa-regular fa-file-lines"></i> Puslapių skaičius</span><span class="span2">272</span></div>
-                <div style="width: 90px;"><span class="span1"><i class="fa-solid fa-language"></i> Kalba</span><span class="span2">lietuvių</span></div>
-                <div style="margin-right: 20px; width: 110px;"><span class="span1"><i class="fa-solid fa-arrow-up-from-bracket"></i> Leidykla</span><span class="span2">Eugrimas</span>
+                <div style="margin-left: 20px; border-left: 0.5px solid darkgrey;"><span class="apieParyskintaInformacija"><i class="fa-solid fa-list"></i> Žanras</span><span class="apieDetaliau">Sėkmės istorijos</span></div>
+                <div><span class="apieParyskintaInformacija"><i class="fa-regular fa-calendar"></i> Išleidimo metai</span><span class="apieDetaliau">2023</span></div>
+                <div><span class="apieParyskintaInformacija"><i class="fa-regular fa-file-lines"></i> Puslapių skaičius</span><span class="apieDetaliau">272</span></div>
+                <div><span class="apieParyskintaInformacija"><i class="fa-solid fa-language"></i> Kalba</span><span class="apieDetaliau">lietuvių</span></div>
+                <div style="margin-right: 20px;"><span class="apieParyskintaInformacija"><i class="fa-solid fa-arrow-up-from-bracket"></i> Leidykla</span><span class="apieDetaliau">Eugrimas</span>
             </div>
         </div>
     </div>
@@ -1399,13 +1401,13 @@
         function closeSortByMenu() {
             document.getElementById("selectSortBy").style.opacity = "0";
             document.getElementById("selectSortBy").style.pointerEvents = "none";
-            document.getElementById("selectSortBy").style.transform = "scale(0.7)";
-            document.getElementById("selectSortBy").style.top = "-20px";
-            document.getElementById("selectSortBy").style.right = "-25px";
             document.getElementById("disableSortBy").style.display = "none";
             document.getElementById("body").style.overflowY = "scroll";
             setTimeout(() => {
                 document.getElementById("selectSortBy").style.display = "none";
+                document.getElementById("selectSortBy").style.transform = "scale(0.7)";
+                document.getElementById("selectSortBy").style.top = "-20px";
+                document.getElementById("selectSortBy").style.right = "-25px";
             }, 200);
         }
         document.getElementById('paieskosInput').addEventListener('keydown', (event) => {

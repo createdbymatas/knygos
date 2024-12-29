@@ -129,6 +129,63 @@
                 transform: rotate(360deg);
             }
         }
+
+        #screenSize{
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 90;
+            background-color: rgb(245, 245, 245);
+            cursor: not-allowed;
+        }
+        #screenSizeTekstas1{
+            font-size: 25px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: black;
+            cursor: not-allowed;
+            font-weight: 600;
+        }
+        #screenSizeTekstas2{
+            font-size: 17px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: black;
+            cursor: not-allowed;
+        }
+        #sizeDiv{
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: not-allowed;
+        }
+        #phoneIcon{
+            font-size: 70px;
+            position: absolute;
+            color: black;
+            cursor: not-allowed;
+        }
+        #xIcon{
+            font-size: 30px;
+            color: red;
+            background-color: rgb(245, 245, 245);
+            border-radius: 100%;
+            margin-top: 60px;
+            z-index: 2;
+            margin-left: 45px;
+            cursor: not-allowed;
+        }
+
         #topInformation{
             width: 100%;
             height: 50px;
@@ -954,12 +1011,27 @@
             font-size: 13px;
             display: block;
         }
+
+        @media only screen and (max-width: 600px){
+            #screenSize{
+                display: none;
+            }
+        }
     </style>
     <!-- <div id="loading">
         <img src="knygos.png" alt="Knygos" id="loadImage" onload="showLoadImage()">
         <div class="spin-loader" aria-hidden="true"></div>
         <p id="createdByMatas"><span id="raide1">C</span><span id="raide2">r</span><span id="raide3">e</span><span id="raide4">a</span><span id="raide5">t</span><span id="raide6">e</span><span id="raide7">d</span> <span id="raide8">b</span><span id="raide9">y</span> <span id="raide10">M</span><span id="raide11">a</span><span id="raide12">t</span><span id="raide13">a</span><span id="raide14">s</span></p>
     </div> -->
+    <div id="screenSize">
+        <p id="screenSizeTekstas1">Ekranas per didelis</p>
+        <p id="screenSizeTekstas2">Tinklalapis pritaikytas telefonui</p>
+        <div id="sizeDiv">
+            <i class="fa-solid fa-mobile-screen-button" id="phoneIcon"></i>
+            <i class="fa-regular fa-circle-xmark" id="xIcon"></i>
+        </div>
+    </div>
+
     <div id="topInformation">
         <p id="topInformationTextPagrindinis">Pagrindinis</p>
         <p id="topInformationTextBiblioteka">Biblioteka</p>

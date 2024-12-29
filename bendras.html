@@ -53,6 +53,8 @@
         body{
             background-color: rgb(245, 245, 245);
             padding-bottom: 75px;
+            overflow-x: hidden;
+            overflow-y: hidden;
         }
         #loading{
             width: 100%;
@@ -1011,6 +1013,9 @@
         }
 
         @media only screen and (max-width: 600px){
+            body{
+                overflow-y: scroll;
+            }
             #screenSize{
                 display: none;
             }

@@ -432,6 +432,7 @@
             width: 100%;
             height: auto;
             display: none;
+            padding-top: 140px;
         }
         #paieska{
             width: 100%;
@@ -830,6 +831,54 @@
             transform: scale(0.8);
             opacity: 0.2;
         }
+        #knygosPaieskoje{
+            display: none;
+            margin-top: 15px;
+        }
+        .knygaPaieskoje{
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            position: relative;
+        }
+        .knygaPaieskoje a{
+            display: none;
+        }
+        .knygaPaieskoje hr{
+            border: none;
+            border-top: 0.5px solid lightgrey;
+            width: 100%;
+        }
+        .knygaPaieskoje img{
+            width: 60px;
+            height: auto;
+            margin-left: 20px;
+            background-color: lightgrey;
+            border-radius: 5px;
+            box-shadow: 0 0 2px darkgrey;
+        }
+        .knygaPaieskoje button{
+            width: 80px;
+            height: 30px;
+            font-size: 13px;
+            border-radius: 50px;
+            border: none;
+            background-color: lightgrey;
+            color: black;
+            position: absolute;
+            right: 20px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .knygaPaieskoje button:active{
+            transform: scale(0.8);
+            opacity: 0.2;
+        }
+        
         .pabaigosTekstas{
             font-size: 13px;
             text-align: center;
@@ -1011,7 +1060,6 @@
             font-size: 13px;
             display: block;
         }
-
         @media only screen and (max-width: 600px){
             body{
                 overflow-y: scroll;
@@ -1090,7 +1138,7 @@
         <h1 id="bibliotekaText">Biblioteka</h1>
         <h3>Knygos</h3>
         
-        <div class="knyga" style="margin-top: 140px;">
+        <div class="knyga">
             <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/-/i/-isskirtiniai-sekmingu-zmoniu-paslaptis.jpg" alt="Išskirtiniai. Sėkmingų žmonių paslaptis">
             <div class="knygaText">
                 <p class="knygosPavadinimas">Išskirtiniai. Sėkmingų žmonių paslaptis</p>
@@ -1189,7 +1237,7 @@
             <button ontouchstart>Peržiūrėti</button>
             <div class="hr"><hr></div>
         </div>
-        <div class="knyga" style="margin-bottom: 10px;">
+        <div class="knyga">
             <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/v/i/vidurnakcio-biblioteka-.jpg" alt="Vidurnakčio biblioteka">
             <div class="knygaText">
                 <p class="knygosPavadinimas">Vidurnakčio biblioteka</p>
@@ -1271,6 +1319,129 @@
             <button style="margin-right: 20px;" ontouchstart>leidykla4</button>
         </div>
     </div>
+    <ul id="knygosPaieskoje">
+        <li class="knygaPaieskoje">
+            <a href="#">Išskirtiniai. Sėkmingų žmonių paslaptis Malcolm Gladwell</a>
+            <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/-/i/-isskirtiniai-sekmingu-zmoniu-paslaptis.jpg" alt="Išskirtiniai. Sėkmingų žmonių paslaptis">
+            <div class="knygaText">
+                
+                <p class="knygosPavadinimas">Išskirtiniai. Sėkmingų žmonių paslaptis</p>
+                <p class="knygosAutorius">Malcolm Gladwell</p>
+            </div>
+            <button onclick="atidaryti1Knyga()" ontouchstart>Peržiūrėti</button>
+            <div class="hr"><hr></div>
+        </li>
+        <li class="knygaPaieskoje">
+            <a href="#">Džiaugiuosi, kad mirė mano mama Jennette McCurdy</a>
+            <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/d/z/dziaugiuosi-kad-mire-mano-mama.jpg" alt="Džiaugiuosi, kad mirė mano mama">
+            <div class="knygaText">
+                <p class="knygosPavadinimas">Džiaugiuosi, kad mirė mano mama</p>
+                <p class="knygosAutorius">Jennette McCurdy</p>
+            </div>
+            <button ontouchstart>Peržiūrėti</button>
+            <div class="hr"><hr></div>
+        </li>
+        <li class="knygaPaieskoje">
+            <a href="#">Išgydytos mintys. Gyvenimo prasmės terapija Benas Lyris</a>
+            <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/i/s/isgydytos-mintys-gyvenimo-prasmes-terapija.jpg" alt="Išgydytos mintys. Gyvenimo prasmės terapija">
+            <div class="knygaText">
+                <p class="knygosPavadinimas">Išgydytos mintys. Gyvenimo prasmės terapija</p>
+                <p class="knygosAutorius">Benas Lyris</p>
+            </div>
+            <button ontouchstart>Peržiūrėti</button>
+            <div class="hr"><hr></div>
+        </li>
+        <li class="knygaPaieskoje">
+            <a href="#">Moneta & labirintas Mantas Adomėnas</a>
+            <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/m/o/moneta--labirintas-ii.jpg" alt="Moneta & labirintas">
+            <div class="knygaText">
+                <p class="knygosPavadinimas">Moneta & labirintas</p>
+                <p class="knygosAutorius">Mantas Adomėnas</p>
+            </div>
+            <button ontouchstart>Peržiūrėti</button>
+            <div class="hr"><hr></div>
+        </li>
+        <li class="knygaPaieskoje">
+            <a href="#">1984-ieji Džordžas Orvelas (George Orwell)</a>
+            <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/1/9/1984-ieji-4-as-leidimas_1.jpg" alt="1984-ieji">
+            <div class="knygaText">
+                <p class="knygosPavadinimas">1984-ieji</p>
+                <p class="knygosAutorius">Džordžas Orvelas (George Orwell)</p>
+            </div>
+            <button ontouchstart>Peržiūrėti</button>
+            <div class="hr"><hr></div>
+        </li>
+        <li class="knygaPaieskoje">
+            <a href="#">Šiogūnas. Pirma knyga James Clavell</a>
+            <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/i/o/iogunas-pirma-knyga.jpg" alt="Šiogūnas. Pirma knyga">
+            <div class="knygaText">
+                <p class="knygosPavadinimas">Šiogūnas. Pirma knyga</p>
+                <p class="knygosAutorius">James Clavell</p>
+            </div>
+            <button ontouchstart>Peržiūrėti</button>
+            <div class="hr"><hr></div>
+        </li>
+        <li class="knygaPaieskoje">
+            <a href="#">Kaifuotoja. Tikra, gniaužianti kvapą istorija apie dvigubą narkomanės gyvenimą Tiffany Jenkins</a>
+            <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/k/a/kaifuotoja-tikra-gniauzianti-kvapa-istorija-apie-dviguba.jpg" alt="Kaifuotoja. Tikra, gniaužianti kvapą istorija apie dvigubą narkomanės gyvenimą">
+            <div class="knygaText">
+                <p class="knygosPavadinimas">Kaifuotoja. Tikra, gniaužianti kvapą istorija apie dvigubą narkomanės gyvenimą</p>
+                <p class="knygosAutorius">Tiffany Jenkins</p>
+            </div>
+            <button ontouchstart>Peržiūrėti</button>
+            <div class="hr"><hr></div>
+        </li>
+        <li class="knygaPaieskoje">
+            <a href="#">Enciklopedija apie viską. Su tūkstančiais neįtikėtinų faktų -</a>
+            <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/e/n/enciklopedija-apie-viska-su-tukstanciais-neitiketinu-faktu.jpg" alt="Enciklopedija apie viską. Su tūkstančiais neįtikėtinų faktų">
+            <div class="knygaText">
+                <p class="knygosPavadinimas">Enciklopedija apie viską. Su tūkstančiais neįtikėtinų faktų</p>
+                <p class="knygosAutorius">-</p>
+            </div>
+            <button ontouchstart>Peržiūrėti</button>
+            <div class="hr"><hr></div>
+        </li>
+        <li class="knygaPaieskoje">
+            <a href="#">Gyvulių ūkis Džordžas Orvelas (George Orwell)</a>
+            <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/g/y/gyvuliu-ukis_1.jpg" alt="Gyvulių ūkis">
+            <div class="knygaText">
+                <p class="knygosPavadinimas">Gyvulių ūkis</p>
+                <p class="knygosAutorius">Džordžas Orvelas (George Orwell)</p>
+            </div>
+            <button ontouchstart>Peržiūrėti</button>
+            <div class="hr"><hr></div>
+        </li>
+        <li class="knygaPaieskoje">
+            <a href="#">Jūra vandenynas Alessandro Baricco</a>
+            <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/j/u/jura-vandenynas.jpg" alt="Jūra vandenynas">
+            <div class="knygaText">
+                <p class="knygosPavadinimas">Jūra vandenynas</p>
+                <p class="knygosAutorius">Alessandro Baricco</p>
+            </div>
+            <button ontouchstart>Peržiūrėti</button>
+            <div class="hr"><hr></div>
+        </li>
+        <li class="knygaPaieskoje">
+            <a href="#">Apie peles ir žmones John Steinbeck</a>
+            <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/a/p/apie-peles-ir-zmones.jpg" alt="Apie peles ir žmones">
+            <div class="knygaText">
+                <p class="knygosPavadinimas">Apie peles ir žmones</p>
+                <p class="knygosAutorius">John Steinbeck</p>
+            </div>
+            <button ontouchstart>Peržiūrėti</button>
+            <div class="hr"><hr></div>
+        </li>
+        <li class="knygaPaieskoje">
+            <a href="#">Vidurnakčio biblioteka Matt Haig</a>
+            <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/v/i/vidurnakcio-biblioteka-.jpg" alt="Vidurnakčio biblioteka">
+            <div class="knygaText">
+                <p class="knygosPavadinimas">Vidurnakčio biblioteka</p>
+                <p class="knygosAutorius">Matt Haig</p>
+            </div>
+            <button ontouchstart>Peržiūrėti</button>
+            <div class="hr"><hr></div>
+        </li>
+    </ul>
     <p class="pabaigosTekstas" style="color: black; margin-top: 10px; opacity: 0.1;"><i class="fa-regular fa-circle-question"></i> Pagalbos centras</p>
     <p class="pabaigosTekstas" style="margin-top: 5px;">Kasparavičių šeimos knygų biblioteka</p>
     <p class="pabaigosTekstas">Created by Matas</p>
@@ -1309,6 +1480,9 @@
 
     <script src="https://kit.fontawesome.com/a11707644f.js" crossorigin="anonymous"></script>
     <script>
+        function myFunction() {
+  
+}
         // setTimeout(() => {
         //     document.getElementById("createdByMatas").style.opacity = "1";
         // }, 100);
@@ -1542,6 +1716,7 @@
                 document.getElementById("puslapiuPaieska").style.display = "inline-block";
                 document.getElementById("kalbosPaieska").style.display = "inline-block";
                 document.getElementById("leidyklosPaieska").style.display = "inline-block";
+                document.getElementById("knygosPaieskoje").style.display = "none";
             }
             else{
                 document.getElementById("ieskotiPagal").style.display = "none";
@@ -1550,6 +1725,24 @@
                 document.getElementById("puslapiuPaieska").style.display = "none";
                 document.getElementById("kalbosPaieska").style.display = "none";
                 document.getElementById("leidyklosPaieska").style.display = "none";
+                document.getElementById("knygosPaieskoje").style.display = "block";
+            }
+            // Declare variables
+            let input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById('paieskosInput');
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("knygosPaieskoje");
+            li = ul.getElementsByTagName('li');
+
+            // Loop through all list items, and hide those who don't match the search query
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
             }
         }
         function atidaryti1Knyga() {

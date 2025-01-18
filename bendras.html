@@ -921,7 +921,8 @@
         .uzdarytiPilnaKnyga{
             width: 30px;
             height: 30px;
-            background-color: lightgrey;
+            background-color: rgba(211, 211, 211, 1);
+            color: rgba(0, 0, 0, 1);
             border-radius: 100%;
             position: fixed;
             top: 10px;
@@ -936,7 +937,8 @@
         }
         .uzdarytiPilnaKnyga:active{
             transform: scale(0.8);
-            opacity: 0.2;
+            background-color: rgba(211, 211, 211, 0.2);
+            color: rgba(0, 0, 0, 0.2);
         }
         .pilnaKnyga img{
             width: 70%;
@@ -1466,11 +1468,11 @@
         </div>
         <div class="apiePilnaKnyga">
             <p><i class="fa-regular fa-bookmark"></i> Apie knygą:</p>
-            <div style="margin-left: 20px; border-left: 0.5px solid darkgrey;"><span class="apieParyskintaInformacija"><i class="fa-solid fa-list"></i> Žanras</span><span class="apieDetaliau">Sėkmės istorijos</span></div>
+            <div style="margin-left: 20px;"><span class="apieParyskintaInformacija"><i class="fa-solid fa-list"></i> Žanras</span><span class="apieDetaliau">Sėkmės istorijos</span></div>
             <div><span class="apieParyskintaInformacija"><i class="fa-regular fa-calendar"></i> Išleidimo metai</span><span class="apieDetaliau">2023</span></div>
             <div><span class="apieParyskintaInformacija"><i class="fa-regular fa-file-lines"></i> Puslapių skaičius</span><span class="apieDetaliau">272</span></div>
             <div><span class="apieParyskintaInformacija"><i class="fa-solid fa-language"></i> Kalba</span><span class="apieDetaliau">lietuvių</span></div>
-            <div style="margin-right: 20px;"><span class="apieParyskintaInformacija"><i class="fa-solid fa-arrow-up-from-bracket"></i> Leidykla</span><span class="apieDetaliau">Eugrimas</span></div>
+            <div style="margin-right: 20px; border: none;"><span class="apieParyskintaInformacija"><i class="fa-solid fa-arrow-up-from-bracket"></i> Leidykla</span><span class="apieDetaliau">Eugrimas</span></div>
         </div>
     </div>
 
@@ -1480,9 +1482,9 @@
 
     <script src="https://kit.fontawesome.com/a11707644f.js" crossorigin="anonymous"></script>
     <script>
-        function myFunction() {
+//         function myFunction() {
   
-}
+// }
         // setTimeout(() => {
         //     document.getElementById("createdByMatas").style.opacity = "1";
         // }, 100);

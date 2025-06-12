@@ -37,7 +37,7 @@ input:focus::-webkit-textfield-decoration-container {
 }
 body{
     background-color: rgb(245, 245, 245);
-    padding-bottom: 75px;
+    padding-bottom: 90px;
     overflow-x: hidden;
     overflow-y: hidden;
 }
@@ -218,8 +218,8 @@ body{
     background-color: lightgrey;
     border-radius: 100%;
     position: fixed;
-    top: 10px;
-    right: 10px;
+    top: 25px;
+    right: 4.5%;
     cursor: pointer;
     display: none;
     justify-content: center;
@@ -290,12 +290,12 @@ body{
     z-index: 14;
 }
 #nav{
-    width: 100%;
+    width: auto;
+    min-width: 200px;
     height: 60px;
     position: fixed;
-    left: 0;
-    right: 0;
-    bottom: -1px;
+    left: 2.5%;
+    bottom: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -304,6 +304,7 @@ body{
     -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
     z-index: 10;
+    border-radius: 25px;
 }
 #nav ul{
     width: 100%;
@@ -313,8 +314,10 @@ body{
     align-items: center;
 }
 #nav li{
-    width: 30%;
+    width: 50%;
     height: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -339,12 +342,49 @@ body{
     text-align: center;
     transition: none;
 }
+#paieLi{
+    width: auto;
+    height: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
+    position: fixed;
+    right: 2.5%;
+    bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 0 10px lightgrey;
+    background-color: rgba(245, 245, 245, 0.9);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    z-index: 10;
+    border-radius: 25px;
+    color: darkgrey;
+    cursor: pointer;
+    transition: none;
+}
+#paieLi i{
+    font-size: 23px;
+    margin-bottom: 7px;
+    transition: none;
+}
+#paieLi p{
+    width: 100%;
+    font-size: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    text-overflow: ellipsis;
+    text-align: center;
+    transition: none;
+}
 #iVirsu{
     width: 90px;
     height: 40px;
     position: fixed;
     right: -100px;
-    bottom: 70px;
+    bottom: 85px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -879,7 +919,9 @@ h3{
     right: 0;
     top: 0;
     bottom: 0;
-    background-color: rgb(245, 245, 245);
+    background-color: rgba(245, 245, 245, 0.9);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
     box-shadow: 0 0 15px darkgrey;
     z-index: 20;
     padding-top: 50px;
@@ -961,8 +1003,8 @@ h3{
     cursor: default;
 }
 .vietaP{
-    font-size: 13px;
-    color: darkgrey;
+    font-size: 15px;
+    color: rgb(160, 160, 160);
     font-weight: 600;
 }
 .detaliVietaP{
@@ -989,10 +1031,11 @@ h3{
     padding-right: 20px;
     margin-top: 20px;
     cursor: default;
+    text-align: justify;
 }
 .trumpasAprasymasP{
-    font-size: 13px;
-    color: darkgrey;
+    font-size: 15px;
+    color: rgb(160, 160, 160);
     font-weight: 600;
 }
 .aprasymasP{
@@ -1017,8 +1060,8 @@ h3{
     margin-left: 20px;
     margin-top: -25px;
     z-index: 5;
-    font-size: 13px;
-    color: darkgrey;
+    font-size: 15px;
+    color: rgb(160, 160, 160);
     cursor: default;
 }
 .apiePilnaKnyga div{

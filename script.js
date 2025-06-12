@@ -67,9 +67,9 @@ function scrollFunction() {
         document.getElementById("pagrindinisText").style.opacity = "0";
         document.getElementById("bibliotekaText").style.opacity = "0";
         document.getElementById("paieskaText").style.opacity = "0";
-        document.getElementById("topInformation").style.top = "-1px";
+        document.getElementById("topInformation").style.top = "0";
         document.getElementById("topInformation").style.boxShadow = "0 0 10px lightgrey";
-        document.getElementById("iVirsu").style.right = "10px";
+        document.getElementById("iVirsu").style.right = "2.5%";
     }
     else
     {
@@ -202,8 +202,8 @@ function sortByMenu() {
     setTimeout(() => {
         document.getElementById("selectSortBy").style.transform = "scale(1)";
         document.getElementById("selectSortBy").style.opacity = "1";
-        document.getElementById("selectSortBy").style.top = "45px";
-        document.getElementById("selectSortBy").style.right = "10px";
+        document.getElementById("selectSortBy").style.top = "60px";
+        document.getElementById("selectSortBy").style.right = "4.5%";
     }, 10);
 }
 function closeSortByMenu() {

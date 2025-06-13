@@ -202,8 +202,8 @@ function sortByMenu() {
     setTimeout(() => {
         document.getElementById("selectSortBy").style.transform = "scale(1)";
         document.getElementById("selectSortBy").style.opacity = "1";
-        document.getElementById("selectSortBy").style.top = "60px";
-        document.getElementById("selectSortBy").style.right = "4.5%";
+        document.getElementById("selectSortBy").style.top = "45px";
+        document.getElementById("selectSortBy").style.right = "10px";
     }, 10);
 }
 function closeSortByMenu() {

@@ -64,16 +64,16 @@ window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
     if(document.body.scrollTop > 30 || document.documentElement.scrollTop > 30)
     {
-        document.getElementById("pagrindinisText").style.opacity = "0";
+        document.getElementById("pradinisText").style.opacity = "0";
         document.getElementById("bibliotekaText").style.opacity = "0";
         document.getElementById("paieskaText").style.opacity = "0";
-        document.getElementById("topInformation").style.top = "0";
+        document.getElementById("topInformation").style.top = "10px";
         document.getElementById("topInformation").style.boxShadow = "0 0 10px lightgrey";
         document.getElementById("iVirsu").style.right = "2.5%";
     }
     else
     {
-        document.getElementById("pagrindinisText").style.opacity = "1";
+        document.getElementById("pradinisText").style.opacity = "1";
         document.getElementById("bibliotekaText").style.opacity = "1";
         document.getElementById("paieskaText").style.opacity = "1";
         document.getElementById("topInformation").style.top = "-50px";
@@ -81,13 +81,13 @@ function scrollFunction() {
         document.getElementById("iVirsu").style.right = "-100px";
     }
 }
-function pagrindinis() {
+function pradinis() {
     setTimeout(() => {
-        document.querySelector('#pageTopPagrindinis').scrollIntoView({
+        document.querySelector('#pageTopPradinis').scrollIntoView({
             behavior: 'auto'
         });
     }, 1);
-    document.getElementById("pagrindinis").style.display = "block";
+    document.getElementById("pradinis").style.display = "block";
     document.getElementById("biblioteka").style.display = "none";
     document.getElementById("paieska").style.display = "none";
     document.getElementById("pagrLi").style.pointerEvents = "none";
@@ -96,18 +96,18 @@ function pagrindinis() {
     document.getElementById("pagrLi").style.color = "black";
     document.getElementById("biblLi").style.color = "darkgrey";
     document.getElementById("paieLi").style.color = "darkgrey";
-    document.getElementById("topInformationTextPagrindinis").style.display = "block";
+    document.getElementById("topInformationTextPradinis").style.display = "block";
     document.getElementById("topInformationTextBiblioteka").style.display = "none";
     document.getElementById("topInformationTextPaieska").style.display = "none";
-    document.getElementById("sortBy").style.display = "none";
+    document.getElementById("sortBy").style.display = "flex";
     document.getElementById("topInformation").style.transition = "none";
-    document.getElementById("pagrindinisText").style.transition = "none";
+    document.getElementById("pradinisText").style.transition = "none";
     document.getElementById("bibliotekaText").style.transition = "none";
     document.getElementById("paieskaText").style.transition = "none";
     document.getElementById("iVirsu").style.transition = "none";
     setTimeout(() => {
         document.getElementById("topInformation").style.transition = "0.3s";
-        document.getElementById("pagrindinisText").style.transition = "0.3s";
+        document.getElementById("pradinisText").style.transition = "0.3s";
         document.getElementById("bibliotekaText").style.transition = "0.3s";
         document.getElementById("paieskaText").style.transition = "0.3s";
         document.getElementById("iVirsu").style.transition = "0.3s";
@@ -119,7 +119,7 @@ function biblioteka() {
             behavior: 'auto'
         });
     }, 1);
-    document.getElementById("pagrindinis").style.display = "none";
+    document.getElementById("pradinis").style.display = "none";
     document.getElementById("biblioteka").style.display = "block";
     document.getElementById("paieska").style.display = "none";
     document.getElementById("pagrLi").style.pointerEvents = "all";
@@ -128,18 +128,18 @@ function biblioteka() {
     document.getElementById("pagrLi").style.color = "darkgrey";
     document.getElementById("biblLi").style.color = "black";
     document.getElementById("paieLi").style.color = "darkgrey";
-    document.getElementById("topInformationTextPagrindinis").style.display = "none";
+    document.getElementById("topInformationTextPradinis").style.display = "none";
     document.getElementById("topInformationTextBiblioteka").style.display = "block";
     document.getElementById("topInformationTextPaieska").style.display = "none";
     document.getElementById("sortBy").style.display = "flex";
     document.getElementById("topInformation").style.transition = "none";
-    document.getElementById("pagrindinisText").style.transition = "none";
+    document.getElementById("pradinisText").style.transition = "none";
     document.getElementById("bibliotekaText").style.transition = "none";
     document.getElementById("paieskaText").style.transition = "none";
     document.getElementById("iVirsu").style.transition = "none";
     setTimeout(() => {
         document.getElementById("topInformation").style.transition = "0.3s";
-        document.getElementById("pagrindinisText").style.transition = "0.3s";
+        document.getElementById("pradinisText").style.transition = "0.3s";
         document.getElementById("bibliotekaText").style.transition = "0.3s";
         document.getElementById("paieskaText").style.transition = "0.3s";
         document.getElementById("iVirsu").style.transition = "0.3s";
@@ -151,7 +151,7 @@ function paieska() {
             behavior: 'auto'
         });
     }, 1);
-    document.getElementById("pagrindinis").style.display = "none";
+    document.getElementById("pradinis").style.display = "none";
     document.getElementById("biblioteka").style.display = "none";
     document.getElementById("paieska").style.display = "block";
     document.getElementById("pagrLi").style.pointerEvents = "all";
@@ -160,18 +160,18 @@ function paieska() {
     document.getElementById("pagrLi").style.color = "darkgrey";
     document.getElementById("biblLi").style.color = "darkgrey";
     document.getElementById("paieLi").style.color = "black";
-    document.getElementById("topInformationTextPagrindinis").style.display = "none";
+    document.getElementById("topInformationTextPradinis").style.display = "none";
     document.getElementById("topInformationTextBiblioteka").style.display = "none";
     document.getElementById("topInformationTextPaieska").style.display = "block";
     document.getElementById("sortBy").style.display = "none";
     document.getElementById("topInformation").style.transition = "none";
-    document.getElementById("pagrindinisText").style.transition = "none";
+    document.getElementById("pradinisText").style.transition = "none";
     document.getElementById("bibliotekaText").style.transition = "none";
     document.getElementById("paieskaText").style.transition = "none";
     document.getElementById("iVirsu").style.transition = "none";
     setTimeout(() => {
         document.getElementById("topInformation").style.transition = "0.3s";
-        document.getElementById("pagrindinisText").style.transition = "0.3s";
+        document.getElementById("pradinisText").style.transition = "0.3s";
         document.getElementById("bibliotekaText").style.transition = "0.3s";
         document.getElementById("paieskaText").style.transition = "0.3s";
         document.getElementById("iVirsu").style.transition = "0.3s";
@@ -179,7 +179,7 @@ function paieska() {
 }
 function scrollToTop() {
     setTimeout(() => {
-        document.querySelector('#pageTopPagrindinis').scrollIntoView({
+        document.querySelector('#pageTopPradinis').scrollIntoView({
             behavior: 'smooth'
         });
     }, 1);

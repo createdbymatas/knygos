@@ -28,15 +28,15 @@
     </div>
 
     <div id="topInformation">
-        <p id="topInformationTextPagrindinis">Pagrindinis</p>
+        <p id="topInformationTextPradinis">Pradinis</p>
         <p id="topInformationTextBiblioteka">Biblioteka</p>
         <p id="topInformationTextPaieska">Paieška</p>
+        <i class="fa-solid fa-arrow-down-short-wide" id="sortBy" onclick="sortByMenu()" ontouchstart></i>
     </div>
-    <i class="fa-solid fa-arrow-down-short-wide" id="sortBy" onclick="sortByMenu()" ontouchstart></i>
     <div id="disableSortBy" onclick="closeSortByMenu()"></div>
     <nav id="nav">
         <ul>
-            <li id="pagrLi" onclick="pagrindinis()" ontouchstart style="color: black; pointer-events: none;"><i class="fa-solid fa-house"></i> <p>Pagrindinis</p></li>
+            <li id="pagrLi" onclick="pradinis()" ontouchstart style="color: black; pointer-events: none;"><i class="fa-solid fa-house"></i> <p>Pradinis</p></li>
             <li id="biblLi" onclick="biblioteka()" ontouchstart><i class="fa-solid fa-book-bookmark"></i> <p>Biblioteka</p></li>
         </ul>
     </nav>
@@ -50,14 +50,14 @@
         <button style="border-bottom: none;"><i class="fa-solid fa-check"></i> autorių: nuo Ž iki A</button>
     </div>
 
-    <div id="pagrindinis">
-        <div id="pageTopPagrindinis"></div>
-        <h1 id="pagrindinisText">Pagrindinis</h1>
+    <div id="pradinis">
+        <div id="pageTopPradinis"></div>
+        <h1 id="pradinisText">Pradinis</h1>
         <h3>Knygos</h3>
 
         <div id="kategorija1">
             <h2>Nauja <i class="fa-solid fa-chevron-right"></i></h2>
-            <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/-/i/-isskirtiniai-sekmingu-zmoniu-paslaptis.jpg" alt="nuotrauka" style="margin-left: 20px;"></img>
+            <img onclick="atidaryti1Knyga()" src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/-/i/-isskirtiniai-sekmingu-zmoniu-paslaptis.jpg" alt="nuotrauka" style="margin-left: 20px;"></img>
             <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/d/z/dziaugiuosi-kad-mire-mano-mama.jpg" alt="nuotrauka"></img>
             <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/i/s/isgydytos-mintys-gyvenimo-prasmes-terapija.jpg" alt="nuotrauka"></img>
             <img src="https://www.patogupirkti.lt/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/m/o/moneta--labirintas-ii.jpg" alt="nuotrauka" style="margin-right: 20px;"></img>
